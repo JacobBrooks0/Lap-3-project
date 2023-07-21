@@ -1,7 +1,11 @@
-DROP TABLE IF EXISTS Users;
-DROP TABLE IF EXISTS Languages;
 DROP TABLE IF EXISTS Leaderboards;
-DROP TABLE IF EXISTS Basicgram_quiz;
+DROP TABLE IF EXISTS Basicgram_quizzes;
+DROP TABLE IF EXISTS Nouns_quizzes;
+DROP TABLE IF EXISTS Foods_quizzes;
+DROP TABLE IF EXISTS Bookings_quizzes;
+DROP TABLE IF EXISTS Info_quizzes;
+DROP TABLE IF EXISTS Users cascade;
+DROP TABLE IF EXISTS Languages cascade;
 
 
 CREATE TABLE Users(
@@ -27,8 +31,6 @@ CREATE TABLE Leaderboards(
     score_italian INT NOT NULL ,
     PRIMARY KEY(leaderboard_id),
     FOREIGN KEY (user_id) REFERENCES Users(user_id)
-    -- FOREIGN KEY (score_spanish) REFERENCES Users(score_spanish),
-    -- FOREIGN KEY (score_italian) REFERENCES Users(score_italian)
 );
 
 CREATE TABLE Basicgram_quizzes(
@@ -42,15 +44,90 @@ CREATE TABLE Basicgram_quizzes(
     FOREIGN KEY (language_id) REFERENCES Languages(language_id)   
 );
 
+CREATE TABLE Nouns_quizzes(
+    quiz_id INT GENERATED ALWAYS AS IDENTITY,
+    user_id INT NOT NULL,
+    has_completed BOOLEAN DEFAULT FALSE,
+    score INT NOT NULL DEFAULT 0,
+    language_id INT NOT NULL,
+    PRIMARY KEY(quiz_id),
+    FOREIGN KEY (user_id) REFERENCES Users(user_id),
+    FOREIGN KEY (language_id) REFERENCES Languages(language_id)   
+);
+
+CREATE TABLE Foods_quizzes(
+    quiz_id INT GENERATED ALWAYS AS IDENTITY,
+    user_id INT NOT NULL,
+    has_completed_beginner BOOLEAN DEFAULT FALSE,
+    has_completed_intermediate BOOLEAN DEFAULT FALSE,
+    has_completed_advanced BOOLEAN DEFAULT FALSE,
+    beginner_score INT NOT NULL DEFAULT 0,
+    intermediate_score INT NOT NULL DEFAULT 0,
+    advanced_score INT NOT NULL DEFAULT 0,
+    language_id INT NOT NULL,
+    PRIMARY KEY(quiz_id),
+    FOREIGN KEY (user_id) REFERENCES Users(user_id),
+    FOREIGN KEY (language_id) REFERENCES Languages(language_id)   
+);
+
+CREATE TABLE Bookings_quizzes(
+    quiz_id INT GENERATED ALWAYS AS IDENTITY,
+    user_id INT NOT NULL,
+    has_completed_beginner BOOLEAN DEFAULT FALSE,
+    has_completed_intermediate BOOLEAN DEFAULT FALSE,
+    has_completed_advanced BOOLEAN DEFAULT FALSE,
+    beginner_score INT NOT NULL DEFAULT 0,
+    intermediate_score INT NOT NULL DEFAULT 0,
+    advanced_score INT NOT NULL DEFAULT 0,
+    language_id INT NOT NULL,
+    PRIMARY KEY(quiz_id),
+    FOREIGN KEY (user_id) REFERENCES Users(user_id),
+    FOREIGN KEY (language_id) REFERENCES Languages(language_id)   
+);
+
+CREATE TABLE Info_quizzes(
+    quiz_id INT GENERATED ALWAYS AS IDENTITY,
+    user_id INT NOT NULL,
+    has_completed_beginner BOOLEAN DEFAULT FALSE,
+    has_completed_intermediate BOOLEAN DEFAULT FALSE,
+    has_completed_advanced BOOLEAN DEFAULT FALSE,
+    beginner_score INT NOT NULL DEFAULT 0,
+    intermediate_score INT NOT NULL DEFAULT 0,
+    advanced_score INT NOT NULL DEFAULT 0,
+    language_id INT NOT NULL,
+    PRIMARY KEY(quiz_id),
+    FOREIGN KEY (user_id) REFERENCES Users(user_id),
+    FOREIGN KEY (language_id) REFERENCES Languages(language_id)   
+);
+
 
 INSERT INTO Users (username, email, password, score_spanish, score_italian)
-VALUES ('Alex', 'alex', 'alex', 20, 50);
+VALUES ('Alex', 'alex', 'alex', 0, 0);
 
 INSERT INTO Languages (language_name)
 VALUES ('Spanish'), ('Italian');
 
 INSERT INTO Leaderboards (user_id, score_spanish, score_italian)
-VALUES (1, 20, 50);
+VALUES (1,0, 0);
 
-INSERT INTO Basicgram_quizzes (user_id, language_id)
-VALUES (1, 1), (1, 2);
+INSERT INTO Basicgram_quizzes (user_id, score, language_id)
+VALUES (1, 20, 1), (1, 10, 2);
+
+INSERT INTO Nouns_quizzes (user_id,score, language_id)
+VALUES (1, 20, 1), (1, 10, 2);
+
+INSERT INTO Foods_quizzes (user_id, beginner_score, language_id)
+VALUES (1, 20, 1), (1, 10, 2);
+
+INSERT INTO Bookings_quizzes (user_id, intermediate_score, language_id)
+VALUES (1, 20, 1), (1, 10, 2);
+
+INSERT INTO Info_quizzes (user_id, advanced_score, language_id)
+VALUES (1, 20, 1), (1, 10, 2);
+
+-- queries to update the users table
+-- UPDATE Users SET score_spanish = (SELECT score FROM Basicgram_quizzes WHERE Basicgram_quizzes.user_id = Users.user_id AND Basicgram_quizzes.language_id = 1) 
+-- UPDATE Users SET score_italian = (SELECT score FROM Basicgram_quizzes WHERE Basicgram_quizzes.user_id = Users.user_id AND Basicgram_quizzes.language_id = 2) 
+
+-- queries to update the leaderboards table
+-- UPDATE Leaderboards SET (score_spanish, score_italian) = (SELECT score_spanish, score_italian FROM Users WHERE Users.user_id = Leaderboards.user_id) 
