@@ -11,16 +11,16 @@ export default function Login() {
 
     const userDetails = new FormData(e.current.target);
 
-    const body = JSON.stringify({
-      username: userDetails.get("username"),
-      password: userDetails.get("password"),
-    });
+    const config = {
+      data: JSON.stringify({
+        username: userDetails.get("username"),
+        password: userDetails.get("password"),
+      }),
+    };
 
     const { status, data } = await axios.post(
       `${process.env.SERVER}/users/login`,
-      {
-        data: body,
-      }
+      config
     );
 
     if (status == 201) {
