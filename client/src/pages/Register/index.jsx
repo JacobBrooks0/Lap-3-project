@@ -1,4 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 import { UsernameInput, PasswordInput } from "../../components";
 
@@ -10,26 +11,21 @@ export default function Register() {
 
     const userDetails = new FormData(e.current.target);
 
-    const options = {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
+    const config = {
       body: JSON.stringify({
         username: userDetails.get("username"),
         password: userDetails.get("password"),
       }),
     };
 
-    const response = await fetch(
+    const response = await axios.post(
       `${process.env.SERVER}/users/register`,
-      options
+      config
     );
     const data = await response.json();
 
     if (response.status == 201) {
-      goTo("/")
+      goTo("/login")
     } else {
       alert(data.Error);
     }

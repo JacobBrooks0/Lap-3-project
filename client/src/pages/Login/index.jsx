@@ -1,30 +1,31 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 import { UsernameInput, PasswordInput } from "../../components";
 
 export default function Login() {
+  const goTo = useNavigate();
+
   const loginUser = async (e) => {
     e.preventDefault();
 
     const userDetails = new FormData(e.current.target);
 
-    const options = {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        username: userDetails.get("username"),
-        password: userDetails.get("password"),
-      }),
-    };
+    const body = JSON.stringify({
+      username: userDetails.get("username"),
+      password: userDetails.get("password"),
+    });
 
-    const response = await fetch(`${process.env.SERVER}/users/login`, options);
-    const data = await response.json();
+    const { status, data } = await axios.post(
+      `${process.env.SERVER}/users/login`,
+      {
+        data: body,
+      }
+    );
 
-    if (response.status == 201) {
+    if (status == 201) {
       localStorage.setItem("token", data.token);
+      goTo("/");
     } else {
       alert(data.Error);
     }
