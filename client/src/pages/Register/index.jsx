@@ -11,23 +11,27 @@ export default function Register() {
 
     const userDetails = new FormData(e.current.target);
 
-    const config = {
-      body: JSON.stringify({
-        username: userDetails.get("username"),
-        password: userDetails.get("password"),
-      }),
-    };
+    try {
+      const config = {
+        body: JSON.stringify({
+          username: userDetails.get("username"),
+          password: userDetails.get("password"),
+        }),
+      };
 
-    const response = await axios.post(
-      `${process.env.SERVER}/users/register`,
-      config
-    );
-    const data = await response.json();
+      const response = await axios.post(
+        `${process.env.SERVER}/users/register`,
+        config
+      );
+      const data = await response.json();
 
-    if (response.status == 201) {
-      goTo("/login")
-    } else {
-      alert(data.Error);
+      if (response.status == 201) {
+        goTo("/login");
+      } else {
+        alert(data.Error);
+      }
+    } catch (error) {
+      console.log(error);
     }
   };
 
