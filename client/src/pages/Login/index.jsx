@@ -11,23 +11,27 @@ export default function Login() {
 
     const userDetails = new FormData(e.current.target);
 
-    const config = {
-      data: JSON.stringify({
-        username: userDetails.get("username"),
-        password: userDetails.get("password"),
-      }),
-    };
+    try {
+      const config = {
+        data: JSON.stringify({
+          username: userDetails.get("username"),
+          password: userDetails.get("password"),
+        }),
+      };
 
-    const { status, data } = await axios.post(
-      `${process.env.SERVER}/users/login`,
-      config
-    );
+      const { status, data } = await axios.post(
+        `${process.env.SERVER}/users/login`,
+        config
+      );
 
-    if (status == 201) {
-      localStorage.setItem("token", data.token);
-      goTo("/");
-    } else {
-      alert(data.Error);
+      if (status == 201) {
+        localStorage.setItem("token", data.token);
+        goTo("/");
+      } else {
+        alert(data.Error);
+      }
+    } catch (error) {
+      console.log(error);
     }
   };
 
