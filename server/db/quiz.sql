@@ -60,9 +60,12 @@ INSERT INTO Leaderboards (user_id, score_spanish, score_italian)
 VALUES (1,0, 0), (2, 0, 0);
 
 INSERT INTO Quizzes (quiz_id, user_id, beginner_score, intermediate_score, advanced_score, language_id)
-VALUES (1, 1, 10, 20, 30, 1), (2, 1, 10, 10, 10, 1), (1, 1, 5, 10, 20, 2), (1, 2, 5, 10, 20, 1), (1, 2, 15, 5, 15, 2);
+VALUES (1, 1, 10, 20, 30, 1), (2, 1, 0, 7, 6, 2), (1, 2, 5, 10, 20, 1), (1, 1, 5, 10, 20, 2), (1, 2, 15, 5, 15, 2),(2, 1, 10, 10, 10, 1);
 
 UPDATE Leaderboards SET score_spanish = (SELECT (SELECT COALESCE(SUM(beginner_score), 0) FROM Quizzes WHERE language_id = 1 AND  user_id = 1) + (SELECT COALESCE(SUM(intermediate_score), 0) FROM Quizzes WHERE language_id = 1 AND  user_id = 1) + (SELECT COALESCE(SUM(advanced_score), 0) FROM Quizzes WHERE language_id = 1 AND  user_id = 1)) WHERE user_id = 1;
+
+-- Easy way of visualising each user
+-- SELECT * FROM Quizzes ORDER BY user_id, quiz_id, language_id
 
 
 --handle the addition of a score in the leaderboards table?
