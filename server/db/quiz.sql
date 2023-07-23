@@ -139,3 +139,8 @@ UPDATE Leaderboards SET score_italian = (SELECT (SELECT COALESCE(SUM(score), 0) 
 
 --old way of updating leaderboards table
 -- UPDATE Leaderboards SET (score_spanish, score_italian) = (SELECT score_spanish, score_italian FROM Users WHERE Users.user_id = Leaderboards.user_id);
+
+
+--handle the addition of a score in the leaderboards table?
+-- UPDATE Employee SET SALARY=CASE WHEN SALARY IS NULL OR SALARY='' THEN '300'  
+-- ELSE SALARY+'300' END WHERE EMPLOYEE_ID=2?
