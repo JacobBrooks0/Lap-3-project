@@ -1,0 +1,17 @@
+.nav {
+  background-color: grey;
+  position: sticky;
+  top: 0;
+  height: 40px;
+
+  padding: 10px 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  column-gap: 1rem;
+}
+
+.nav :global(.active) {
+  color: black;
+}

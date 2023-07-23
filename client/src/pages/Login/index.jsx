@@ -1,10 +1,14 @@
 import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../../contexts";
 import axios from "axios";
 
 import { UsernameInput, PasswordInput } from "../../components";
 
 export default function Login() {
   const goTo = useNavigate();
+
+  const { user } = useAuth();
+  if (user) goTo("/");
 
   const loginUser = async (e) => {
     e.preventDefault();

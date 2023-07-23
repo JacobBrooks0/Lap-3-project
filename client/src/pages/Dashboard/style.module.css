@@ -1,0 +1,14 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.container > div {
+  background-color: lightgrey;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+}
