@@ -143,24 +143,32 @@ class Quiz {
   }
 
   async updateQuizInstance(data) {
-    const {
-      user_id,
-      language_id = this.language_id,
-      quiz_id = this.quiz_id,
-      beginner_score,
-      intermediate_score,
-      advanced_score,
-    } = data;
+    const { beginner_score, intermediate_score, advanced_score } = data;
+
+    let newBeginner_score;
+    let newIntermediate_score;
+    let newAdvanced_score;
+
+    beginner_score > this.beginner_score
+      ? (newBeginner_score = beginner_score)
+      : (newBeginner_score = this.beginner_score);
+    intermediate_score > this.intermediate_score
+      ? (newIntermediate_score = intermediate_score)
+      : (newIntermediate_score = this.intermediate_score);
+    advanced_score > this.advanced_score
+      ? (newAdvanced_score = advanced_score)
+      : (newAdvanced_score = this.advanced_score);
+    //need to check the old score wasn't more than the new score
 
     const response = await db.query(
       "UPDATE Quizzes SET beginner_score =  $1, intermediate_score = $2, advanced_score = $3 WHERE user_id = $4 AND language_id = $5 AND quiz_id = $6 RETURNING *",
       [
-        beginner_score,
-        intermediate_score,
-        advanced_score,
-        user_id,
-        language_id,
-        quiz_id,
+        newBeginner_score,
+        newIntermediate_score,
+        newAdvanced_score,
+        this.user_id,
+        this.language_id,
+        this.quiz_id,
       ]
     );
 
