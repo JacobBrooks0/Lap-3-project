@@ -1,4 +1,4 @@
-const db = require("../db/connect");
+const db = require ("../db/connect");
 
 class Quiz {
     constructor({ quiz_instance, quiz_id, user_id, language_id, beginner, intermediate, advanced }) {
@@ -20,6 +20,8 @@ class Quiz {
         }
       }
 
+    //GET all quizzes by ID
+
       static async getAllQuizzesByUserId(user_id) {
         const response = await db.query("SELECT * FROM Quizzes WHERE user_id = $1", [user_id]);
         const quizzes = response.rows.map((quizData) => new Quiz(quizData));
@@ -27,17 +29,36 @@ class Quiz {
     
     }
 
-    static asnyc createQuizEntry(data) {
-      const {quiz_id, user_id, beginner_score, intermediate_score, advanced_score, language_id} = data
+    // Get all quizzes associated with a specific language ID
+  static async getQuizzesByLanguageId(languageId) {
+    const response = await db.query("SELECT * FROM Quizzes WHERE language_id = $1", [languageId]);
+    const quizzes = response.rows.map((quizData) => new Quiz(quizData));
+    return quizzes;
+  }
 
-    }
+  // Get all beginner quizzes
+  static async getBeginnerQuizzes() {
+    const response = await db.query("SELECT * FROM Quizzes WHERE beginner = true");
+    const quizzes = response.rows.map((quizData) => new Quiz(quizData));
+    return quizzes;
+  }
 
+  // Get all intermediate quizzes
+  static async getIntermediateQuizzes() {
+    const response = await db.query("SELECT * FROM Quizzes WHERE intermediate = true");
+    const quizzes = response.rows.map((quizData) => new Quiz(quizData));
+    return quizzes;
+  }
 
-
-
-
-
-
+  // Get all advanced quizzes
+  static async getAdvancedQuizzes() {
+    const response = await db.query("SELECT * FROM Quizzes WHERE advanced = true");
+    const quizzes = response.rows.map((quizData) => new Quiz(quizData));
+    return quizzes;
+  }
 }
+
+
+
 
 module.exports = Quiz;

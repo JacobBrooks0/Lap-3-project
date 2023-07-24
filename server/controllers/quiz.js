@@ -1,4 +1,4 @@
-const Quiz = require("../models/Quiz");
+const Quiz = require("../models/Quiz")
 const User = require("../models/User");
 
 async function show(req, res) {
@@ -32,7 +32,50 @@ async function create(req, res) {
   }
 }
 
-// Other functions for other routes
+// Get all quizzes by language ID
+async function showByLanguageId(req, res) {
+  try {
+    const languageId = req.params.languageId;
+    const quizzes = await Quiz.getQuizzesByLanguageId(languageId);
+    res.status(200).json(quizzes);
+  } catch (err) {
+    res.status(404).json({ error: err.message });
+  }
+}
+
+// Get all beginner quizzes
+async function getBeginnerQuizzes(req, res) {
+  try {
+    const quizzes = await Quiz.getBeginnerQuizzes();
+    res.status(200).json(quizzes);
+  } catch (err) {
+    res.status(404).json({ error: err.message });
+  }
+}
+
+// Get all intermediate quizzes
+async function getIntermediateQuizzes(req, res) {
+  try {
+    const quizzes = await Quiz.getIntermediateQuizzes();
+    res.status(200).json(quizzes);
+  } catch (err) {
+    res.status(404).json({ error: err.message });
+  }
+}
+
+// Get all advanced quizzes
+async function getAdvancedQuizzes(req, res) {
+  try {
+    const quizzes = await Quiz.getAdvancedQuizzes();
+    res.status(200).json(quizzes);
+  } catch (err) {
+    res.status(404).json({ error: err.message });
+  }
+}
 module.exports = {
-  show, showById, create
+  show, showById, create,
+  showByLanguageId,
+  getBeginnerQuizzes,
+  getIntermediateQuizzes,
+  getAdvancedQuizzes,
 };
