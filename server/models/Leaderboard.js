@@ -1,10 +1,12 @@
 const db = require("../db/connect");
 
 class Leaderboard {
-  constructor({ user_id, score_spanish, score_italian }) {
+  constructor({ user_id, score_spanish, score_italian, rank, total }) {
     this.user_id = user_id;
     this.score_spanish = score_spanish;
     this.score_italian = score_italian;
+    this.rank = rank;
+    this.total = score_spanish + score_italian;
   }
 
   static async getAllLeaderboardEntries() {
@@ -87,10 +89,20 @@ class Leaderboard {
           "UPDATE Leaderboards SET score_spanish = (SELECT (SELECT COALESCE(SUM(beginner_score), 0) FROM Quizzes WHERE language_id = $1 AND  user_id = $2) + (SELECT COALESCE(SUM(intermediate_score), 0) FROM Quizzes WHERE language_id = $1 AND  user_id = $2) + (SELECT COALESCE(SUM(advanced_score), 0) FROM Quizzes WHERE language_id = $1 AND  user_id = $2)) WHERE user_id = $2;",
           [body.language_id, body.user_id]
         );
+
+        await db.query(
+          "UPDATE Leaderboards SET rank = CASE WHEN CAST(score_italian as INT) + CAST(score_spanish as INT) > 160 THEN 5 WHEN CAST(score_italian as INT) + CAST(score_spanish as INT)  > 120 THEN 4 WHEN CAST(score_italian as INT) + CAST(score_spanish as INT)  > 80 THEN 3 WHEN CAST(score_italian as INT) + CAST(score_spanish as INT)  > 40 THEN 2 ELSE 1 END WHERE user_id = $1",
+          [body.user_id]
+        );
       } else {
         await db.query(
           "UPDATE Leaderboards SET score_italian = (SELECT (SELECT COALESCE(SUM(beginner_score), 0) FROM Quizzes WHERE language_id = $1 AND  user_id = $2) + (SELECT COALESCE(SUM(intermediate_score), 0) FROM Quizzes WHERE language_id = $1 AND  user_id = $2) + (SELECT COALESCE(SUM(advanced_score), 0) FROM Quizzes WHERE language_id = $1 AND  user_id = $2)) WHERE user_id = $2;",
           [body.language_id, body.user_id]
+        );
+
+        await db.query(
+          "UPDATE Leaderboards SET rank = CASE WHEN CAST(score_italian as INT) + CAST(score_spanish as INT) > 160 THEN 5 WHEN CAST(score_italian as INT) + CAST(score_spanish as INT)  > 120 THEN 4 WHEN CAST(score_italian as INT) + CAST(score_spanish as INT)  > 80 THEN 3 WHEN CAST(score_italian as INT) + CAST(score_spanish as INT)  > 40 THEN 2 ELSE 1 END WHERE user_id = $1",
+          [body.user_id]
         );
       }
     } catch (error) {
