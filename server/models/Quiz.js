@@ -21,6 +21,17 @@ class Quiz {
       }
 
     //GET all quizzes by ID
+    static async getQuizByQuizId(quiz_id) {
+      try {
+        const response = await db.query("SELECT * FROM Quizzes WHERE quiz_id = $1", [quiz_id]);
+        if (response.rows.length === 0) {
+          return null; // Return null if no quiz is found with the provided quiz_id
+        }
+        return new Quiz(response.rows[0]); // Create a new Quiz instance from the retrieved quiz data
+      } catch (error) {
+        throw new Error("Failed to fetch the quiz from the database.");
+      }
+    }
 
       static async getAllQuizzesByUserId(user_id) {
         const response = await db.query("SELECT * FROM Quizzes WHERE user_id = $1", [user_id]);

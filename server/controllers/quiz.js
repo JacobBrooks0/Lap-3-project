@@ -9,6 +9,18 @@ async function show(req, res) {
     res.status(500).json({ error: "Failed to fetch quizzes." });
   }
 }
+async function getQuizByQuizId(req, res) {
+  try {
+    const quiz_id = req.params.id;
+    const quiz = await Quiz.getQuizByQuizId(quiz_id);
+    if (!quiz) {
+      return res.status(404).json({ error: "Quiz not found." });
+    }
+    res.status(200).json(quiz);
+  } catch (err) {
+    res.status(500).json({ error: "Failed to fetch the quiz." });
+  }
+}
 
 async function showById(req, res) {
     try {
@@ -73,7 +85,7 @@ async function getAdvancedQuizzes(req, res) {
   }
 }
 module.exports = {
-  show, showById, create,
+  show, showById, getQuizByQuizId, create,
   showByLanguageId,
   getBeginnerQuizzes,
   getIntermediateQuizzes,
