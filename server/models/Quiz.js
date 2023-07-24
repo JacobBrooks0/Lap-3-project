@@ -90,6 +90,57 @@ class Quiz {
     const quizzes = response.rows.map((quizData) => new Quiz(quizData));
     return quizzes;
   }
+
+  static async getAllInfoForOneUser(id, language_id, quiz_id) {
+    const response = await db.query(
+      "SELECT * FROM Quizzes WHERE user_id = $1 AND quiz_id = $2 AND language_id = $3;",
+      [id, quiz_id, language_id]
+    );
+
+    if (response.rows.length != 1) {
+      throw new Error("No Entry available for this user");
+    }
+
+    const quiz = response.rows[0];
+    return quiz;
+  }
+
+  static async createQuiz(data) {
+    const {
+      quiz_id,
+      user_id,
+      beginner_score,
+      intermediate_score,
+      advanced_score,
+      language_id,
+    } = data;
+
+    const response = await db.query(
+      "INSERT INTO Quizzes(quiz_id, user_id, beginner_score, intermediate_score, advanced_score, language_id) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *",
+      [
+        quiz_id,
+        user_id,
+        beginner_score,
+        intermediate_score,
+        advanced_score,
+        language_id,
+      ]
+    );
+
+    if (response.rows.length != 1) {
+      throw new Error("Unable to add quiz");
+    }
+
+    //get quiz by quiz id where language id = language from above
+    const newQuiz = response.rows[0];
+    const newEntry = await Quiz.getAllInfoForOneUser(
+      user_id,
+      language_id,
+      quiz_id
+    );
+
+    return new Quiz(newEntry);
+  }
 }
 
 module.exports = Quiz;

@@ -1,5 +1,6 @@
 const Quiz = require("../models/Quiz");
 const User = require("../models/User");
+const Leaderboard = require("../models/Leaderboard");
 
 async function show(req, res) {
   try {
@@ -31,18 +32,6 @@ async function showById(req, res) {
     res.status(404).json({ error: err.message });
   }
 }
-
-// async function create(req, res) {
-//   try {
-//     const data = req.body;
-//     const checker = await User.getOneById(data.user_id)
-//     // do check to determine if the user exists
-//     const newEntry = await Quiz.createQuizEntry(data)
-//     res.status(201).json(newEntry);
-//   } catch (error) {
-//     res.status(500).json({ error: "Failed to fetch quizzes." });
-//   }
-// }
 
 // Get all quizzes by language ID
 async function showByLanguageId(req, res) {
@@ -85,6 +74,28 @@ async function getAdvancedQuizzes(req, res) {
     res.status(404).json({ error: err.message });
   }
 }
+
+async function getAllInfo(req, res) {
+  try {
+    const { id, language_id, quiz_id } = req.params;
+    const quizInfo = await Quiz.getAllInfoForOneUser(id, language_id, quiz_id);
+    res.status(200).json(quizInfo);
+  } catch (err) {
+    res.status(404).json({ error: err.message });
+  }
+}
+
+async function createQuizInstance(req, res) {
+  try {
+    const data = req.body;
+    const newEntry = await Quiz.createQuiz(data);
+    const updateLeaderboard = await Leaderboard.updateLeaderboards(newEntry);
+    res.status(201).json(newEntry);
+  } catch (error) {
+    res.status(500).json({ error: "Failed to fetch quizzes." });
+  }
+}
+
 module.exports = {
   show,
   showById,
@@ -93,4 +104,6 @@ module.exports = {
   getBeginnerQuizzes,
   getIntermediateQuizzes,
   getAdvancedQuizzes,
+  getAllInfo,
+  createQuizInstance,
 };

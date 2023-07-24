@@ -18,7 +18,10 @@ quizRouter.get("/level/beginner", quizController.getBeginnerQuizzes);
 quizRouter.get("/level/intermediate", quizController.getIntermediateQuizzes);
 quizRouter.get("/level/advanced", quizController.getAdvancedQuizzes);
 
+//GET route for all information about a quiz user and language
+quizRouter.get("/:id/:language_id/:quiz_id", quizController.getAllInfo);
+
 //POSTS a new quiz instance for a user
-// quizRouter.post("/:id", quizController.createQuizInstance)
+quizRouter.post("/", quizController.createQuizInstance);
 //quizRouter.patch
 module.exports = quizRouter;
