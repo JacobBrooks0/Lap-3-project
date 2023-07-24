@@ -19,4 +19,7 @@ quizRouter.get("/beginner", authenticator, quizController.getBeginnerQuizzes);
 quizRouter.get("/intermediate", authenticator, quizController.getIntermediateQuizzes);
 quizRouter.get("/advanced", authenticator, quizController.getAdvancedQuizzes);
 
+//POSTS a new quiz instance for a user 
+quizRouter.post("/:id", authenticator, quizController.createQuizInstance)
+//quizRouter.patch
 module.exports = quizRouter;
