@@ -5,14 +5,14 @@ const quizController = require("../controllers/quiz");
 const quizRouter = Router()
 
 //GET route to return all quizzes 
-quizRouter.get("/", authenticator, quizController.getAllQuizzes);
+quizRouter.get("/", authenticator, quizController.show);
 //GET by quiz id
-quizRouter.get("/:id", authenticator, quizController.getQuizzesByQuizId);
+quizRouter.get("/:id", authenticator, quizController.getQuizByQuizId);
 
 //GET route to return all quizzes by UserID
-quizRouter.get("/user/:id", authenticator, quizController.getQuizById);
+quizRouter.get("/user/:id", authenticator, quizController.showById);
 //GET route to return all quizzes by language ID
-quizRouter.get("/language/:languageId", authenticator, quizController.getQuizByLanguageId);
+quizRouter.get("/language/:languageId", authenticator, quizController.showByLanguageId);
 //GET route tto return all the quiz by lvl
 quizRouter.get("/beginner", authenticator, quizController.getBeginnerQuizzes);
 quizRouter.get("/intermediate", authenticator, quizController.getIntermediateQuizzes);
