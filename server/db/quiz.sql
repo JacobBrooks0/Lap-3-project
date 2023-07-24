@@ -3,6 +3,7 @@ DROP TABLE IF EXISTS Quiz_names cascade;
 DROP TABLE IF EXISTS Quizzes cascade;
 DROP TABLE IF EXISTS Users cascade;
 DROP TABLE IF EXISTS Languages cascade;
+DROP TABLE IF EXISTS token;
 
 CREATE TABLE Users(
     user_id INT GENERATED ALWAYS AS IDENTITY,
@@ -10,6 +11,13 @@ CREATE TABLE Users(
     email VARCHAR(40) NOT NULL UNIQUE,
     password VARCHAR(60) NOT NULL,
     PRIMARY KEY (user_id)
+);
+CREATE TABLE token(
+    token_id INT GENERATED ALWAYS AS IDENTITY,
+    user_id INT NOT NULL,
+    token CHAR(36) UNIQUE NOT NULL,
+    PRIMARY KEY (token_id),
+    FOREIGN KEY (user_id) REFERENCES Users(id)
 );
 
 CREATE TABLE Languages(
