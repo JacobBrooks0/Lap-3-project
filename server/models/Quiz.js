@@ -102,7 +102,7 @@ class Quiz {
     }
 
     const quiz = response.rows[0];
-    return quiz;
+    return new Quiz(quiz);
   }
 
   static async createQuiz(data) {
@@ -140,6 +140,31 @@ class Quiz {
     );
 
     return new Quiz(newEntry);
+  }
+
+  async updateQuizInstance(data) {
+    const {
+      user_id,
+      language_id = this.language_id,
+      quiz_id = this.quiz_id,
+      beginner_score,
+      intermediate_score,
+      advanced_score,
+    } = data;
+
+    const response = await db.query(
+      "UPDATE Quizzes SET beginner_score =  $1, intermediate_score = $2, advanced_score = $3 WHERE user_id = $4 AND language_id = $5 AND quiz_id = $6 RETURNING *",
+      [
+        beginner_score,
+        intermediate_score,
+        advanced_score,
+        user_id,
+        language_id,
+        quiz_id,
+      ]
+    );
+
+    return new Quiz(response.rows[0]);
   }
 }
 

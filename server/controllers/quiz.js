@@ -96,6 +96,26 @@ async function createQuizInstance(req, res) {
   }
 }
 
+async function updateQuizInstance(req, res) {
+  try {
+    const userId = req.params.user_id;
+    const data = req.body;
+    const newEntry = await Quiz.getAllInfoForOneUser(
+      userId,
+      data.language_id,
+      data.quiz_id
+    );
+    const instanceToUpdate = await newEntry.updateQuizInstance(data);
+    console.log(instanceToUpdate);
+    const updateLeaderboard = await Leaderboard.updateLeaderboards(
+      instanceToUpdate
+    );
+    res.status(201).json(instanceToUpdate);
+  } catch (error) {
+    res.status(500).json({ error: "Failed to fetch quizzes." });
+  }
+}
+
 module.exports = {
   show,
   showById,
@@ -106,4 +126,5 @@ module.exports = {
   getAdvancedQuizzes,
   getAllInfo,
   createQuizInstance,
+  updateQuizInstance,
 };

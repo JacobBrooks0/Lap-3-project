@@ -23,5 +23,7 @@ quizRouter.get("/:id/:language_id/:quiz_id", quizController.getAllInfo);
 
 //POSTS a new quiz instance for a user
 quizRouter.post("/", quizController.createQuizInstance);
+
 //quizRouter.patch
+quizRouter.patch("/:user_id", quizController.updateQuizInstance);
 module.exports = quizRouter;
