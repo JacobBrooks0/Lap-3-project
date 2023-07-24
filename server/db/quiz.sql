@@ -73,7 +73,15 @@ VALUES (1, 1, 10, 20, 30, 1), (2, 1, 0, 7, 6, 2), (1, 2, 5, 10, 20, 1), (1, 1, 5
 
 UPDATE Leaderboards SET score_spanish = (SELECT (SELECT COALESCE(SUM(beginner_score), 0) FROM Quizzes WHERE language_id = 1 AND  user_id = 1) + (SELECT COALESCE(SUM(intermediate_score), 0) FROM Quizzes WHERE language_id = 1 AND  user_id = 1) + (SELECT COALESCE(SUM(advanced_score), 0) FROM Quizzes WHERE language_id = 1 AND  user_id = 1)) WHERE user_id = 1;
 
-UPDATE Leaderboards SET score_spanish = (SELECT (SELECT COALESCE(SUM(beginner_score), 0) FROM Quizzes WHERE language_id = 2 AND  user_id = 2) + (SELECT COALESCE(SUM(intermediate_score), 0) FROM Quizzes WHERE language_id = 2 AND  user_id = 2) + (SELECT COALESCE(SUM(advanced_score), 0) FROM Quizzes WHERE language_id = 2 AND  user_id = 2)) WHERE user_id = 2;
+UPDATE Leaderboards SET score_spanish = (SELECT (SELECT COALESCE(SUM(beginner_score), 0) FROM Quizzes WHERE language_id = 1 AND  user_id = 2) + (SELECT COALESCE(SUM(intermediate_score), 0) FROM Quizzes WHERE language_id = 1 AND  user_id = 2) + (SELECT COALESCE(SUM(advanced_score), 0) FROM Quizzes WHERE language_id = 1 AND  user_id = 2)) WHERE user_id = 2;
+
+UPDATE Leaderboards SET score_italian = (SELECT (SELECT COALESCE(SUM(beginner_score), 0) FROM Quizzes WHERE language_id = 2 AND  user_id = 1) + (SELECT COALESCE(SUM(intermediate_score), 0) FROM Quizzes WHERE language_id = 2 AND  user_id = 1) + (SELECT COALESCE(SUM(advanced_score), 0) FROM Quizzes WHERE language_id = 2 AND  user_id = 1)) WHERE user_id = 1;
+
+UPDATE Leaderboards SET score_italian = (SELECT (SELECT COALESCE(SUM(beginner_score), 0) FROM Quizzes WHERE language_id = 2 AND  user_id = 2) + (SELECT COALESCE(SUM(intermediate_score), 0) FROM Quizzes WHERE language_id = 2 AND  user_id = 2) + (SELECT COALESCE(SUM(advanced_score), 0) FROM Quizzes WHERE language_id = 2 AND  user_id = 2)) WHERE user_id = 2;
+
+UPDATE Leaderboards SET rank = CASE WHEN CAST(score_italian as INT) + CAST(score_spanish as INT) > 160 THEN 5 WHEN CAST(score_italian as INT) + CAST(score_spanish as INT)  > 120 THEN 4 WHEN CAST(score_italian as INT) + CAST(score_spanish as INT)  > 80 THEN 3 WHEN CAST(score_italian as INT) + CAST(score_spanish as INT)  > 40 THEN 2 ELSE 1 END WHERE user_id = 1;
+
+UPDATE Leaderboards SET rank = CASE WHEN CAST(score_italian as INT) + CAST(score_spanish as INT) > 160 THEN 5 WHEN CAST(score_italian as INT) + CAST(score_spanish as INT)  > 120 THEN 4 WHEN CAST(score_italian as INT) + CAST(score_spanish as INT)  > 80 THEN 3 WHEN CAST(score_italian as INT) + CAST(score_spanish as INT)  > 40 THEN 2 ELSE 1 END WHERE user_id = 2;
 
 -- Easy way of visualising each user
 -- SELECT * FROM Quizzes ORDER BY user_id, quiz_id, language_id
