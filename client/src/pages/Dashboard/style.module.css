@@ -1,7 +1,7 @@
 .container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr ;
   gap: 2rem;
   padding: 2rem;
 }
@@ -11,4 +11,11 @@
   border-radius: 10px;
   display: grid;
   place-items: center;
+}
+
+.practice {
+  
+  background-color: aqua;
+  display: flex;
+  flex-direction: row;
 }
