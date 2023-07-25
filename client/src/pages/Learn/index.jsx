@@ -1,12 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Question from '../../components/Question';
 import AnswerOption from '../../components/AnswerOption';
 import ResultContainer from '../../components/ResultPage';
-import style from './style.module.css'
-import { useEffect } from 'react';
+import quizData from '../../data/quizData.json';
+import style from './style.module.css';
 
 const QuizPage = () => {
-
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showResult, setShowResult] = useState(false);
   const [score, setScore] = useState(0);
@@ -14,11 +13,8 @@ const QuizPage = () => {
   const [selectedQuiz, setSelectedQuiz] = useState(null);
 
   useEffect(() => {
-    fetch('../../data/quizData.json')
-      .then((response) => response.json())
-      .then((data) => setSelectedQuiz(data.quizzes[0]));
+    setSelectedQuiz(quizData.quizzes[0]);
   }, []);
-
 
   const handleAnswerClick = (selectedOption) => {
     const currentQuiz = selectedQuiz.questions[currentQuestion];
@@ -69,6 +65,5 @@ const QuizPage = () => {
     </div>
   );
 };
-
 
 export default QuizPage;
