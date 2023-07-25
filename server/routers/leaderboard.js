@@ -12,7 +12,7 @@ leaderboardRouter.get("/:language_name", leaderboardController.show);
 // //gets a leaderboard entry by user id
 leaderboardRouter.get("/user/:user_id", leaderboardController.showUser);
 
-// //patches a score for a user
+// //patches a score for a user for an entry
 leaderboardRouter.patch("/user/:user_id", leaderboardController.update);
 
 module.exports = leaderboardRouter;
