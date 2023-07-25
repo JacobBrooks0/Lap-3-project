@@ -4,35 +4,16 @@ import AnswerOption from '../../components/AnswerOption';
 import ResultContainer from '../../components/ResultPage';
 import style from './style.module.css'
 
-
-const quizData = [
-  {
-    question: "What is 'dog' in Spanish?",
-    options: ["Perro", "Gato", "Conejo", "Pájaro"],
-    correctAnswer: "Perro"
-  },
-  {
-    question: "How do you say 'hello' in French?",
-    options: ["Hola", "Bonjour", "Ciao", "Guten Tag"],
-    correctAnswer: "Bonjour"
-  },
-  {
-    question: "Which language is spoken in Japan?",
-    options: ["Chinese", "Japanese", "Korean", "Thai"],
-    correctAnswer: "Japanese"
-  },
-  {
-    question: "How do you say 'thank you' in German?",
-    options: ["Danke", "Gracias", "Merci", "Grazie"],
-    correctAnswer: "Danke"
-  }
-];
-
 const QuizPage = () => {
+
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showResult, setShowResult] = useState(false);
   const [score, setScore] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
+  const [quizzes, setQuizzes] = useState([]);
+
+
+
 
   const handleAnswerClick = (selectedOption) => {
     if (selectedOption === quizData[currentQuestion].correctAnswer) {
