@@ -9,7 +9,7 @@ export default function User() {
   return user ? (
     <>
       <nav className={style["nav"]}>
-        <NavLink to="/">Dashboard</NavLink>
+        <NavLink to="/dashboard">Dashboard</NavLink>
         <NavLink to="/games">Games</NavLink>
         <NavLink to="/learn">Learn</NavLink>
         <NavLink to="/profile">Profile</NavLink>
@@ -18,6 +18,6 @@ export default function User() {
       {/* <footer>Snack Rankings 2022</footer> */}
     </>
   ) : (
-    <Navigate to="/login" />
+    <Navigate to="/" />
   );
 }

@@ -55,8 +55,27 @@ class User {
     }
   }
 
-  //delete method
+  //delete method to delete users by ID
+  static async deleteById(id) {
+    try{
+      const response = await db.query(
+        "DELETE FROM Users WHERE user_id = $1 RETURNING *;",
+      [id]
+      );
+    // Check if a user was deleted
+    if (response.rows.length === 0) {
+      throw new Error("Unable to delete user. User not found.");
+     }
+     // Return the deleted user object
+     return new User(response.rows[0]);
+    } catch (err) {
+      throw new Error("Unable to delete user. " + err.message);
+    }
+     
+
+    }
+  }
+
   //update method
-}
 
 module.exports = User;
