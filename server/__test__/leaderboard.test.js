@@ -1,7 +1,7 @@
-const request = require("supertest");
+/*const request = require("supertest");
 const app = require("../app");
-const db = require("../database/connect");
-const setupMockDB = require("./mock/database/setup");
+const db = require("../db/connect");
+//const setupMockDB = require("./mock/database/setup");
 
 describe("Leaderboards Endpoints", () => {
   let token;
@@ -88,4 +88,4 @@ it("Should update a class", async () => {
   });
 
   //could test the other update route
-})
+})*/

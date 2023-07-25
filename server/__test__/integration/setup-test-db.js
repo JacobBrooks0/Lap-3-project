@@ -62,7 +62,7 @@ const populateDbEnv = async () => {
     // Insert data into the "Users" table
     await db.query("INSERT INTO Users (username, email, password) VALUES ('Mike', 'mike@gmail.com', 'hello')");
     await db.query("INSERT INTO Users (username, email, password) VALUES ('Sofia', 'sofia@gmail.com', 'ciao')");
-
+   
     // Insert data into the "Languages" table
     await db.query("INSERT INTO Languages (language_name) VALUES ('English')");
     await db.query("INSERT INTO Languages (language_name) VALUES ('Spanish')");
@@ -86,15 +86,17 @@ const populateDbEnv = async () => {
     await db.query("INSERT INTO token (user_id, token) VALUES (2, 'tok456')");
 
 
-}//cleaning up the test environment by dropping the "Users" table from the test database.
+};
+//cleaning up the test environment by dropping the "Users" table from the test database.
 const destroyDbEnv = async () => {
     await db.query(`
-        DROP TABLE IF EXISTS Quizzes;
-        DROP TABLE IF EXISTS Quiz_names;
-        DROP TABLE IF EXISTS Leaderboards;
-        DROP TABLE IF EXISTS Languages;
-        DROP TABLE IF EXISTS token;
-        DROP TABLE IF EXISTS Users;`)
-};
+      DROP TABLE IF EXISTS Quizzes;
+      DROP TABLE IF EXISTS Quiz_names;
+      DROP TABLE IF EXISTS Leaderboards;
+      DROP TABLE IF EXISTS Languages;
+      DROP TABLE IF EXISTS token;
+      DROP TABLE IF EXISTS Users;
+    `);
+  };  
 
 module.exports = { createDbEnv, populateDbEnv, destroyDbEnv };
