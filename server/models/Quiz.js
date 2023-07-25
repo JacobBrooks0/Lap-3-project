@@ -116,41 +116,31 @@ class Quiz {
       language_id,
     } = data;
 
-    const checkIfThisQuizExists = await Quiz.getAllInfoForOneUser(
+    const response = await db.query(
+      "INSERT INTO Quizzes(quiz_id, user_id, beginner_score, intermediate_score, advanced_score, language_id) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *",
+      [
+        quiz_id,
+        user_id,
+        beginner_score,
+        intermediate_score,
+        advanced_score,
+        language_id,
+      ]
+    );
+
+    if (response.rows.length != 1) {
+      throw new Error("Unable to add quiz");
+    }
+
+    //get quiz by quiz id where language id = language from above
+    const newQuiz = response.rows[0];
+    const newEntry = await Quiz.getAllInfoForOneUser(
       user_id,
       language_id,
       quiz_id
     );
 
-    if (checkIfThisQuizExists.quiz_instance > 0) {
-      throw new Error("Quiz already exists");
-    } else if (checkIfThisQuizExists === "No Entry available for this user") {
-      const response = await db.query(
-        "INSERT INTO Quizzes(quiz_id, user_id, beginner_score, intermediate_score, advanced_score, language_id) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *",
-        [
-          quiz_id,
-          user_id,
-          beginner_score,
-          intermediate_score,
-          advanced_score,
-          language_id,
-        ]
-      );
-
-      if (response.rows.length != 1) {
-        throw new Error("Unable to add quiz");
-      }
-
-      //get quiz by quiz id where language id = language from above
-      const newQuiz = response.rows[0];
-      const newEntry = await Quiz.getAllInfoForOneUser(
-        user_id,
-        language_id,
-        quiz_id
-      );
-
-      return new Quiz(newEntry);
-    }
+    return new Quiz(newEntry);
   }
 
   async updateQuizInstance(data) {
