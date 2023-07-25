@@ -1,5 +1,5 @@
 import React from 'react';
-import style from '../../pages/learn/style.module.css'
+import style from '../../pages/Learn/style.module.css'
 
 const AnswerOption = ({ option, onClick, isCorrect, isSelected }) => {
     let buttonClass = style["option-button"];
