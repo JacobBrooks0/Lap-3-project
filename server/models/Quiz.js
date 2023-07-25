@@ -98,6 +98,7 @@ class Quiz {
     );
 
     if (response.rows.length != 1) {
+      throw new Error("No Entry available for this user");
       return "No Entry available for this user";
     }
 

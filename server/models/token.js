@@ -45,17 +45,21 @@ class Token {
 
   //Check if the token is valid
   static async isValidAuthToken(token) {
-    const response = await db.query('SELECT user_id FROM tokens WHERE token = $1;', [token]);
+    const response = await db.query(
+      "SELECT user_id FROM token WHERE token = $1;",
+      [token]
+    );
     return response.rows.length === 1;
   }
 
   //Get the user ID associated with the provided token
   static async getUserIdByAuthToken(token) {
-    const response = await db.query('SELECT user_id FROM tokens WHERE token = $1;', [token]);
+    const response = await db.query(
+      "SELECT user_id FROM token WHERE token = $1;",
+      [token]
+    );
     return response.rows[0]?.user_id || null;
   }
-
-
 }
 
 module.exports = Token;
