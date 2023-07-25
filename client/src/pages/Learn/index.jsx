@@ -3,6 +3,7 @@ import Question from '../../components/Question';
 import AnswerOption from '../../components/AnswerOption';
 import ResultContainer from '../../components/ResultPage';
 import style from './style.module.css'
+import { useEffect } from 'react';
 
 const QuizPage = () => {
 
@@ -12,7 +13,11 @@ const QuizPage = () => {
   const [selectedOption, setSelectedOption] = useState(null);
   const [quizzes, setQuizzes] = useState([]);
 
-
+  useEffect(() => {
+    fetch('../data/quizData.json')
+      .then((response) => response.json())
+      .then((data) => setQuizzes(data.quizzes));
+  }, []);
 
 
   const handleAnswerClick = (selectedOption) => {
