@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Question from '../../components/Question';
 import AnswerOption from '../../components/AnswerOption';
 import ResultContainer from '../../components/ResultPage';
-import '../../Quiz.css';
+import style from './style.module.css'
 
 
 const quizData = [
@@ -59,7 +59,7 @@ const QuizPage = () => {
   };
 
   return (
-    <div className="container">
+    <div className={style["container"]}>
       {!showResult ? (
         <>
           <Question question={quizData[currentQuestion].question} />
