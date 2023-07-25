@@ -1,11 +1,11 @@
 import React from 'react';
-
+import style from '../../pages/learn/style.module.css'
 const ResultContainer = ({ score, totalQuestions, onRestart }) => {
     return (
-        <div className="result-container">
+        <div className={style["result-container"]}>
             <h2>Quiz Result</h2>
             <p>Your score: {score} / {totalQuestions}</p>
-            <button className="restart-button" onClick={onRestart}>Restart Quiz</button>
+            <button className={style["restart-button"]} onClick={onRestart}>Restart Quiz</button>
         </div>
     );
 };
