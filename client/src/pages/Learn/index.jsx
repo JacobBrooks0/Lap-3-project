@@ -11,24 +11,26 @@ const QuizPage = () => {
   const [showResult, setShowResult] = useState(false);
   const [score, setScore] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
-  const [quizzes, setQuizzes] = useState([]);
+  const [selectedQuiz, setSelectedQuiz] = useState(null);
 
   useEffect(() => {
-    fetch('../data/quizData.json')
+    fetch('../../data/quizData.json')
       .then((response) => response.json())
-      .then((data) => setQuizzes(data.quizzes));
+      .then((data) => setSelectedQuiz(data.quizzes[0]));
   }, []);
 
 
   const handleAnswerClick = (selectedOption) => {
-    if (selectedOption === quizData[currentQuestion].correctAnswer) {
+    const currentQuiz = selectedQuiz.questions[currentQuestion];
+
+    if (selectedOption === currentQuiz.correctAnswer) {
       setScore(score + 1);
     }
     setSelectedOption(selectedOption);
     setShowResult(false);
 
     setTimeout(() => {
-      if (currentQuestion + 1 < quizData.length) {
+      if (currentQuestion + 1 < selectedQuiz.questions.length) {
         setCurrentQuestion(currentQuestion + 1);
         setSelectedOption(null);
       } else {
@@ -45,16 +47,16 @@ const QuizPage = () => {
   };
 
   return (
-    <div className={style["container"]}>
+    <div className={style['container']}>
       {!showResult ? (
         <>
-          <Question question={quizData[currentQuestion].question} />
+          <Question question={selectedQuiz?.questions[currentQuestion]?.question} />
           <div>
-            {quizData[currentQuestion].options.map((option, index) => (
+            {selectedQuiz?.questions[currentQuestion]?.options.map((option, index) => (
               <AnswerOption
                 key={index}
                 option={option}
-                isCorrect={option === quizData[currentQuestion].correctAnswer}
+                isCorrect={option === selectedQuiz?.questions[currentQuestion]?.correctAnswer}
                 isSelected={selectedOption === option}
                 onClick={() => handleAnswerClick(option)}
               />
@@ -62,14 +64,11 @@ const QuizPage = () => {
           </div>
         </>
       ) : (
-        <ResultContainer
-          score={score}
-          totalQuestions={quizData.length}
-          onRestart={handleRestartQuiz}
-        />
+        <ResultContainer score={score} totalQuestions={selectedQuiz?.questions.length} onRestart={handleRestartQuiz} />
       )}
     </div>
   );
 };
+
 
 export default QuizPage;
