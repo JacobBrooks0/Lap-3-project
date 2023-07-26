@@ -31,12 +31,12 @@
     background-color: #f1f1f1;
 }
 
-.option-button.correct {
+.option-button:global(.correct) {
     background-color: #4caf50;
     color: #fff;
 }
 
-.option-button.incorrect {
+.option-button:global(.incorrect) {
     background-color: #f44336;
     color: #fff;
 }
@@ -48,19 +48,4 @@
     border: 1px solid #ccc;
     border-radius: 12px;
     background-color: #f9f9f9;
-}
-
-.restart-button {
-    margin-top: 30px;
-    padding: 30px 60px;
-    background-color: #4caf50;
-    color: #fff;
-    transition: background-color 0.3s ease;
-    font-size: 20px;
-    border: none;
-
-}
-
-.restart-button:hover {
-    background-color: #45a049;
 }

@@ -1,0 +1,289 @@
+{
+    "quizzes": [
+        {
+            "id": 1,
+            "language": "Italian",
+            "name": "Nouns",
+            "questions": [
+                {
+                    "question": "What is 'dog' in Italian?",
+                    "options": [
+                        "Cane",
+                        "Gatto",
+                        "Coniglio",
+                        "Uccello"
+                    ],
+                    "correctAnswer": "Cane"
+                },
+                {
+                    "question": "How do you say 'book' in Italian?",
+                    "options": [
+                        "Libro",
+                        "Casa",
+                        "Palla",
+                        "Fiore"
+                    ],
+                    "correctAnswer": "Libro"
+                },
+                {
+                    "question": "What is 'car' in Italian?",
+                    "options": [
+                        "Auto",
+                        "Treno",
+                        "Bicicletta",
+                        "Aereo"
+                    ],
+                    "correctAnswer": "Auto"
+                },
+                {
+                    "question": "How do you say 'table' in Italian?",
+                    "options": [
+                        "Tavolo",
+                        "Sedia",
+                        "Letto",
+                        "Finestra"
+                    ],
+                    "correctAnswer": "Tavolo"
+                },
+                {
+                    "question": "What is 'computer' in Italian?",
+                    "options": [
+                        "Computer",
+                        "Telefono",
+                        "Televisione",
+                        "Orologio"
+                    ],
+                    "correctAnswer": "Computer"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "language": "Italian",
+            "name": "Basic Grammar",
+            "questions": [
+                {
+                    "question": "What is the word for 'good morning' in Italian?",
+                    "options": [
+                        "Buon giorno",
+                        "Buona sera",
+                        "Buona notte",
+                        "Arrivederci"
+                    ],
+                    "correctAnswer": "Buon giorno"
+                },
+                {
+                    "question": "Which word means 'yes' in Italian?",
+                    "options": [
+                        "Sì",
+                        "No",
+                        "Forse",
+                        "Grazie"
+                    ],
+                    "correctAnswer": "Sì"
+                },
+                {
+                    "question": "What does 'scusa' mean in English?",
+                    "options": [
+                        "Excuse me",
+                        "Thank you",
+                        "Please",
+                        "Sorry"
+                    ],
+                    "correctAnswer": "Excuse me"
+                },
+                {
+                    "question": "How do you say 'I love you' in Italian?",
+                    "options": [
+                        "Ti amo",
+                        "Mi dispiace",
+                        "Per favore",
+                        "Mi scusi"
+                    ],
+                    "correctAnswer": "Ti amo"
+                },
+                {
+                    "question": "What is the translation of 'beautiful'?",
+                    "options": [
+                        "Bello",
+                        "Brutto",
+                        "Grande",
+                        "Piccolo"
+                    ],
+                    "correctAnswer": "Bello"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "language": "Italian",
+            "name": "Foods",
+            "questions": [
+                {
+                    "question": "What is 'pizza' in Italian?",
+                    "options": [
+                        "Pizza",
+                        "Pasta",
+                        "Pane",
+                        "Pesce"
+                    ],
+                    "correctAnswer": "Pizza"
+                },
+                {
+                    "question": "Which Italian food is made of rice and can be served with various ingredients?",
+                    "options": [
+                        "Ravioli",
+                        "Lasagna",
+                        "Risotto",
+                        "Tiramisù"
+                    ],
+                    "correctAnswer": "Risotto"
+                },
+                {
+                    "question": "What is the word for 'coffee' in Italian?",
+                    "options": [
+                        "Caffè",
+                        "Cioccolato",
+                        "Vino",
+                        "Tè"
+                    ],
+                    "correctAnswer": "Caffè"
+                },
+                {
+                    "question": "Which Italian dessert translates to 'pick me up'?",
+                    "options": [
+                        "Cannoli",
+                        "Gelato",
+                        "Tiramisù",
+                        "Panna Cotta"
+                    ],
+                    "correctAnswer": "Tiramisù"
+                },
+                {
+                    "question": "What is the word for 'water' in Italian?",
+                    "options": [
+                        "Acqua",
+                        "Latte",
+                        "Succo",
+                        "Birra"
+                    ],
+                    "correctAnswer": "Acqua"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "language": "Italian",
+            "name": "Information/Asking for Directions/Bathroom",
+            "questions": [
+                {
+                    "question": "How do you ask 'Where is the train station?'",
+                    "options": [
+                        "Dov'è il ristorante?",
+                        "Dov'è il bagno?",
+                        "Dov'è la stazione?",
+                        "Dov'è l'albergo?"
+                    ],
+                    "correctAnswer": "Dov'è la stazione?"
+                },
+                {
+                    "question": "If you want to know the time, how do you ask 'What time is it?'",
+                    "options": [
+                        "Che ore sono?",
+                        "Come ti chiami?",
+                        "Quanto costa?",
+                        "Che giorno è oggi?"
+                    ],
+                    "correctAnswer": "Che ore sono?"
+                },
+                {
+                    "question": "How do you ask someone's name in Italian?",
+                    "options": [
+                        "Come ti chiami?",
+                        "Quanti anni hai?",
+                        "Dove abiti?",
+                        "Che lavoro fai?"
+                    ],
+                    "correctAnswer": "Come ti chiami?"
+                },
+                {
+                    "question": "What does 'uscita' mean in English?",
+                    "options": [
+                        "Entrance",
+                        "Open",
+                        "Exit",
+                        "Push"
+                    ],
+                    "correctAnswer": "Exit"
+                },
+                {
+                    "question": "If you need to use the restroom in Italy, what do you ask?",
+                    "options": [
+                        "Puoi aiutarmi?",
+                        "Dov'è il bagno?",
+                        "Quanto costa?",
+                        "Parli inglese?"
+                    ],
+                    "correctAnswer": "Dov'è il bagno?"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "language": "Italian",
+            "name": "Bookings",
+            "questions": [
+                {
+                    "question": "How do you ask 'Do you have a reservation?'",
+                    "options": [
+                        "Parli inglese?",
+                        "Posso pagare con carta?",
+                        "Hai una prenotazione?",
+                        "Dove posso mangiare?"
+                    ],
+                    "correctAnswer": "Hai una prenotazione?"
+                },
+                {
+                    "question": "What is 'hotel' in Italian?",
+                    "options": [
+                        "Albergo",
+                        "Ospedale",
+                        "Ristorante",
+                        "Banca"
+                    ],
+                    "correctAnswer": "Albergo"
+                },
+                {
+                    "question": "If you need to change your booking time, how do you ask?",
+                    "options": [
+                        "È incluso?",
+                        "Posso pagare in contanti?",
+                        "Posso cambiare l'orario?",
+                        "Parli spagnolo?"
+                    ],
+                    "correctAnswer": "Posso cambiare l'orario?"
+                },
+                {
+                    "question": "What does 'una camera singola' mean in English?",
+                    "options": [
+                        "A single ticket",
+                        "A single room",
+                        "A double room",
+                        "The bill, please"
+                    ],
+                    "correctAnswer": "A single room"
+                },
+                {
+                    "question": "How do you ask 'Is breakfast included?'",
+                    "options": [
+                        "La colazione è inclusa?",
+                        "A che ora chiude?",
+                        "Quanto costa?",
+                        "Dove si trova?"
+                    ],
+                    "correctAnswer": "La colazione è inclusa?"
+                }
+            ]
+        }
+    ]
+}
