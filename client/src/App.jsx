@@ -17,13 +17,16 @@ import { Welcome, User } from "./layouts";
 
 import "./App.css";
 import { LanguageProvider } from "./contexts/Language";
+import { Popup } from "./components";
+
 
 function App() {
+  
   const [selectedLanguage, setSelectedLanguage] = useState("");
 
   return (
     <>
-      <LanguageProvider>
+     <LanguageProvider>
         <AuthProvider>
           <Routes>
             <Route element={<Welcome />}>
@@ -47,13 +50,13 @@ function App() {
                 }
               />
               <Route path="/learn/:quizId" element={<Learn setSelectedLanguage={setSelectedLanguage} />} />
-
               <Route path="/games" element={<Games />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="*" element={<NotFound />} />
             </Route>
             <Route path="*" element={<Navigate to="/login" />} />
           </Routes>
+          <Popup />
         </AuthProvider>
       </LanguageProvider>
     </>
