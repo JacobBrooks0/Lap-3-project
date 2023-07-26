@@ -21,7 +21,7 @@ describe("Leaderboards Endpoints", () => {
     const response = await request(app)
       .post("/users/login")
       .send(registerDetails);
-    token = response.body.token.token;
+    token = response.body.token;
   });
 
   afterAll(async () => {
