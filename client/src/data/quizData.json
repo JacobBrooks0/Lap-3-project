@@ -10,55 +10,55 @@
                     "options": [
                         "Cane",
                         "Gatto",
-                        "Coniglio",
+                        "Cavallo",
                         "Uccello"
                     ],
                     "correctAnswer": "Cane",
-                    "hint": "In Italian, it sounds like 'KAH-neh'."
+                    "hint": "This loyal companion is called 'C_ne' in Italian."
                 },
                 {
                     "question": "How do you say 'book' in Italian?",
                     "options": [
-                        "Libro",
                         "Casa",
-                        "Palla",
+                        "Libreria",
+                        "Libro",
                         "Fiore"
                     ],
                     "correctAnswer": "Libro",
-                    "hint": "The word 'library' in Italian is 'biblioteca'. Think about it!"
+                    "hint": "In a 'libr__ia', you'll find many 'L_bri' (books) in Italian."
                 },
                 {
                     "question": "What is 'car' in Italian?",
                     "options": [
-                        "Auto",
                         "Treno",
                         "Bicicletta",
-                        "Aereo"
+                        "Aereo",
+                        "Auto"
                     ],
                     "correctAnswer": "Auto",
-                    "hint": "It's similar to the English word for 'automobile'."
+                    "hint": "Very similar to the word 'automobile' in English."
                 },
                 {
                     "question": "How do you say 'table' in Italian?",
                     "options": [
+                        "Tavola",
                         "Tavolo",
-                        "Sedia",
                         "Letto",
                         "Finestra"
                     ],
                     "correctAnswer": "Tavolo",
-                    "hint": "Imagine eating on this piece of furniture!"
+                    "hint": "A table is commonly known as 't___lo' in Italian"
                 },
                 {
                     "question": "What is 'computer' in Italian?",
                     "options": [
                         "Computer",
-                        "Telefono",
+                        "Calcolatrice",
                         "Televisione",
                         "Orologio"
                     ],
                     "correctAnswer": "Computer",
-                    "hint": "The word 'laptop' is 'computer portatile' in Italian. Keep it simple!"
+                    "hint": "Simpler than you think."
                 }
             ]
         },
@@ -76,18 +76,18 @@
                         "Arrivederci"
                     ],
                     "correctAnswer": "Buon giorno",
-                    "hint": "It's what you say to greet someone in the morning!"
+                    "hint": "Greet someone in the morning with 'Bu_n gi_rno'."
                 },
                 {
-                    "question": "Which word means 'yes' in Italian?",
+                    "question": "How do you say 'he drinks the juice' in Italian?",
                     "options": [
-                        "Sì",
-                        "No",
-                        "Forse",
-                        "Grazie"
+                        "Lui beve il pane",
+                        "Lui beve il succo",
+                        "Lui mangia la mela",
+                        "Lui guarda la televisione"
                     ],
-                    "correctAnswer": "Sì",
-                    "hint": "It's a simple word and also used in Spanish."
+                    "correctAnswer": "Lui beve il succo",
+                    "hint": "To find the correct Italian translation, look for the option that includes 'he' doing something with 'juice'."
                 },
                 {
                     "question": "What does 'scusa' mean in Italian?",
@@ -98,29 +98,29 @@
                         "Sorry"
                     ],
                     "correctAnswer": "Excuse me",
-                    "hint": "Use this word when you want to get someone's attention politely."
+                    "hint": "Use 'Sc_sa' when you need someone's attention politely."
                 },
                 {
-                    "question": "How do you say 'I love you' in Italian?",
+                    "question": "How do you say 'My name is Maria, and I am from Italy'?",
                     "options": [
-                        "Ti amo",
-                        "Mi dispiace",
-                        "Per favore",
-                        "Mi scusi"
+                        "Mi chiamo Maria, sono italiana.",
+                        "Come ti chiami? Sono spagnola.",
+                        "Quanti anni hai? Sono di Roma.",
+                        "Mi piace il gelato, e tu?"
                     ],
-                    "correctAnswer": "Ti amo",
-                    "hint": "It's a romantic phrase you'd say to someone special."
+                    "correctAnswer": "Mi chiamo Maria, sono italiana.",
+                    "hint": "Her name is Maria and she's Italian."
                 },
                 {
-                    "question": "What is the translation of 'beautiful'?",
+                    "question": "What is the translation of 'the women eat bread'?",
                     "options": [
-                        "Bello",
-                        "Brutto",
-                        "Grande",
-                        "Piccolo"
+                        "Le donne mangiano la pizza",
+                        "Le ragazze bevono il pane",
+                        "Le donne mangiano il pane",
+                        "Le ragazze mangiano il formaggio"
                     ],
-                    "correctAnswer": "Bello",
-                    "hint": "This word can describe a stunning sunset or a charming person."
+                    "correctAnswer": "Le donne mangiano il panne",
+                    "hint": "In the correct translation, the subject is 'the women,' and the action is 'eat' something. Look for the option that matches these elements."
                 }
             ]
         },
@@ -130,59 +130,59 @@
             "name": "Foods",
             "questions": [
                 {
-                    "question": "What is 'pizza' in Italian?",
+                    "question": "What is the translation of 'vorrei un caffè, per favore'?",
                     "options": [
-                        "Pizza",
-                        "Pasta",
-                        "Pane",
-                        "Pesce"
+                        "Where is the cafè?",
+                        "I would like a croissant, please.",
+                        "I would like a coffee, please.",
+                        "I would like a cake, please."
                     ],
-                    "correctAnswer": "Pizza",
-                    "hint": "It's a popular Italian dish loved all over the world."
+                    "correctAnswer": "I would like a coffee, please.",
+                    "hint": "In Italy, it's common to start your day with this beverage, especially at a cozy cafè."
                 },
                 {
-                    "question": "Which Italian food is made of rice and can be served with various ingredients?",
+                    "question": "How do you ask 'Is this vegetarian?'",
                     "options": [
-                        "Ravioli",
-                        "Lasagna",
-                        "Risotto",
-                        "Tiramisù"
+                        "È vegetariano?",
+                        "Posso pagare con la carta?",
+                        "Hai una prenotazione?",
+                        "Dove posso mangiare?"
                     ],
-                    "correctAnswer": "Risotto",
-                    "hint": "It's creamy and delicious, often served with seafood or mushrooms."
+                    "correctAnswer": "È vegetariano?",
+                    "hint": "When asking about the food, inquire 'È __get_ri_no?'"
                 },
                 {
                     "question": "What is the word for 'coffee' in Italian?",
                     "options": [
-                        "Caffè",
-                        "Cioccolato",
+                        "Café",
+                        "Chocolate",
                         "Vino",
-                        "Tè"
+                        "Té"
                     ],
-                    "correctAnswer": "Caffè",
-                    "hint": "This word sounds similar to its English counterpart."
+                    "correctAnswer": "Café",
+                    "hint": "A cup of 'C_fé' is an energizing drink in Italian."
                 },
                 {
-                    "question": "How do you say 'Can I get the check please?'",
+                    "question": "How do you ask 'Can I get the check please?'",
                     "options": [
-                        "Potrei chiamare il conto per favore?",
-                        "Dovrei chiedere il conto per favore?",
-                        "Posso vedere il conto per favore?",
-                        "Posso avere il conto per favore?"
+                        "Posso pagare con carta?",
+                        "Posso chiedere il conto?",
+                        "Posso cambiare prenotazione?",
+                        "Parli inglese?"
                     ],
-                    "correctAnswer": "Posso avere il conto per favore?",
-                    "hint": "You use this phrase to ask for the bill in a restaurant."
+                    "correctAnswer": "Posso chiedere il conto?",
+                    "hint": "Ask for the bill politely with 'Posso ch_ed_re il c_nto?'"
                 },
                 {
                     "question": "What is the word for 'water' in Italian?",
                     "options": [
                         "Acqua",
-                        "Latte",
+                        "Birra",
                         "Succo",
-                        "Birra"
+                        "Latte"
                     ],
                     "correctAnswer": "Acqua",
-                    "hint": "It's a simple word for a basic necessity of life."
+                    "hint": "A simple word for a basic necessity is 'Ac_ua' in Italian."
                 }
             ]
         },
@@ -200,7 +200,7 @@
                         "Dov'è l'hotel?"
                     ],
                     "correctAnswer": "Dov'è la stazione dei treni?",
-                    "hint": "If you're lost and need to find the train station, ask this question."
+                    "hint": "When lost and in need of directions, ask 'D_v'è la st_zi_ne dei tr_ni?'"
                 },
                 {
                     "question": "If you want to know the time, how do you ask 'What time is it?'",
@@ -211,29 +211,29 @@
                         "Che giorno è oggi?"
                     ],
                     "correctAnswer": "Che ora è?",
-                    "hint": "You can use this phrase when you need to know the time."
+                    "hint": "When you need to know the time, inquire 'Che _ra è?'"
                 },
                 {
                     "question": "How do you ask someone's name in Italian?",
                     "options": [
-                        "Come ti chiami?",
                         "Quanti anni hai?",
+                        "Come ti chiami?",
                         "Dove abiti?",
                         "Cosa fai nella vita?"
                     ],
                     "correctAnswer": "Come ti chiami?",
-                    "hint": "When making new friends, this is one of the first questions to ask."
+                    "hint": "When making new friends, ask 'C_me ti ch_mi?'"
                 },
                 {
                     "question": "What does 'uscita' mean in Italian?",
                     "options": [
-                        "Entrata",
-                        "Aperto",
-                        "Uscita",
-                        "Spingere"
+                        "Entrance",
+                        "Open",
+                        "Exit",
+                        "Push"
                     ],
-                    "correctAnswer": "Uscita",
-                    "hint": "It's the way out, the opposite of 'entrata'."
+                    "correctAnswer": "Exit",
+                    "hint": "When looking for a way out, find the sign 'U_c_ta' in Italian."
                 },
                 {
                     "question": "If you need to use the restroom in Italy, what do you ask?",
@@ -244,7 +244,7 @@
                         "Parli inglese?"
                     ],
                     "correctAnswer": "Dov'è il bagno?",
-                    "hint": "This phrase will lead you to the nearest restroom."
+                    "hint": "Seek the nearest restroom by asking 'D_v'è il b_gn_?'"
                 }
             ]
         },
@@ -254,29 +254,29 @@
             "name": "Bookings",
             "questions": [
                 {
-                    "question": "How do you ask 'Do you have a reservation?'",
+                    "question": "How to say 'Is this vegetarian?'",
                     "options": [
-                        "Parli inglese?",
+                        "È vegetariano?",
                         "Posso pagare con la carta?",
                         "Hai una prenotazione?",
                         "Dove posso mangiare?"
                     ],
-                    "correctAnswer": "Hai una prenotazione?",
-                    "hint": "Use this question when you want to confirm your reservation."
+                    "correctAnswer": "È vegetariano?",
+                    "hint": "When asking about the food, inquire 'È __get_ri_no?'"
                 },
                 {
-                    "question": "What is 'hotel' in Italian?",
+                    "question": "How do you ask 'I would like to book a room in the hotel'?",
                     "options": [
-                        "Hotel",
-                        "Ospedale",
-                        "Ristorante",
-                        "Banca"
+                        "Vorrei prenotare una camera nell'hotel.",
+                        "Mi piace l'albergo.",
+                        "Voglio andare all'hotel per una visita.",
+                        "Dove posso mangiare?"
                     ],
-                    "correctAnswer": "Hotel",
-                    "hint": "A place where travelers can stay overnight."
+                    "correctAnswer": "Vorrei prenotare una camera nell'hotel.",
+                    "hint": "Look for the phrase that includes 'prenotare una camera' which means 'to book a room."
                 },
                 {
-                    "question": "If you need to change your booking time, how do you ask?",
+                    "question": "How do you ask if you can change your booking time?",
                     "options": [
                         "È incluso?",
                         "Posso pagare in contanti?",
@@ -284,18 +284,18 @@
                         "Parli spagnolo?"
                     ],
                     "correctAnswer": "Posso cambiare l'orario?",
-                    "hint": "Use this question when you need to reschedule your appointment or booking."
+                    "hint": "To reschedule, inquire 'P_sso c_mb__re l'_r_ri_?'"
                 },
                 {
                     "question": "What does 'una camera singola' mean in Italian?",
                     "options": [
-                        "Un biglietto singolo",
-                        "Una camera singola",
-                        "Una camera doppia",
-                        "Il conto, per favore"
+                        "A single ticket",
+                        "A single room",
+                        "A double room",
+                        "The bill, please"
                     ],
-                    "correctAnswer": "Una camera singola",
-                    "hint": "It's the type of accommodation with a single bed."
+                    "correctAnswer": "A single room",
+                    "hint": "If you prefer privacy, choose 'A single room' in Italian."
                 },
                 {
                     "question": "How do you ask 'Is breakfast included?'",
@@ -306,7 +306,7 @@
                         "Dove si trova?"
                     ],
                     "correctAnswer": "È incluso la colazione?",
-                    "hint": "Use this question when you want to know if your morning meal is covered."
+                    "hint": "Check if breakfast is part of the deal by asking 'È __clus__ la c__l__zi__ne?'"
                 }
             ]
         },
@@ -316,37 +316,37 @@
             "name": "Nouns",
             "questions": [
                 {
-                    "question": "What is 'dog' in Spanish?",
+                    "question": "What is 'cat' in Spanish?",
                     "options": [
-                        "Perro",
                         "Gato",
-                        "Conejo",
-                        "Pájaro"
+                        "Perro",
+                        "Vaca",
+                        "Pez"
                     ],
-                    "correctAnswer": "Perro",
-                    "hint": "In Spanish, it sounds like 'PEH-rro'."
+                    "correctAnswer": "Gato",
+                    "hint": "This four-legged creature is called 'G_t_' in Spanish."
                 },
                 {
-                    "question": "How do you say 'book' in Spanish?",
+                    "question": "How do you say 'house' in Spanish?",
                     "options": [
-                        "Libro",
                         "Casa",
+                        "Libro",
                         "Pelota",
                         "Flor"
                     ],
-                    "correctAnswer": "Libro",
-                    "hint": "The word 'library' in Spanish is 'biblioteca'. Think about it!"
+                    "correctAnswer": "Casa",
+                    "hint": "In a 'c_s_', you feel at home."
                 },
                 {
                     "question": "What is 'car' in Spanish?",
                     "options": [
-                        "Coche",
+                        "Bote",
                         "Tren",
                         "Bicicleta",
-                        "Avión"
+                        "Coche"
                     ],
                     "correctAnswer": "Coche",
-                    "hint": "It's similar to the English word for 'coach'."
+                    "hint": "A car is commonly known as 'c_che' in Spanish."
                 },
                 {
                     "question": "How do you say 'table' in Spanish?",
@@ -357,7 +357,7 @@
                         "Ventana"
                     ],
                     "correctAnswer": "Mesa",
-                    "hint": "Imagine eating on this piece of furniture!"
+                    "hint": "A table is commonly known as 'm_sa' in Spanish."
                 },
                 {
                     "question": "What is 'computer' in Spanish?",
@@ -368,7 +368,7 @@
                         "Reloj"
                     ],
                     "correctAnswer": "Computadora",
-                    "hint": "The word 'laptop' is 'computadora portátil' in Spanish. Keep it simple!"
+                    "hint": "Pretty similar to the English word!"
                 }
             ]
         },
@@ -380,24 +380,24 @@
                 {
                     "question": "What is the word for 'good morning' in Spanish?",
                     "options": [
-                        "Buen día",
-                        "Buenas noches",
+                        "Buenos días",
                         "Buenas tardes",
-                        "Hola"
+                        "Buenas noches",
+                        "Adiós"
                     ],
-                    "correctAnswer": "Buen día",
-                    "hint": "It's what you say to greet someone in the morning!"
+                    "correctAnswer": "Buenos días",
+                    "hint": "Greet someone in the morning with 'Buen_s d_as'."
                 },
                 {
-                    "question": "Which word means 'yes' in Spanish?",
+                    "question": "How do you say 'he drinks the juice' in Spanish?",
                     "options": [
-                        "Sí",
-                        "No",
-                        "Tal vez",
-                        "Gracias"
+                        "Él bebe el pan",
+                        "Él bebe el zumo",
+                        "Él come la manzana",
+                        "Él mira la televisión"
                     ],
-                    "correctAnswer": "Sí",
-                    "hint": "It's a simple word and also used in Italian."
+                    "correctAnswer": "Él bebe el zumo",
+                    "hint": "To find the correct Spanish translation, look for the option that includes 'he' doing something with 'zumo'."
                 },
                 {
                     "question": "What does 'perdón' mean in Spanish?",
@@ -408,29 +408,29 @@
                         "Sorry"
                     ],
                     "correctAnswer": "Excuse me",
-                    "hint": "Use this word when you want to apologize or get someone's attention politely."
+                    "hint": "Use 'P_rd_n' when you need someone's attention politely."
                 },
                 {
-                    "question": "How do you say 'I love you' in Spanish?",
+                    "question": "How do you say 'My name is Maria, and I am from Italy'?",
                     "options": [
-                        "Te amo",
-                        "Lo siento",
-                        "Por favor",
-                        "Disculpe"
+                        "Me llamo María, soy italiana.",
+                        "¿Cómo te llamas? Soy española.",
+                        "¿Cuántos años tienes? Soy de Roma.",
+                        "Me gusta el helado, ¿y a ti?"
                     ],
-                    "correctAnswer": "Te amo",
-                    "hint": "It's a romantic phrase you'd say to someone special."
+                    "correctAnswer": "Me llamo María, soy italiana.",
+                    "hint": "Her name is Maria, and she's Italian."
                 },
                 {
-                    "question": "What is the translation of 'beautiful'?",
+                    "question": "What is the translation of 'the women eat bread'?",
                     "options": [
-                        "Hermoso",
-                        "Feo",
-                        "Grande",
-                        "Pequeño"
+                        "Las mujeres comen pizza",
+                        "Las niñas beben pan",
+                        "Las mujeres comen pan",
+                        "Las niñas comen queso"
                     ],
-                    "correctAnswer": "Hermoso",
-                    "hint": "This word can describe a breathtaking landscape or an attractive person."
+                    "correctAnswer": "Las mujeres comen pan",
+                    "hint": "In the correct translation, the subject is 'las mujeres,' and the action is 'comen' something. Look for the option that matches these elements."
                 }
             ]
         },
@@ -440,26 +440,26 @@
             "name": "Foods",
             "questions": [
                 {
-                    "question": "What is 'pizza' in Spanish?",
+                    "question": "What is the translation of 'vorrei un caffè, per favore'?",
                     "options": [
-                        "Pizza",
-                        "Pasta",
-                        "Pan",
-                        "Pescado"
+                        "Where is the cafè?",
+                        "I would like a croissant, please.",
+                        "I would like a coffee, please.",
+                        "I would like a cake, please."
                     ],
-                    "correctAnswer": "Pizza",
-                    "hint": "It's a popular dish loved all over the world."
+                    "correctAnswer": "I would like a coffee, please.",
+                    "hint": "This phrase is commonly used when ordering a beverage at a café or restaurant."
                 },
                 {
-                    "question": "How do you ask 'can I get the check please?'",
+                    "question": "How do you ask 'Is this vegetarian?'",
                     "options": [
-                        "¿Puedo tener el menú por favor?",
-                        "¿Podría pagar el menú por favor?",
-                        "¿Me puede dar un café por favor?",
-                        "¿Puedo tener la cuenta por favor?"
+                        "¿Es vegetariano?",
+                        "¿Puedo pagar con tarjeta?",
+                        "¿Tienes una reserva?",
+                        "¿Dónde puedo comer?"
                     ],
-                    "correctAnswer": "¿Puedo tener la cuenta por favor?",
-                    "hint": "You use this phrase to ask for the bill in a restaurant."
+                    "correctAnswer": "¿Es vegetariano?",
+                    "hint": "When asking about the food, inquire '¿Es _get_ri_no?'"
                 },
                 {
                     "question": "What is the word for 'coffee' in Spanish?",
@@ -470,29 +470,29 @@
                         "Té"
                     ],
                     "correctAnswer": "Café",
-                    "hint": "This word sounds similar to its English counterpart."
+                    "hint": "A cup of 'C_fé' is an energizing drink in Spanish."
                 },
                 {
-                    "question": "Which Spanish dessert translates to 'pick me up'?",
+                    "question": "How do you ask 'Can I get the check please?'",
                     "options": [
-                        "Cannoli",
-                        "Gelato",
-                        "Tiramisú",
-                        "Panna Cotta"
+                        "¿Puedo pagar con tarjeta?",
+                        "¿Puedo pedir la cuenta?",
+                        "¿Puedo cambiar la reserva?",
+                        "¿Hablas inglés?"
                     ],
-                    "correctAnswer": "Tiramisú",
-                    "hint": "It's a delicious dessert with coffee-flavored layers."
+                    "correctAnswer": "¿Puedo pedir la cuenta?",
+                    "hint": "Ask for the bill politely with '¿Puedo pedir la cu_nta?''"
                 },
                 {
                     "question": "What is the word for 'water' in Spanish?",
                     "options": [
                         "Agua",
-                        "Leche",
-                        "Zumo",
-                        "Cerveza"
+                        "Cerveza",
+                        "Jugo",
+                        "Leche"
                     ],
                     "correctAnswer": "Agua",
-                    "hint": "It's a simple word for a basic necessity of life."
+                    "hint": "A simple word for a basic necessity is 'Ag_ua' in Spanish."
                 }
             ]
         },
@@ -502,15 +502,15 @@
             "name": "Information",
             "questions": [
                 {
-                    "question": "How do you ask 'Where is the train station?'",
+                    "question": "How do you ask 'Where is the restaurant?'",
                     "options": [
-                        "¿Dónde está el restaurante?",
                         "¿Dónde está el baño?",
-                        "¿Dónde está la estación de tren?",
-                        "¿Dónde está el hotel?"
+                        "¿Dónde está el restaurante?",
+                        "¿Dónde está el hospital?",
+                        "¿Dónde está el banco?"
                     ],
-                    "correctAnswer": "¿Dónde está la estación de tren?",
-                    "hint": "If you're lost and need to find the train station, ask this question."
+                    "correctAnswer": "¿Dónde está el restaurante?",
+                    "hint": "When looking for a place to eat, ask '¿Dónde está el res________?'"
                 },
                 {
                     "question": "If you want to know the time, how do you ask 'What time is it?'",
@@ -521,7 +521,7 @@
                         "¿Qué día es hoy?"
                     ],
                     "correctAnswer": "¿Qué hora es?",
-                    "hint": "You can use this phrase when you need to know the time."
+                    "hint": "When you need to know the time, inquire '¿Qué h_ra es?'"
                 },
                 {
                     "question": "How do you ask someone's name in Spanish?",
@@ -529,94 +529,32 @@
                         "¿Cómo te llamas?",
                         "¿Cuántos años tienes?",
                         "¿Dónde vives?",
-                        "¿A qué te dedicas?"
+                        "¿Qué haces en la vida?"
                     ],
                     "correctAnswer": "¿Cómo te llamas?",
-                    "hint": "When making new friends, this is one of the first questions to ask."
+                    "hint": "When making new friends, ask '¿C_mo te ll_m_s?'"
                 },
                 {
                     "question": "What does 'salida' mean in Spanish?",
                     "options": [
-                        "Entrada",
-                        "Abierto",
-                        "Salida",
-                        "Empujar"
+                        "Entrance",
+                        "Open",
+                        "Exit",
+                        "Push"
                     ],
-                    "correctAnswer": "Salida",
-                    "hint": "It's the way out, the opposite of 'entrada'."
+                    "correctAnswer": "Exit",
+                    "hint": "When looking for an exit, find the sign 'S_lida' in Spanish."
                 },
                 {
                     "question": "If you need to use the restroom in Spain, what do you ask?",
                     "options": [
-                        "¿Puedes ayudarme?",
+                        "¿Me puede ayudar?",
                         "¿Dónde está el baño?",
                         "¿Cuánto cuesta?",
                         "¿Hablas inglés?"
                     ],
                     "correctAnswer": "¿Dónde está el baño?",
-                    "hint": "This phrase will lead you to the nearest restroom."
-                }
-            ]
-        },
-        {
-            "id": 10,
-            "language": "Spanish",
-            "name": "Bookings",
-            "questions": [
-                {
-                    "question": "How do you ask 'Do you have a reservation?'",
-                    "options": [
-                        "¿Hablas inglés?",
-                        "¿Puedo pagar con tarjeta?",
-                        "¿Tienes una reserva?",
-                        "¿Dónde puedo comer?"
-                    ],
-                    "correctAnswer": "¿Tienes una reserva?",
-                    "hint": "Use this question when you want to confirm your reservation."
-                },
-                {
-                    "question": "What is 'hotel' in Spanish?",
-                    "options": [
-                        "Hotel",
-                        "Ospedale",
-                        "Ristorante",
-                        "Banca"
-                    ],
-                    "correctAnswer": "Hotel",
-                    "hint": "A place where travelers can stay overnight."
-                },
-                {
-                    "question": "If you need to change your booking time, how do you ask?",
-                    "options": [
-                        "¿Está incluido?",
-                        "¿Puedo pagar en efectivo?",
-                        "¿Puedo cambiar el horario?",
-                        "¿Hablas español?"
-                    ],
-                    "correctAnswer": "¿Puedo cambiar el horario?",
-                    "hint": "Use this question when you need to reschedule your appointment or booking."
-                },
-                {
-                    "question": "What does 'una habitación individual' mean in Spanish?",
-                    "options": [
-                        "A single ticket",
-                        "A single room",
-                        "A double room",
-                        "The bill, please"
-                    ],
-                    "correctAnswer": "A single room",
-                    "hint": "It's the type of accommodation with a single bed."
-                },
-                {
-                    "question": "How do you ask 'Is breakfast included?'",
-                    "options": [
-                        "¿Está incluido el desayuno?",
-                        "¿A qué hora cierra?",
-                        "¿Cuánto cuesta?",
-                        "¿Dónde está ubicado?"
-                    ],
-                    "correctAnswer": "¿Está incluido el desayuno?",
-                    "hint": "Use this question when you want to know if your morning meal is covered."
+                    "hint": "Seek the nearest restroom by asking '¿D_nde está el bañ_?'"
                 }
             ]
         }
