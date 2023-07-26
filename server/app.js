@@ -1,13 +1,16 @@
 const express = require("express");
 const cors = require("cors");
 
-const app = express();
-app.use(cors());
-app.use(express.json());
-
+const logRoutes = require("./middleware/logger");
 const userRouter = require("./routers/user");
 const leaderboardRouter = require("./routers/leaderboard");
 const quizRouter = require("./routers/quiz");
+
+
+const app = express();
+app.use(cors());
+app.use(express.json());
+app.use(logRoutes);
 
 app.get("/", (req, res) => {
   res.send({ message: "hello" });

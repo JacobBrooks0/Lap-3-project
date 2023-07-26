@@ -55,27 +55,40 @@ class User {
     }
   }
 
-  //delete method to delete users by ID
-  static async deleteById(id) {
-    try{
-      const response = await db.query(
-        "DELETE FROM Users WHERE user_id = $1 RETURNING *;",
-      [id]
-      );
-    // Check if a user was deleted
+  async deleteUser() {
+    // firstly have to delete foreign key constraints
+    const quizResponse = await db.query(
+      "DELETE FROM Quizzes WHERE user_id = $1 RETURNING *;",
+      [this.user_id]
+    );
+
+    const leaderboardsResponse = await db.query(
+      "DELETE FROM Leaderboards WHERE user_id = $1 RETURNING *;",
+      [this.user_id]
+    );
+
+    const tokenResponse = await db.query(
+      "DELETE FROM token WHERE user_id = $1 RETURNING *",
+      [this.user_id]
+    );
+
+    const response = await db.query(
+      "DELETE FROM Users WHERE user_id = $1 RETURNING *;",
+      [this.user_id]
+    );
+
+    if (tokenResponse.rows.length === 0) {
+      throw new Error("Unable to delete user. User not found.");
+    }
+
     if (response.rows.length === 0) {
       throw new Error("Unable to delete user. User not found.");
-     }
-     // Return the deleted user object
-     return new User(response.rows[0]);
-    } catch (err) {
-      throw new Error("Unable to delete user. " + err.message);
     }
-     
 
-    }
+    return new User(response.rows[0]);
   }
+}
 
-  //update method
+//update method
 
 module.exports = User;

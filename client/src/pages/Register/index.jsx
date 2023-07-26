@@ -11,33 +11,29 @@ export default function Register() {
   const registerUser = async (e) => {
     e.preventDefault();
 
-    const userDetails = new FormData(e.current.target);
+    const userDetails = new FormData(e.target);
 
     try {
       const config = {
-        body: JSON.stringify({
-          username: userDetails.get("username"),
-          password: userDetails.get("password"),
-        }),
+        username: userDetails.get("username"),
+        password: userDetails.get("password"),
       };
 
-      const response = await axios.post(
-        `${process.env.SERVER}/users/register`,
+      const { status } = await axios.post(
+        `${import.meta.env.VITE_SERVER}/users/register`,
         config
       );
-      const data = await response.json();
 
-      if (response.status == 201) {
+      if (status == 201) {
+        await writePopup("Your account has been registered!");
         goTo("/login");
-      } else {
-        alert(data.Error);
       }
     } catch (error) {
+      writePopup(error.response.data.error);
       console.log(error);
     }
   };
 
-  writePopup("Your account has been registered!");
   return (
     <>
       <div className={style["container"]}>

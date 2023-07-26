@@ -1,6 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
+import { writePopup } from "../Popup";
+
 export default function LogoutButton() {
   const goTo = useNavigate();
   const LogOut = async () => {
@@ -12,10 +14,12 @@ export default function LogoutButton() {
 
     try {
       localStorage.removeItem("token");
+      await writePopup("You're being logged out");
       //we don't care whether the token has been deleted on the db or not
-      await axios.delete(`${process.env.SERVER}/users/logout`, config);
-      goTo("/login");
+      axios.delete(`${import.meta.env.VITE_SERVER}/users/logout`, config);
+      goTo("/");
     } catch (error) {
+      writePopup(error.response.data.error);
       console.log(error);
     }
   };
