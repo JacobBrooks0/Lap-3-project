@@ -11,6 +11,7 @@ import {
   NotFound,
   GetStarted,
   Language,
+  Practice
 } from "./pages";
 import { AuthProvider } from "./contexts";
 import { Welcome, User } from "./layouts";
@@ -21,12 +22,12 @@ import { Popup } from "./components";
 
 
 function App() {
-  
+
   const [selectedLanguage, setSelectedLanguage] = useState("");
 
   return (
     <>
-     <LanguageProvider>
+      <LanguageProvider>
         <AuthProvider>
           <Routes>
             <Route element={<Welcome />}>
@@ -50,6 +51,7 @@ function App() {
                 }
               />
               <Route path="/learn/:quizId" element={<Learn setSelectedLanguage={setSelectedLanguage} />} />
+              <Route path="practice/:quizId" element={<Practice />} />
               <Route path="/games" element={<Games />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="*" element={<NotFound />} />
