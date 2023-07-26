@@ -14,7 +14,7 @@
                         "Uccello"
                     ],
                     "correctAnswer": "Cane",
-                    "hint": "This loyal companion is called 'C__ne' in Italian."
+                    "hint": "This loyal companion is called 'C_ne' in Italian."
                 },
                 {
                     "question": "How do you say 'book' in Italian?",
@@ -25,7 +25,7 @@
                         "Fiore"
                     ],
                     "correctAnswer": "Libro",
-                    "hint": "In a 'libr__ia', you'll find many 'L__bri' (books) in Italian."
+                    "hint": "In a 'libr__ia', you'll find many 'L_bri' (books) in Italian."
                 },
                 {
                     "question": "What is 'car' in Italian?",
@@ -47,7 +47,7 @@
                         "Finestra"
                     ],
                     "correctAnswer": "Tavolo",
-                    "hint": "Imagine setting your dinner on a 'T_v__lo' (table) in Italian."
+                    "hint": "A table is commonly known as 't___lo' in Italian"
                 },
                 {
                     "question": "What is 'computer' in Italian?",
@@ -76,7 +76,7 @@
                         "Arrivederci"
                     ],
                     "correctAnswer": "Buon giorno",
-                    "hint": "Greet someone in the morning with 'Bu__n gi__rno'."
+                    "hint": "Greet someone in the morning with 'Bu_n gi_rno'."
                 },
                 {
                     "question": "How do you say 'he drinks the juice' in Italian?",
@@ -98,7 +98,7 @@
                         "Sorry"
                     ],
                     "correctAnswer": "Excuse me",
-                    "hint": "Use 'Sc__sa' when you need someone's attention politely."
+                    "hint": "Use 'Sc_sa' when you need someone's attention politely."
                 },
                 {
                     "question": "How do you say 'My name is Maria, and I am from Italy'?",
@@ -149,7 +149,7 @@
                         "Dove posso mangiare?"
                     ],
                     "correctAnswer": "È vegetariano?",
-                    "hint": "When asking about the food, inquire 'È __get__ri__no?'"
+                    "hint": "When asking about the food, inquire 'È __get_ri_no?'"
                 },
                 {
                     "question": "What is the word for 'coffee' in Italian?",
@@ -160,7 +160,7 @@
                         "Té"
                     ],
                     "correctAnswer": "Café",
-                    "hint": "A cup of 'C__fé' is an energizing drink in Italian."
+                    "hint": "A cup of 'C_fé' is an energizing drink in Italian."
                 },
                 {
                     "question": "How do you ask 'Can I get the check please?'",
@@ -171,7 +171,7 @@
                         "Parli inglese?"
                     ],
                     "correctAnswer": "Posso chiedere il conto?",
-                    "hint": "Ask for the bill politely with 'Posso ch__ed__re il c__nto?'"
+                    "hint": "Ask for the bill politely with 'Posso ch_ed_re il c_nto?'"
                 },
                 {
                     "question": "What is the word for 'water' in Italian?",
@@ -182,7 +182,7 @@
                         "Latte"
                     ],
                     "correctAnswer": "Acqua",
-                    "hint": "A simple word for a basic necessity is 'Ac__ua' in Italian."
+                    "hint": "A simple word for a basic necessity is 'Ac_ua' in Italian."
                 }
             ]
         },
@@ -200,7 +200,7 @@
                         "Dov'è l'hotel?"
                     ],
                     "correctAnswer": "Dov'è la stazione dei treni?",
-                    "hint": "When lost and in need of directions, ask 'D__v'è la st__zi__ne dei tr__ni?'"
+                    "hint": "When lost and in need of directions, ask 'D_v'è la st_zi_ne dei tr_ni?'"
                 },
                 {
                     "question": "If you want to know the time, how do you ask 'What time is it?'",
@@ -211,7 +211,7 @@
                         "Che giorno è oggi?"
                     ],
                     "correctAnswer": "Che ora è?",
-                    "hint": "When you need to know the time, inquire 'Che __ra è?'"
+                    "hint": "When you need to know the time, inquire 'Che _ra è?'"
                 },
                 {
                     "question": "How do you ask someone's name in Italian?",
@@ -222,7 +222,7 @@
                         "Cosa fai nella vita?"
                     ],
                     "correctAnswer": "Come ti chiami?",
-                    "hint": "When making new friends, ask 'C__me ti ch__mi?'"
+                    "hint": "When making new friends, ask 'C_me ti ch_mi?'"
                 },
                 {
                     "question": "What does 'uscita' mean in Italian?",
@@ -233,7 +233,7 @@
                         "Push"
                     ],
                     "correctAnswer": "Exit",
-                    "hint": "When looking for a way out, find the sign 'U__c__ta' in Italian."
+                    "hint": "When looking for a way out, find the sign 'U_c_ta' in Italian."
                 },
                 {
                     "question": "If you need to use the restroom in Italy, what do you ask?",
@@ -244,7 +244,7 @@
                         "Parli inglese?"
                     ],
                     "correctAnswer": "Dov'è il bagno?",
-                    "hint": "Seek the nearest restroom by asking 'D__v'è il b__gn__?'"
+                    "hint": "Seek the nearest restroom by asking 'D_v'è il b_gn_?'"
                 }
             ]
         },
@@ -262,7 +262,7 @@
                         "Dove posso mangiare?"
                     ],
                     "correctAnswer": "È vegetariano?",
-                    "hint": "When asking about the food, inquire 'È __get__ri__no?'"
+                    "hint": "When asking about the food, inquire 'È __get_ri_no?'"
                 },
                 {
                     "question": "How do you ask 'I would like to book a room in the hotel'?",
@@ -284,7 +284,7 @@
                         "Parli spagnolo?"
                     ],
                     "correctAnswer": "Posso cambiare l'orario?",
-                    "hint": "To reschedule, inquire 'P__sso c__mb__re l'__r__ri__?'"
+                    "hint": "To reschedule, inquire 'P_sso c_mb__re l'_r_ri_?'"
                 },
                 {
                     "question": "What does 'una camera singola' mean in Italian?",
