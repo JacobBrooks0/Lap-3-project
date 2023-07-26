@@ -113,10 +113,10 @@ describe("User Endpoints", () => {
     expect(userObj).toHaveProperty("profile_summary");
   });*/
 
-  /*it("Should logout", async () => {
+  it("Should logout", async () => {
     await request(app)
       .delete("/users/logout")
       .set({ authorization: token })
       .expect(202);
-  });*/
+  });
 });
