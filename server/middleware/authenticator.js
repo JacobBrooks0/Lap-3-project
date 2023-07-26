@@ -1,11 +1,11 @@
-const Token = require ("../models/token");
+const Token = require("../models/Token");
 
 // Middleware function to check if a user is authenticated
 async function isAuthenticated(req, res, next) {
     const authToken = req.headers["authorization"];
   
     // Check if the authentication token is present and valid
-    if (authToken && isValidAuthToken(authToken)) {
+    if (authToken && Token.isValidAuthToken(authToken)) {
       try {
         // If the token is valid, get the user associated with the token in the db
         const user = await Token.getOneByToken(authToken);
