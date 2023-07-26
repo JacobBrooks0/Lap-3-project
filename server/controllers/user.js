@@ -26,8 +26,7 @@ async function login(req, res) {
   const data = req.body;
   try {
     const user = await User.getOneByUsername(data.username);
-    console.log(user);
-    console.log("User", user);
+
     const authenticated = await bcrypt.compare(data.password, user["password"]);
     console.log("Authenticated", authenticated);
     if (!authenticated) {
@@ -35,6 +34,7 @@ async function login(req, res) {
     } else {
       //create a new token spec. associated with the user
       const token = await Token.create(user.user_id);
+      await user.updateUser();
       res
         .status(200)
         .json({ authenticated: true, token: token.token, user: data.username });
@@ -53,6 +53,21 @@ async function logout(req, res) {
     res.status(202).json({ message: response });
   } catch (error) {
     res.status(403).json({ error: error.message });
+  }
+}
+
+async function details(req, res) {
+  try {
+    const userId = req.params.id;
+    const user = await User.getOneById(userId);
+
+    // Omit the password from the user object
+    const { password, ...userInfo } = user;
+
+    // Send the user information (without password) in the response
+    res.json(userInfo);
+  } catch (error) {
+    res.status(500).json({ error: "Unable to get user details." });
   }
 }
 
@@ -78,4 +93,5 @@ module.exports = {
   login,
   logout,
   destroy,
+  details,
 };

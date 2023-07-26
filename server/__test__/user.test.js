@@ -17,7 +17,7 @@ describe("User Endpoints", () => {
     username: "user",
     email: "email",
     password: "password",
-    user_id: 3,
+    user_id: 4,
   };
 
   it("Should register user to app", async () => {
@@ -27,21 +27,12 @@ describe("User Endpoints", () => {
       .expect(201);
 
     const userObj = response.body;
-    expect(userObj).toHaveProperty("user_id", 3);
+    expect(userObj).toHaveProperty("user_id", 4);
     expect(userObj).toHaveProperty("email", "email");
-    expect(userObj).toHaveProperty("password");
     expect(userObj).toHaveProperty("username", "user");
+    expect(userObj).toHaveProperty("last_login");
+    expect(userObj).toHaveProperty("streak", 0);
   });
-
-  /*it("Should give error if user tries to register again", async () => {
-    const response = await request(app)
-      .post("/users/register")
-      .send(registerDetails)
-      .expect(500);
-
-    let { Error } = response.body;
-    expect(Error).toBe("User already registered");
-  });*/
 
   it("Should let the user login", async () => {
     const response = await request(app)
@@ -56,15 +47,19 @@ describe("User Endpoints", () => {
     token = userObj.token;
   });
 
-  it("Should return a token after logging in", async () => {
+  it("Should return a user's details", async () => {
     const response = await request(app)
-      .post("/users/login")
-      .send(registerDetails)
+      .get("/users/4")
+      .set({ authorization: token })
       .expect(200);
 
     const userObj = response.body;
-    expect(userObj).toHaveProperty("token");
-    token = userObj.token;
+    expect(userObj).toHaveProperty("user_id", 4);
+    expect(userObj).toHaveProperty("email", "email");
+    expect(userObj).toHaveProperty("username", "user");
+    expect(userObj).toHaveProperty("last_login");
+    expect(userObj).toHaveProperty("streak", 0);
+    expect(userObj).not.toHaveProperty("password");
   });
 
   it("Should error if user gives a wrong username", async () => {
@@ -86,32 +81,6 @@ describe("User Endpoints", () => {
       })
       .expect(403);
   });
-
-  //   it("Should return users by ID", async () => {
-  //     const response = await request(app).get("/users/3").expect(200);
-  //     const userObj = response.body;
-  //     expect(userObj).toHaveProperty("user_id", 1);
-  //     expect(userObj).toHaveProperty("username", "testuser");
-  //     expect(userObj).toHaveProperty("email", "testuser@example.com");
-  //     expect(userObj).toHaveProperty("password");
-  //   });
-
-  /*const profileDetails = {
-    name: "My Name",
-    profile_summary: "This is who I am",
-  };
-  it("Should update profile details", async () => {
-    
-    const response = await request(app)
-      .patch("/users/update")
-      .set({ authorization: token })
-      .send(profileDetails)
-      .expect(202);
-
-    const userObj = response.body;
-    expect(userObj).toHaveProperty("name", "My Name");
-    expect(userObj).toHaveProperty("profile_summary");
-  });*/
 
   it("Should logout", async () => {
     await request(app)
@@ -143,7 +112,7 @@ describe("User Endpoints", () => {
     const deleteToken = userObj.token;
 
     const response = await request(app)
-      .delete("/users/3")
+      .delete("/users/4")
       .set({ authorization: deleteToken })
       .expect(204);
   });
