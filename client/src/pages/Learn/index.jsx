@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import Question from '../../components/Question';
 import AnswerOption from '../../components/AnswerOption';
 import ResultContainer from '../../components/ResultPage';
 import quizData from '../../data/quizData.json';
 import style from './style.module.css';
 
-const QuizPage = () => {
+const QuizPage = ({ setSelectedLanguage }) => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showResult, setShowResult] = useState(false);
   const [score, setScore] = useState(0);
@@ -48,7 +48,7 @@ const QuizPage = () => {
   };
 
   const handleBackToDashboard = () => {
-    window.location.href = '/dashboard';
+    setSelectedLanguage(selectedQuiz.language);
   };
 
   return (
@@ -71,9 +71,11 @@ const QuizPage = () => {
       ) : (
         <>
           <ResultContainer score={score} totalQuestions={selectedQuiz?.questions.length} onRestart={handleRestartQuiz} />
-          <button className={style['back-button']} onClick={handleBackToDashboard}>
-            Back to Dashboard
-          </button>
+          <Link to="/dashboard">
+            <button className={style['back-button']} onClick={handleBackToDashboard}>
+              Back to Dashboard
+            </button>
+          </Link>
         </>
       )}
     </div>

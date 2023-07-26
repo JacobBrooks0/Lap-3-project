@@ -5,7 +5,7 @@ import style from "./style.module.css";
 import LanguageContext from "../../contexts/Language"
 
 export default function Dashboard() {
-  const { selectedLanguage } = useContext(LanguageContext);
+  const { selectedLanguage, setSelectedLanguage } = useContext(LanguageContext);
 
   const filteredQuiz = quizData.quizzes.filter(
     (quiz) => quiz.language === selectedLanguage

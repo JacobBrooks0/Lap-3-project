@@ -42,10 +42,11 @@ function App() {
                 element={
                   <Dashboard
                     selectedLanguage={selectedLanguage}
+                    setSelectedLanguage={setSelectedLanguage}
                   />
                 }
               />
-              <Route path="/learn/:quizId" element={<Learn />} />
+              <Route path="/learn/:quizId" element={<Learn setSelectedLanguage={setSelectedLanguage} />} />
 
               <Route path="/games" element={<Games />} />
               <Route path="/profile" element={<Profile />} />
