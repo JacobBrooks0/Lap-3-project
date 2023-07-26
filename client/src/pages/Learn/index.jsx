@@ -25,7 +25,7 @@ const QuizPage = () => {
     const currentQuiz = selectedQuiz.questions[currentQuestion];
 
     if (selectedOption === currentQuiz.correctAnswer) {
-      setScore(score + 8);
+      setScore(score + 1);
     }
     setSelectedOption(selectedOption);
     setShowResult(false);
@@ -65,7 +65,7 @@ const QuizPage = () => {
           </div>
         </>
       ) : (
-        <ResultContainer score={score} totalQuestions={40} onRestart={handleRestartQuiz} />
+        <ResultContainer score={score} totalQuestions={selectedQuiz?.questions.length} onRestart={handleRestartQuiz} />
       )}
     </div>
   );

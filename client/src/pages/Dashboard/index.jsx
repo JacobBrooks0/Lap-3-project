@@ -1,13 +1,9 @@
 import React from "react";
-import { useAuth } from "../../contexts";
 import { Link } from 'react-router-dom';
 
 import style from "./style.module.css";
 
 export default function Dashboard() {
-  const { user } = useAuth();
-
-
   const quizzes = [
     { id: 1, name: "Nouns" },
     { id: 2, name: "Basic Grammar" },
@@ -17,17 +13,30 @@ export default function Dashboard() {
   ];
 
   return (
-    <div>
-      <h2>Choose a Quiz:</h2>
-      <ul>
+    <div className={style["container"]}>
+
+      <h2>Practice Rounds</h2>
+
+      <div className={style["button-container"]}>
         {quizzes.map(quiz => (
-          <li key={quiz.id}>
-            <Link to={`/learn/${quiz.id}`}>{quiz.name}</Link>
-          </li>
+          <Link key={quiz.id} to={`/practice/${quiz.id}`} className={style["practice-button"]}>
+            {quiz.name}
+          </Link>
         ))}
-      </ul>
+      </div>
+
+      <h2>Test your knowledge</h2>
+
+      <div className={style["card-container"]}>
+        {quizzes.map(quiz => (
+          <Link key={quiz.id} to={`/learn/${quiz.id}`} className={style["quiz-card"]}>
+            {quiz.name}
+          </Link>
+        ))}
+      </div>
     </div>
   );
+
 
   // const handlePracticeClick = (selectedOption) => {
 
