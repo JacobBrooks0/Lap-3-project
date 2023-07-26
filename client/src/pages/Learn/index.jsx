@@ -1,48 +1,32 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Question from '../../components/Question';
 import AnswerOption from '../../components/AnswerOption';
 import ResultContainer from '../../components/ResultPage';
-import style from './style.module.css'
-
-
-const quizData = [
-  {
-    question: "What is 'dog' in Spanish?",
-    options: ["Perro", "Gato", "Conejo", "Pájaro"],
-    correctAnswer: "Perro"
-  },
-  {
-    question: "How do you say 'hello' in French?",
-    options: ["Hola", "Bonjour", "Ciao", "Guten Tag"],
-    correctAnswer: "Bonjour"
-  },
-  {
-    question: "Which language is spoken in Japan?",
-    options: ["Chinese", "Japanese", "Korean", "Thai"],
-    correctAnswer: "Japanese"
-  },
-  {
-    question: "How do you say 'thank you' in German?",
-    options: ["Danke", "Gracias", "Merci", "Grazie"],
-    correctAnswer: "Danke"
-  }
-];
+import quizData from '../../data/quizData.json';
+import style from './style.module.css';
 
 const QuizPage = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showResult, setShowResult] = useState(false);
   const [score, setScore] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
+  const [selectedQuiz, setSelectedQuiz] = useState(null);
+
+  useEffect(() => {
+    setSelectedQuiz(quizData.quizzes[0]);
+  }, []);
 
   const handleAnswerClick = (selectedOption) => {
-    if (selectedOption === quizData[currentQuestion].correctAnswer) {
+    const currentQuiz = selectedQuiz.questions[currentQuestion];
+
+    if (selectedOption === currentQuiz.correctAnswer) {
       setScore(score + 1);
     }
     setSelectedOption(selectedOption);
     setShowResult(false);
 
     setTimeout(() => {
-      if (currentQuestion + 1 < quizData.length) {
+      if (currentQuestion + 1 < selectedQuiz.questions.length) {
         setCurrentQuestion(currentQuestion + 1);
         setSelectedOption(null);
       } else {
@@ -59,16 +43,16 @@ const QuizPage = () => {
   };
 
   return (
-    <div className={style["container"]}>
+    <div className={style['container']}>
       {!showResult ? (
         <>
-          <Question question={quizData[currentQuestion].question} />
+          <Question question={selectedQuiz?.questions[currentQuestion]?.question} />
           <div>
-            {quizData[currentQuestion].options.map((option, index) => (
+            {selectedQuiz?.questions[currentQuestion]?.options.map((option, index) => (
               <AnswerOption
                 key={index}
                 option={option}
-                isCorrect={option === quizData[currentQuestion].correctAnswer}
+                isCorrect={option === selectedQuiz?.questions[currentQuestion]?.correctAnswer}
                 isSelected={selectedOption === option}
                 onClick={() => handleAnswerClick(option)}
               />
@@ -76,11 +60,7 @@ const QuizPage = () => {
           </div>
         </>
       ) : (
-        <ResultContainer
-          score={score}
-          totalQuestions={quizData.length}
-          onRestart={handleRestartQuiz}
-        />
+        <ResultContainer score={score} totalQuestions={selectedQuiz?.questions.length} onRestart={handleRestartQuiz} />
       )}
     </div>
   );

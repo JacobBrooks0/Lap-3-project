@@ -1,0 +1,73 @@
+@keyframes fade-in1 {
+  0% {
+    opacity: 0;
+  }
+  60% {
+    top: -30px;
+    opacity: 0;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+  }
+}
+@keyframes fade-in2 {
+  0% {
+    top: -30px;
+    opacity: 0;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+.f-transition.container {
+  animation-name: fade-in2;
+  animation-duration: 1s;
+}
+
+.container {
+  position: relative;
+  top: 0;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  animation-name: fade-in1;
+  animation-duration: 3.5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+}
+
+.container > h1 {
+  color: #4deeea;
+}
+
+.container form {
+  display: grid;
+  row-gap: 0.8rem;
+}
+
+.container button {
+  place-self: stretch;
+  font-size: 18px;
+  background-color: #281c3c;
+  color: #4deeea;
+  border: 2px solid #4deeea;
+  padding: 7px 20px;
+  border-radius: 100vmax;
+  cursor: pointer;
+}
+
+.container p {
+  color: #4deeea;
+  padding: 7px 20px;
+  border-radius: 100vmax;
+  background-color: #281c3c85;
+  font-weight: 500;
+}
+
+.container a {
+  color: #74ee15;
+  font-weight: 500;
+}

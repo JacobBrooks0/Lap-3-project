@@ -15,6 +15,7 @@ import { AuthProvider } from "./contexts";
 import { Welcome, User } from "./layouts";
 
 import "./App.css";
+import { Popup } from "./components";
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
           </Route>
           <Route path="*" element={<Navigate to="/login" />} />
         </Routes>
+        <Popup />
       </AuthProvider>
     </>
   );

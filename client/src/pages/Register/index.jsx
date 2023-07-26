@@ -1,7 +1,9 @@
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-
+import { writePopup } from "../../components";
 import { UsernameInput, PasswordInput } from "../../components";
+
+import style from "./style.module.css";
 
 export default function Register() {
   const goTo = useNavigate();
@@ -35,16 +37,20 @@ export default function Register() {
     }
   };
 
+  writePopup("Your account has been registered!");
   return (
     <>
-      <form id="register-form" onSubmit={registerUser}>
-        <UsernameInput />
-        <PasswordInput />
-        <button type="submit">Register Account</button>
-      </form>
-      <p>
-        Already registered? <Link to="/">Log in here</Link>
-      </p>
+      <div className={style["container"]}>
+        <h1>Register</h1>
+        <form id="register-form" onSubmit={registerUser}>
+          <UsernameInput />
+          <PasswordInput />
+          <button type="submit">Register Account</button>
+        </form>
+        <p>
+          Already registered? <Link to="/login">Log in here</Link>
+        </p>
+      </div>
     </>
   );
 }

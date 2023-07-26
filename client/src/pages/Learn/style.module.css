@@ -31,12 +31,12 @@
     background-color: #f1f1f1;
 }
 
-.option-button.correct {
+.option-button:global(.correct) {
     background-color: #4caf50;
     color: #fff;
 }
 
-.option-button.incorrect {
+.option-button:global(.incorrect) {
     background-color: #f44336;
     color: #fff;
 }
