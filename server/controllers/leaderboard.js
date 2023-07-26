@@ -5,6 +5,7 @@ async function index(req, res) {
     const result = await Leaderboard.getAllLeaderboardEntries();
     res.status(200).send(result);
   } catch (err) {
+    console.log(err)
     res.status(400).json({ error: err.message });
   }
 }
