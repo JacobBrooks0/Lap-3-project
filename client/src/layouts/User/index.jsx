@@ -13,6 +13,7 @@ export default function User() {
         <NavLink to="/games">Games</NavLink>
         <NavLink to="/learn">Learn</NavLink>
         <NavLink to="/profile">Profile</NavLink>
+        <NavLink to="/leaderboard">Leaderboard</NavLink>
       </nav>
       <Outlet />
       {/* <footer>Snack Rankings 2022</footer> */}

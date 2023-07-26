@@ -1,0 +1,18 @@
+.Board{
+    display: flex;
+    justify-content: center;
+
+}
+
+table {
+    border-collapse: separate;
+   
+}
+
+th,
+td {
+  width: 150px;
+  text-align: center;
+  border: 1px solid black;
+  padding: 5px;
+}
