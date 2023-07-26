@@ -16,4 +16,7 @@ export default defineConfig({
       generateScopedName: "[local]_[hash:base64:2]",
     },
   },
+  test: {
+    environment: "jsdom",
+  },
 });
