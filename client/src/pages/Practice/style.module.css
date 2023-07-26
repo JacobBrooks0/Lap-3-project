@@ -77,3 +77,21 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
+
+.show-hint-container {
+    margin: 20px;
+}
+
+.show-hint-button {
+    padding: 20px 40px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.show-hint-button:hover {
+    background-color: #f1f1f1;
+}

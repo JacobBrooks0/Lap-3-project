@@ -7,7 +7,7 @@ export default function LanguageSelection() {
         <>
             <main id="language-selection">
                 <div className={style["container"]}>
-                    <h1>Pick a language you want to learn today!</h1>
+                    <h1>Pick a language you want to learn</h1>
                     <LanguageButton />
                 </div>
             </main>
