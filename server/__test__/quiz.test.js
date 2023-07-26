@@ -150,94 +150,13 @@ describe("Leaderboards Endpoints", () => {
   //   expect(advanced_score).toBe(30);
   // });
 
-  //PATCH
-  it("Should update a quiz instance", async () => {
-    const updatedScore = {
-      quiz_id: 1,
-      language_id: 2,
-      beginner_score: 16,
-    };
-
-    const response = await request(app)
-      .patch(`/quizzes/2`)
-      .set({ authorization: token })
-      .send(updatedScore)
-      .expect(201);
-    const userObj = response.body;
-
-    const {
-      user_id,
-      quiz_id,
-      language_id,
-      beginner_score,
-      intermediate_score,
-      advanced_score,
-      quiz_instance,
-    } = userObj;
-
-    expect(user_id).toBe(2);
-    expect(quiz_instance).toBe(5);
-    expect(quiz_id).toBe(1);
-    expect(language_id).toBe(2);
-    expect(beginner_score).toBe(16);
-    expect(intermediate_score).toBe(5);
-    expect(advanced_score).toBe(15);
-  });
-
-  it("Should not update a quiz instance if the score sent is lower", async () => {
-    const updatedScore = {
-      quiz_id: 1,
-      language_id: 2,
-      beginner_score: 14,
-    };
-
-    const response = await request(app)
-      .patch(`/quizzes/2`)
-      .set({ authorization: token })
-      .send(updatedScore)
-      .expect(201);
-    const userObj = response.body;
-
-    const {
-      user_id,
-      quiz_id,
-      language_id,
-      beginner_score,
-      intermediate_score,
-      advanced_score,
-      quiz_instance,
-    } = userObj;
-
-    expect(user_id).toBe(2);
-    expect(quiz_instance).toBe(5);
-    expect(quiz_id).toBe(1);
-    expect(language_id).toBe(2);
-    expect(beginner_score).toBe(16);
-    expect(intermediate_score).toBe(5);
-    expect(advanced_score).toBe(15);
-  });
-
-  it("Should fail if the data sent isn't correct", async () => {
-    const updatedScore = {
-      language_id: 2,
-      beginner_score: 14,
-    };
-
-    const response = await request(app)
-      .patch(`/quizzes/2`)
-      .set({ authorization: token })
-      .send(updatedScore)
-      .expect(500);
-  });
-
   //POST
   it("posts a new quiz", async () => {
     const postNewQuizDetails = {
-      quiz_id: 3,
+      quiz_id: 1,
       language_id: 1,
-      user_id: 1,
-      beginner_score: 0,
-      intermediate_score: 20,
+      beginner_score: 20,
+      intermediate_score: 0,
       advanced_score: 0,
     };
 
@@ -250,11 +169,84 @@ describe("Leaderboards Endpoints", () => {
     const { quiz_instance } = postResponse.body;
     quizInst = quiz_instance;
 
-    expect(postResponse.body).toHaveProperty("quiz_id", 3);
+    expect(postResponse.body).toHaveProperty("quiz_id", 1);
     expect(postResponse.body).toHaveProperty("language_id", 1);
-    expect(postResponse.body).toHaveProperty("user_id", 1);
-    expect(postResponse.body).toHaveProperty("beginner_score", 0);
-    expect(postResponse.body).toHaveProperty("intermediate_score", 20);
+    //user_id gotten from token so it's not put in the body and you can't test for it
+    // expect(postResponse.body).toHaveProperty("user_id", 1);
+    expect(postResponse.body).toHaveProperty("beginner_score", 20);
+    expect(postResponse.body).toHaveProperty("intermediate_score", 0);
     expect(postResponse.body).toHaveProperty("advanced_score", 0);
+  });
+
+  //PATCH
+  it("Should update a quiz instance", async () => {
+    const updatedScore = {
+      quiz_id: 1,
+      language_id: 1,
+      beginner_score: 30,
+    };
+
+    const response = await request(app)
+      .patch(`/quizzes`)
+      .set({ authorization: token })
+      .send(updatedScore)
+      .expect(201);
+    const userObj = response.body;
+
+    const {
+      quiz_id,
+      language_id,
+      beginner_score,
+      intermediate_score,
+      advanced_score,
+    } = userObj;
+
+    expect(quiz_id).toBe(1);
+    expect(language_id).toBe(1);
+    expect(beginner_score).toBe(30);
+    expect(intermediate_score).toBe(0);
+    expect(advanced_score).toBe(0);
+  });
+
+  it("Should not update a quiz instance if the score sent is lower", async () => {
+    const updatedScore = {
+      quiz_id: 1,
+      language_id: 1,
+      beginner_score: 14,
+    };
+
+    const response = await request(app)
+      .patch(`/quizzes`)
+      .set({ authorization: token })
+      .send(updatedScore)
+      .expect(201);
+    const userObj = response.body;
+
+    const {
+      quiz_id,
+      language_id,
+      beginner_score,
+      intermediate_score,
+      advanced_score,
+    } = userObj;
+
+    expect(quiz_id).toBe(1);
+    expect(language_id).toBe(1);
+    expect(beginner_score).toBe(30);
+    expect(intermediate_score).toBe(0);
+    expect(advanced_score).toBe(0);
+  });
+
+  it("Should fail if the data sent isn't correct", async () => {
+    const updatedScore = {
+      language_id: 2,
+      beginner_score: 14,
+    };
+
+    const response = await request(app)
+      .patch(`/quizzes`)
+      .set({ authorization: token })
+      .send(updatedScore)
+      .expect(500);
   });
 });

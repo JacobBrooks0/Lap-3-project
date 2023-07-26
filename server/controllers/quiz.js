@@ -87,19 +87,21 @@ async function getAllInfo(req, res) {
 }
 
 async function createQuizInstance(req, res) {
+  const user_id = req.user.user_id;
   try {
     const data = req.body;
-    const newEntry = await Quiz.createQuiz(data);
-    const updateLeaderboard = await Leaderboard.updateLeaderboards(newEntry);
+    const newEntry = await Quiz.createQuiz(user_id, data);
+    await Leaderboard.updateLeaderboards(newEntry);
     res.status(201).json(newEntry);
   } catch (error) {
-    res.status(500).json({ error: "Failed to fetch quizzes." });
+    console.log(error);
+    res.status(500).json({ error: error.message });
   }
 }
 
 async function updateQuizInstance(req, res) {
   try {
-    const userId = req.params.user_id;
+    const userId = req.user.user_id;
     const data = req.body;
     const newEntry = await Quiz.getAllInfoForOneUser(
       userId,
@@ -107,11 +109,10 @@ async function updateQuizInstance(req, res) {
       data.quiz_id
     );
     const instanceToUpdate = await newEntry.updateQuizInstance(data);
-    const updateLeaderboard = await Leaderboard.updateLeaderboards(
-      instanceToUpdate
-    );
+    await Leaderboard.updateLeaderboards(instanceToUpdate);
     res.status(201).json(instanceToUpdate);
   } catch (error) {
+    console.log(error);
     res.status(500).json({ error: "Failed to fetch quizzes." });
   }
 }

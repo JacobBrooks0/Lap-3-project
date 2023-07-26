@@ -9,11 +9,7 @@ CREATE TABLE Users(
     user_id INT GENERATED ALWAYS AS IDENTITY,
     username VARCHAR(30) NOT NULL UNIQUE,
     email VARCHAR(40) UNIQUE,
-    created_date FLOAT DEFAULT extract(
-        epoch
-        from
-            now()
-    ),
+    created_date TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,
     password VARCHAR(60) NOT NULL,
     last_login TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
     streak INT DEFAULT 0,
@@ -34,11 +30,12 @@ CREATE TABLE Languages(
 );
 
 CREATE TABLE Leaderboards(
+    entry_id INT GENERATED ALWAYS AS IDENTITY,
     user_id INT NOT NULL,
     score_spanish INT NOT NULL DEFAULT 0,
     score_italian INT NOT NULL DEFAULT 0,
     rank INT NOT NULL DEFAULT 1,
-    PRIMARY KEY(user_id),
+    PRIMARY KEY(entry_id),
     FOREIGN KEY (user_id) REFERENCES Users(user_id)
 );
 

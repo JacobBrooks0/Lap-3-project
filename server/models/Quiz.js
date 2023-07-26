@@ -106,19 +106,16 @@ class Quiz {
       [id, quiz_id, language_id]
     );
 
-    if (response.rows.length != 1) {
+    if (response.rows.length === 0) {
       throw new Error("No Entry available for this user");
-      return "No Entry available for this user";
     }
 
-    const quiz = response.rows[0];
-    return new Quiz(quiz);
+    return new Quiz(response.rows[0]);
   }
 
-  static async createQuiz(data) {
+  static async createQuiz(user_id, data) {
     const {
       quiz_id,
-      user_id,
       beginner_score,
       intermediate_score,
       advanced_score,
@@ -141,15 +138,7 @@ class Quiz {
       throw new Error("Unable to add quiz");
     }
 
-    //get quiz by quiz id where language id = language from above
-    const newQuiz = response.rows[0];
-    const newEntry = await Quiz.getAllInfoForOneUser(
-      user_id,
-      language_id,
-      quiz_id
-    );
-
-    return new Quiz(newEntry);
+    return new Quiz(response.rows[0]);
   }
 
   async updateQuizInstance(data) {
