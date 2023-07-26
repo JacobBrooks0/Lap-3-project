@@ -73,9 +73,25 @@ async function destroy(req, res) {
   }
 }
 
+async function details(req, res) {
+  try {
+    const userId = req.params.id;
+    const user = await User.getOneById(userId);
+
+    // Omit the password from the user object
+    const { password, ...userInfo } = user;
+
+    // Send the user information (without password) in the response
+    res.json(userInfo);
+  } catch (error) {
+    res.status(500).json({ error: "Unable to get user details." });
+  }
+}
+
 module.exports = {
   register,
   login,
   logout,
   destroy,
+  details
 };

@@ -4,6 +4,7 @@ const userRouter = Router();
 const isAuthenticated = require("../middleware/authenticator");
 const userController = require("../controllers/user");
 
+userRouter.get("/:id", userController.details);
 userRouter.post("/register", userController.register);
 userRouter.post("/login", userController.login);
 
