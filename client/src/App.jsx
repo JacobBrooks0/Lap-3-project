@@ -11,7 +11,9 @@ import {
   NotFound,
   GetStarted,
   Language,
+  Leaderboard,
   Practice
+
 } from "./pages";
 import { AuthProvider } from "./contexts";
 import { Welcome, User } from "./layouts";
@@ -27,6 +29,7 @@ function App() {
 
   return (
     <>
+
       <LanguageProvider>
         <AuthProvider>
           <Routes>
@@ -54,6 +57,7 @@ function App() {
               <Route path="practice/:quizId" element={<Practice />} />
               <Route path="/games" element={<Games />} />
               <Route path="/profile" element={<Profile />} />
+              <Route path="/leaderboard" element={<Leaderboard />} />
               <Route path="*" element={<NotFound />} />
             </Route>
             <Route path="*" element={<Navigate to="/login" />} />
@@ -61,6 +65,7 @@ function App() {
           <Popup />
         </AuthProvider>
       </LanguageProvider>
+
     </>
   );
 }
