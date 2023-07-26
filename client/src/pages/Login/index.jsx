@@ -1,8 +1,9 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "../../contexts";
 import axios from "axios";
-
 import { UsernameInput, PasswordInput } from "../../components";
+
+import style from "./style.module.css";
 
 export default function Login() {
   const goTo = useNavigate();
@@ -39,16 +40,20 @@ export default function Login() {
     }
   };
 
+  const { hash } = useLocation();
   return (
     <>
-      <form id="login-form" onSubmit={loginUser}>
-        <UsernameInput />
-        <PasswordInput />
-        <button type="submit">Login</button>
-      </form>
-      <p>
-        No account? <Link to="/register">Sign up here</Link>
-      </p>
+      <div className={`${hash !== "#fw" ? style["f-transition"] : ""} ${style["container"]}`}>
+        <h1>Login</h1>
+        <form id="login-form" onSubmit={loginUser}>
+          <UsernameInput />
+          <PasswordInput />
+          <button type="submit">Login</button>
+        </form>
+        <p>
+          No account? <Link to="/register">Sign up here</Link>
+        </p>
+      </div>
     </>
   );
 }
