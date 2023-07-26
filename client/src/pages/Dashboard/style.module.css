@@ -41,7 +41,7 @@
   margin-bottom: 20px;
 }
 
-.practice-button {
+.quiz-button {
   margin: 10px;
   padding: 20px;
   border: 1px solid #ccc;
@@ -54,30 +54,6 @@
   transition: background-color 0.3s ease;
 }
 
-.practice-button:hover {
-  background-color: #f1f1f1;
-}
-
-.card-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.quiz-card {
-  margin: 10px;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 12px;
-  background-color: #f9f9f9;
-  text-decoration: none;
-  color: #000;
-  font-size: 20px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.quiz-card:hover {
+.quiz-button:hover {
   background-color: #f1f1f1;
 }

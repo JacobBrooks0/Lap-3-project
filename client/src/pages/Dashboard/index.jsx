@@ -19,7 +19,7 @@ export default function Dashboard() {
 
       <div className={style["button-container"]}>
         {quizzes.map(quiz => (
-          <Link key={quiz.id} to={`/practice/${quiz.id}`} className={style["practice-button"]}>
+          <Link key={quiz.id} to={`/practice/${quiz.id}`} className={style["quiz-button"]}>
             {quiz.name}
           </Link>
         ))}
@@ -27,9 +27,9 @@ export default function Dashboard() {
 
       <h2>Test your knowledge</h2>
 
-      <div className={style["card-container"]}>
+      <div className={style["button-container"]}>
         {quizzes.map(quiz => (
-          <Link key={quiz.id} to={`/learn/${quiz.id}`} className={style["quiz-card"]}>
+          <Link key={quiz.id} to={`/learn/${quiz.id}`} className={style["quiz-button"]}>
             {quiz.name}
           </Link>
         ))}

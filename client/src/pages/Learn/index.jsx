@@ -47,6 +47,10 @@ const QuizPage = () => {
     setSelectedOption(null);
   };
 
+  const handleBackToDashboard = () => {
+    window.location.href = '/dashboard';
+  };
+
   return (
     <div className={style['container']}>
       {!showResult ? (
@@ -65,7 +69,12 @@ const QuizPage = () => {
           </div>
         </>
       ) : (
-        <ResultContainer score={score} totalQuestions={selectedQuiz?.questions.length} onRestart={handleRestartQuiz} />
+        <>
+          <ResultContainer score={score} totalQuestions={selectedQuiz?.questions.length} onRestart={handleRestartQuiz} />
+          <button className={style['back-button']} onClick={handleBackToDashboard}>
+            Back to Dashboard
+          </button>
+        </>
       )}
     </div>
   );

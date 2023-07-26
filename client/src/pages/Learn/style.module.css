@@ -64,3 +64,16 @@
 .restart-button:hover {
     background-color: #45a049;
 }
+
+.back-button {
+    margin: 50px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    background-color: #f9f9f9;
+    text-decoration: none;
+    color: #000;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
