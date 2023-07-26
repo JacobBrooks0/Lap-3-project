@@ -11,7 +11,7 @@ export default function User() {
       <nav className={style["nav"]}>
         <NavLink to="/dashboard">Dashboard</NavLink>
         <NavLink to="/games">Games</NavLink>
-        <NavLink to="/learn">Learn</NavLink>
+        <NavLink to="/language">Pick a language</NavLink>
         <NavLink to="/profile">Profile</NavLink>
       </nav>
       <Outlet />
