@@ -11,4 +11,6 @@ userRouter.use(isAuthenticated);
 
 userRouter.delete("/logout", userController.logout);
 
+userRouter.delete("/:user_id", userController.destroy);
+
 module.exports = userRouter;

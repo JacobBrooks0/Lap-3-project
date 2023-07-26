@@ -35,14 +35,15 @@ async function login(req, res) {
     } else {
       //create a new token spec. associated with the user
       const token = await Token.create(user.user_id);
-      res.status(200).json({ authenticated: true, token: token.token, user: data.username });
+      res
+        .status(200)
+        .json({ authenticated: true, token: token.token, user: data.username });
     }
   } catch (err) {
-    console.log(err)
+    console.log(err);
     res.status(403).json({ error: err.message });
   }
 }
-
 
 async function logout(req, res) {
   const token = req.user;
@@ -55,8 +56,26 @@ async function logout(req, res) {
   }
 }
 
+async function destroy(req, res) {
+  const { user_id } = req.params;
+  const user = req.user;
+  try {
+    if (user_id != user.user_id) {
+      throw new Error(
+        "Permission not granted- you cannot delete someone else's profile"
+      );
+    }
+    const userToDelete = await User.getOneById(user_id);
+    const deleteUser = await userToDelete.deleteUser();
+    res.status(204).json({ message: "Successfully deleted" });
+  } catch (error) {
+    res.status(405).json({ error: error.message });
+  }
+}
+
 module.exports = {
   register,
   login,
-  logout
+  logout,
+  destroy,
 };

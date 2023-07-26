@@ -5,7 +5,7 @@ const isAuthenticated = require("../middleware/authenticator");
 const leaderboardController = require("../controllers/leaderboard");
 
 //gets all the leaderboard
-leaderboardRouter.get("/", isAuthenticated, leaderboardController.index);
+leaderboardRouter.get("/", leaderboardController.index);
 
 // //gets a leaderboard by its language id
 leaderboardRouter.get(
