@@ -9,17 +9,15 @@
     "react-router-dom": "^6.14.2",
     "uuid": "^9.0.0"
   },
-  
   "name": "lap-3-project",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "setup-db": "node ./db/setup.js",
     "dev": "nodemon -L ./index.js",
-    "test": "jest --watchAll",
+    "test": "npx jest --detectOpenHandles --coverage",
     "start": "node ./index.js",
-    "coverage": "jest --coverage",
-    "unit-tests": "jest --testPathPattern=/unit/ --watchAll --verbose"
+    "coverage": "jest --coverage"
   },
   "keywords": [],
   "author": "",
