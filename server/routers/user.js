@@ -6,6 +6,7 @@ const userController = require("../controllers/user");
 
 userRouter.post("/register", userController.register);
 userRouter.post("/login", userController.login);
+userRouter.get("/:id", userController.details);
 
 userRouter.use(isAuthenticated);
 

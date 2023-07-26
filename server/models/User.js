@@ -1,11 +1,13 @@
 const db = require("../db/connect");
 
 class User {
-  constructor({ user_id, username, email, password }) {
+  constructor({ user_id, username, email, password, last_login, streak }) {
     this.user_id = user_id;
     this.username = username;
     this.email = email;
     this.password = password;
+    this.last_login = last_login;
+    this.streak = streak;
   }
   //implement all the details that are not null from the table
 
@@ -51,6 +53,33 @@ class User {
       throw new Error("Unable to add new user.");
     } else {
       const newUser = await User.getOneById(newId);
+      return newUser;
+    }
+  }
+
+  async updateUser() {
+    const time = new Date();
+
+    //calculcation of day length
+    let timer = time - this.last_login < 24 * 3600000 ? this.last_login : time;
+    let streak;
+    if (time - this.last_login < 24 * 3600000) {
+      streak = this.streak;
+    } else if (time - this.last_login < 48 * 3600000) {
+      streak = this.streak + 1;
+    } else {
+      streak = 0;
+    }
+
+    const response = await db.query(
+      "UPDATE Users SET last_login = $1, streak = $2 WHERE user_id = $3 RETURNING *;",
+      [timer, streak, this.user_id]
+    );
+
+    if (response.rows.length != 1) {
+      throw new Error("Unable to add new user.");
+    } else {
+      const newUser = await User.getOneById(this.user_id);
       return newUser;
     }
   }

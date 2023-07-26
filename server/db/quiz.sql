@@ -15,6 +15,8 @@ CREATE TABLE Users(
             now()
     ),
     password VARCHAR(60) NOT NULL,
+    last_login TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    streak INT DEFAULT 0,
     PRIMARY KEY (user_id)
 );
 CREATE TABLE token(
@@ -62,9 +64,12 @@ CREATE TABLE Quizzes(
 
 
 INSERT INTO Users (username, email, password)
-VALUES ('Alex', 'alex', 'alex'), ('Roberta', 'roberta', 'roberta'), 
+VALUES ('Alex', 'alex', 'alex'), ('Roberta', 'roberta', 'roberta');
+
+INSERT INTO Users (username, email, password, last_login, streak)
+VALUES 
 -- the password is 1
-('hack', 'hack@streeboys.com', '$2b$10$.pj1LTt4HxpVVg6fZDhdFOMBfiywBTikuDqx3KjDy85aJNyZ4IoJC');
+('hack', 'hack@streeboys.com', '$2b$10$.pj1LTt4HxpVVg6fZDhdFOMBfiywBTikuDqx3KjDy85aJNyZ4IoJC','2023-07-26 16:23:23 +0000', 2);
 
 INSERT INTO Languages (language_name)
 VALUES ('Spanish'), ('Italian');
