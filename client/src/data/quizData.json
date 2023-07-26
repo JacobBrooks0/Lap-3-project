@@ -150,14 +150,14 @@
                     "correctAnswer": "Caffè"
                 },
                 {
-                    "question": "Which Italian dessert translates to 'pick me up'?",
+                    "question": "How do you say 'Can I get the check please?'",
                     "options": [
-                        "Cannoli",
-                        "Gelato",
-                        "Tiramisù",
+                        "Potrei chiamare il conto per favore?",
+                        "Dovrei chiedere il conto per favore?",
+                        "Posso vedere il conto per favore?",
                         "Panna Cotta"
                     ],
-                    "correctAnswer": "Tiramisù"
+                    "correctAnswer": "Posso avere il conto per favore?"
                 },
                 {
                     "question": "What is the word for 'water' in Italian?",
@@ -415,14 +415,14 @@
                     "correctAnswer": "Pizza"
                 },
                 {
-                    "question": "Which Spanish food is made of rice and can be served with various ingredients?",
+                    "question": "How do you ask 'can I get the check please?'",
                     "options": [
-                        "Ravioli",
-                        "Lasaña",
-                        "Risotto",
-                        "Tiramisú"
+                        "¿Puedo tener el menú por favor?",
+                        "¿Podría pagar el menú por favor?",
+                        "¿Me puede dar un café por favor?",
+                        " ¿Puedo tener la cuenta por favor?"
                     ],
-                    "correctAnswer": "Risotto"
+                    "correctAnswer": " ¿Puedo tener la cuenta por favor?"
                 },
                 {
                     "question": "What is the word for 'coffee' in Spanish?",
