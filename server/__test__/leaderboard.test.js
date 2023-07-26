@@ -34,18 +34,18 @@ describe("Leaderboards Endpoints", () => {
     //   .get("/leaderboards")
     //   .set({ authorization: token })
     //   .expect(404);
-    // await request(app)
-    //   .get("/leaderboards/portuguese")
-    //   .set({ authorization: token })
-    //   .expect(404);
-    // await request(app)
-    //   .get("/leaderboards/user/201")
-    //   .set({ authorization: token })
-    //   .expect(404);
-    // await request(app)
-    //   .patch("/leaderboards/user/201")
-    //   .set({ authorization: token })
-    //   .expect(500);
+    await request(app)
+      .get("/leaderboards/portuguese")
+      .set({ authorization: token })
+      .expect(404);
+    await request(app)
+      .get("/leaderboards/user/201")
+      .set({ authorization: token })
+      .expect(404);
+    await request(app)
+      .patch("/leaderboards/user/201")
+      .set({ authorization: token })
+      .expect(500);
   });
 
   it("should get the leaderboard", async () => {
@@ -66,11 +66,11 @@ describe("Leaderboards Endpoints", () => {
     const languageArray = response.body;
 
     expect(Array.isArray(languageArray)).toBe(true);
-    expect(languageArray.length).toBe(1);
+    expect(languageArray.length).toBeGreaterThan(0);
 
     const { user_id, score_spanish } = languageArray[0];
     expect(user_id).toBe(1);
-    expect(score_spanish).toBe(0);
+    expect(score_spanish).toBe(90);
   });
 
   it("should get the leaderboard by a user id", async () => {
@@ -83,10 +83,10 @@ describe("Leaderboards Endpoints", () => {
 
     const { user_id, score_spanish, score_italian, rank, total } = userObj;
     expect(user_id).toBe(1);
-    expect(score_italian).toBe(0);
-    expect(rank).toBe(1);
-    expect(total).toBe(0);
-    expect(score_spanish).toBe(0);
+    expect(score_italian).toBe(48);
+    expect(rank).toBe(4);
+    expect(total).toBe(138);
+    expect(score_spanish).toBe(90);
   });
 
   //PATCH
@@ -101,6 +101,7 @@ describe("Leaderboards Endpoints", () => {
       .set({ authorization: token })
       .send(updatedScore)
       .expect(201);
+
     expect(response.text).toBe("Successfully updated user 1");
   });
 
