@@ -51,7 +51,7 @@ function App() {
                 }
               />
               <Route path="/learn/:quizId" element={<Learn setSelectedLanguage={setSelectedLanguage} />} />
-              <Route path="practice/quizId" element={<Practice />} />
+              <Route path="practice/:quizId" element={<Practice />} />
               <Route path="/games" element={<Games />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="*" element={<NotFound />} />
