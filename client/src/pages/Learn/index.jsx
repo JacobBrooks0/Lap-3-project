@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import Question from '../../components/Question';
 import AnswerOption from '../../components/AnswerOption';
 import ResultContainer from '../../components/ResultPage';
@@ -10,17 +11,21 @@ const QuizPage = () => {
   const [showResult, setShowResult] = useState(false);
   const [score, setScore] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
+
+  const { quizId } = useParams();
   const [selectedQuiz, setSelectedQuiz] = useState(null);
 
   useEffect(() => {
-    setSelectedQuiz(quizData.quizzes[0]);
-  }, []);
+    const quiz = quizData.quizzes.find((quiz) => quiz.id === parseInt(quizId, 10));
+    setSelectedQuiz(quiz);
+
+  }, [quizId]);
 
   const handleAnswerClick = (selectedOption) => {
     const currentQuiz = selectedQuiz.questions[currentQuestion];
 
     if (selectedOption === currentQuiz.correctAnswer) {
-      setScore(score + 1);
+      setScore(score + 8);
     }
     setSelectedOption(selectedOption);
     setShowResult(false);
@@ -60,7 +65,7 @@ const QuizPage = () => {
           </div>
         </>
       ) : (
-        <ResultContainer score={score} totalQuestions={selectedQuiz?.questions.length} onRestart={handleRestartQuiz} />
+        <ResultContainer score={score} totalQuestions={40} onRestart={handleRestartQuiz} />
       )}
     </div>
   );

@@ -30,9 +30,10 @@ function App() {
 
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/games" element={<Games />} />
-            <Route path="/learn" element={<Learn />} />
+
+            <Route path="/learn/:quizId" element={<Learn />} />
             <Route path="/profile" element={<Profile />} />
-            <Route path="/language" element={<Language/>} />
+            <Route path="/language" element={<Language />} />
             <Route path="*" element={<NotFound />} />
           </Route>
           <Route path="*" element={<Navigate to="/login" />} />
