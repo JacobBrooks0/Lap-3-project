@@ -76,8 +76,9 @@ async function getAdvancedQuizzes(req, res) {
 }
 
 async function getAllInfo(req, res) {
+  const id = req.user.user_id;
   try {
-    const { id, language_id, quiz_id } = req.params;
+    const { language_id, quiz_id } = req.params;
     const quizInfo = await Quiz.getAllInfoForOneUser(id, language_id, quiz_id);
     res.status(200).json(quizInfo);
   } catch (err) {

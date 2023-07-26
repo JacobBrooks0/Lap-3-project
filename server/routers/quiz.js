@@ -36,7 +36,7 @@ quizRouter.get(
 
 //GET route for all information about a quiz user and language
 quizRouter.get(
-  "/:id/:language_id/:quiz_id",
+  "/:language_id/:quiz_id",
   isAuthenticated,
   quizController.getAllInfo
 );
