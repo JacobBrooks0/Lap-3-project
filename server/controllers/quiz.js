@@ -106,7 +106,6 @@ async function updateQuizInstance(req, res) {
       data.quiz_id
     );
     const instanceToUpdate = await newEntry.updateQuizInstance(data);
-    console.log(instanceToUpdate);
     const updateLeaderboard = await Leaderboard.updateLeaderboards(
       instanceToUpdate
     );

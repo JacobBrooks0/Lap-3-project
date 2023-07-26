@@ -15,10 +15,9 @@
   "scripts": {
     "setup-db": "node ./db/setup.js",
     "dev": "nodemon -L ./index.js",
-    "test": "jest --setupFiles ./__tests__/integration/config.js --watchAll --testPathPattern=/integration/ --detectOpenHandles --runInBand --verbose",
+    "test": "npx jest --detectOpenHandles --coverage",
     "start": "node ./index.js",
-    "coverage": "jest --coverage",
-    "unit-tests": "jest --testPathPattern=/unit/ --watchAll --verbose"
+    "coverage": "jest --coverage"
   },
   "keywords": [],
   "author": "",
@@ -26,6 +25,8 @@
   "description": "",
   "devDependencies": {
     "jest": "^29.6.1",
+    "jsdom": "^22.1.0",
+    "live-server": "^1.2.2",
     "nodemon": "^3.0.1",
     "supertest": "^6.3.3"
   }
