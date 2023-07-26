@@ -16,9 +16,9 @@ const QuizPage = () => {
   const [selectedQuiz, setSelectedQuiz] = useState(null);
 
   useEffect(() => {
-    const quiz = quizData.quizzes.find((quiz) => quiz.id === parseInt(quizId, 10));
+    const parsedQuizId = parseInt(quizId, 10);
+    const quiz = quizData.quizzes.find((quiz) => quiz.id === parsedQuizId);
     setSelectedQuiz(quiz);
-
   }, [quizId]);
 
   const handleAnswerClick = (selectedOption) => {

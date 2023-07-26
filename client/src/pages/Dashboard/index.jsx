@@ -1,34 +1,29 @@
-import React from "react";
-import { Link } from 'react-router-dom';
-
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+import quizData from "../../data/quizData.json"
 import style from "./style.module.css";
+import LanguageContext from "../../contexts/Language"
 
 export default function Dashboard() {
-  const quizzes = [
-    { id: 1, name: "Nouns" },
-    { id: 2, name: "Basic Grammar" },
-    { id: 3, name: "Food" },
-    { id: 4, name: "Information" },
-    { id: 5, name: "Bookings" },
-  ];
+  const { selectedLanguage } = useContext(LanguageContext);
+
+  const filteredQuiz = quizData.quizzes.filter(
+    (quiz) => quiz.language === selectedLanguage
+  );
 
   return (
     <div className={style["container"]}>
-
       <h2>Practice Rounds</h2>
-
       <div className={style["button-container"]}>
-        {quizzes.map(quiz => (
+        {filteredQuiz.map((quiz) => (
           <Link key={quiz.id} to={`/practice/${quiz.id}`} className={style["quiz-button"]}>
             {quiz.name}
           </Link>
         ))}
       </div>
-
       <h2>Test your knowledge</h2>
-
       <div className={style["button-container"]}>
-        {quizzes.map(quiz => (
+        {filteredQuiz.map((quiz) => (
           <Link key={quiz.id} to={`/learn/${quiz.id}`} className={style["quiz-button"]}>
             {quiz.name}
           </Link>
@@ -36,19 +31,4 @@ export default function Dashboard() {
       </div>
     </div>
   );
-
-
-  // const handlePracticeClick = (selectedOption) => {
-
-  //   setSelectedOption(selectedOption);
-
-  // }
-  // return (
-  //   <>
-  //     <main id="dashboard" className={style["container"]}>
-
-
-  //     </main>
-  //   </>
-  // );
 }

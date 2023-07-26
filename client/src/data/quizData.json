@@ -83,7 +83,7 @@
                     "correctAnswer": "Sì"
                 },
                 {
-                    "question": "What does 'scusa' mean in English?",
+                    "question": "What does 'scusa' mean in Italian?",
                     "options": [
                         "Excuse me",
                         "Thank you",
@@ -174,27 +174,27 @@
         {
             "id": 4,
             "language": "Italian",
-            "name": "Information/Asking for Directions/Bathroom",
+            "name": "Information",
             "questions": [
                 {
                     "question": "How do you ask 'Where is the train station?'",
                     "options": [
                         "Dov'è il ristorante?",
                         "Dov'è il bagno?",
-                        "Dov'è la stazione?",
-                        "Dov'è l'albergo?"
+                        "Dov'è la stazione dei treni?",
+                        "Dov'è l'hotel?"
                     ],
-                    "correctAnswer": "Dov'è la stazione?"
+                    "correctAnswer": "Dov'è la stazione dei treni?"
                 },
                 {
                     "question": "If you want to know the time, how do you ask 'What time is it?'",
                     "options": [
-                        "Che ore sono?",
+                        "Che ora è?",
                         "Come ti chiami?",
                         "Quanto costa?",
                         "Che giorno è oggi?"
                     ],
-                    "correctAnswer": "Che ore sono?"
+                    "correctAnswer": "Che ora è?"
                 },
                 {
                     "question": "How do you ask someone's name in Italian?",
@@ -202,24 +202,24 @@
                         "Come ti chiami?",
                         "Quanti anni hai?",
                         "Dove abiti?",
-                        "Che lavoro fai?"
+                        "Cosa fai nella vita?"
                     ],
                     "correctAnswer": "Come ti chiami?"
                 },
                 {
-                    "question": "What does 'uscita' mean in English?",
+                    "question": "What does 'uscita' mean in Italian?",
                     "options": [
-                        "Entrance",
-                        "Open",
-                        "Exit",
-                        "Push"
+                        "Entrata",
+                        "Aperto",
+                        "Uscita",
+                        "Spingere"
                     ],
-                    "correctAnswer": "Exit"
+                    "correctAnswer": "Uscita"
                 },
                 {
                     "question": "If you need to use the restroom in Italy, what do you ask?",
                     "options": [
-                        "Puoi aiutarmi?",
+                        "Mi puoi aiutare?",
                         "Dov'è il bagno?",
                         "Quanto costa?",
                         "Parli inglese?"
@@ -237,7 +237,7 @@
                     "question": "How do you ask 'Do you have a reservation?'",
                     "options": [
                         "Parli inglese?",
-                        "Posso pagare con carta?",
+                        "Posso pagare con la carta?",
                         "Hai una prenotazione?",
                         "Dove posso mangiare?"
                     ],
@@ -246,12 +246,12 @@
                 {
                     "question": "What is 'hotel' in Italian?",
                     "options": [
-                        "Albergo",
+                        "Hotel",
                         "Ospedale",
                         "Ristorante",
                         "Banca"
                     ],
-                    "correctAnswer": "Albergo"
+                    "correctAnswer": "Hotel"
                 },
                 {
                     "question": "If you need to change your booking time, how do you ask?",
@@ -264,7 +264,292 @@
                     "correctAnswer": "Posso cambiare l'orario?"
                 },
                 {
-                    "question": "What does 'una camera singola' mean in English?",
+                    "question": "What does 'una camera singola' mean in Italian?",
+                    "options": [
+                        "Un biglietto singolo",
+                        "Una camera singola",
+                        "Una camera doppia",
+                        "Il conto, per favore"
+                    ],
+                    "correctAnswer": "Una camera singola"
+                },
+                {
+                    "question": "How do you ask 'Is breakfast included?'",
+                    "options": [
+                        "È incluso la colazione?",
+                        "A che ora chiude?",
+                        "Quanto costa?",
+                        "Dove si trova?"
+                    ],
+                    "correctAnswer": "È incluso la colazione?"
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "language": "Spanish",
+            "name": "Nouns",
+            "questions": [
+                {
+                    "question": "What is 'dog' in Spanish?",
+                    "options": [
+                        "Perro",
+                        "Gato",
+                        "Conejo",
+                        "Pájaro"
+                    ],
+                    "correctAnswer": "Perro"
+                },
+                {
+                    "question": "How do you say 'book' in Spanish?",
+                    "options": [
+                        "Libro",
+                        "Casa",
+                        "Pelota",
+                        "Flor"
+                    ],
+                    "correctAnswer": "Libro"
+                },
+                {
+                    "question": "What is 'car' in Spanish?",
+                    "options": [
+                        "Coche",
+                        "Tren",
+                        "Bicicleta",
+                        "Avión"
+                    ],
+                    "correctAnswer": "Coche"
+                },
+                {
+                    "question": "How do you say 'table' in Spanish?",
+                    "options": [
+                        "Mesa",
+                        "Silla",
+                        "Cama",
+                        "Ventana"
+                    ],
+                    "correctAnswer": "Mesa"
+                },
+                {
+                    "question": "What is 'computer' in Spanish?",
+                    "options": [
+                        "Computadora",
+                        "Teléfono",
+                        "Televisión",
+                        "Reloj"
+                    ],
+                    "correctAnswer": "Computadora"
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "language": "Spanish",
+            "name": "Basic Grammar",
+            "questions": [
+                {
+                    "question": "What is the word for 'good morning' in Spanish?",
+                    "options": [
+                        "Buen día",
+                        "Buenas noches",
+                        "Buenas tardes",
+                        "Hola"
+                    ],
+                    "correctAnswer": "Buen día"
+                },
+                {
+                    "question": "Which word means 'yes' in Spanish?",
+                    "options": [
+                        "Sí",
+                        "No",
+                        "Tal vez",
+                        "Gracias"
+                    ],
+                    "correctAnswer": "Sí"
+                },
+                {
+                    "question": "What does 'perdón' mean in Spanish?",
+                    "options": [
+                        "Excuse me",
+                        "Thank you",
+                        "Please",
+                        "Sorry"
+                    ],
+                    "correctAnswer": "Excuse me"
+                },
+                {
+                    "question": "How do you say 'I love you' in Spanish?",
+                    "options": [
+                        "Te amo",
+                        "Lo siento",
+                        "Por favor",
+                        "Disculpe"
+                    ],
+                    "correctAnswer": "Te amo"
+                },
+                {
+                    "question": "What is the translation of 'beautiful'?",
+                    "options": [
+                        "Hermoso",
+                        "Feo",
+                        "Grande",
+                        "Pequeño"
+                    ],
+                    "correctAnswer": "Hermoso"
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "language": "Spanish",
+            "name": "Foods",
+            "questions": [
+                {
+                    "question": "What is 'pizza' in Spanish?",
+                    "options": [
+                        "Pizza",
+                        "Pasta",
+                        "Pan",
+                        "Pescado"
+                    ],
+                    "correctAnswer": "Pizza"
+                },
+                {
+                    "question": "Which Spanish food is made of rice and can be served with various ingredients?",
+                    "options": [
+                        "Ravioli",
+                        "Lasaña",
+                        "Risotto",
+                        "Tiramisú"
+                    ],
+                    "correctAnswer": "Risotto"
+                },
+                {
+                    "question": "What is the word for 'coffee' in Spanish?",
+                    "options": [
+                        "Café",
+                        "Chocolate",
+                        "Vino",
+                        "Té"
+                    ],
+                    "correctAnswer": "Café"
+                },
+                {
+                    "question": "Which Spanish dessert translates to 'pick me up'?",
+                    "options": [
+                        "Cannoli",
+                        "Gelato",
+                        "Tiramisú",
+                        "Panna Cotta"
+                    ],
+                    "correctAnswer": "Tiramisú"
+                },
+                {
+                    "question": "What is the word for 'water' in Spanish?",
+                    "options": [
+                        "Agua",
+                        "Leche",
+                        "Zumo",
+                        "Cerveza"
+                    ],
+                    "correctAnswer": "Agua"
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "language": "Spanish",
+            "name": "Information",
+            "questions": [
+                {
+                    "question": "How do you ask 'Where is the train station?'",
+                    "options": [
+                        "¿Dónde está el restaurante?",
+                        "¿Dónde está el baño?",
+                        "¿Dónde está la estación de tren?",
+                        "¿Dónde está el hotel?"
+                    ],
+                    "correctAnswer": "¿Dónde está la estación de tren?"
+                },
+                {
+                    "question": "If you want to know the time, how do you ask 'What time is it?'",
+                    "options": [
+                        "¿Qué hora es?",
+                        "¿Cómo te llamas?",
+                        "¿Cuánto cuesta?",
+                        "¿Qué día es hoy?"
+                    ],
+                    "correctAnswer": "¿Qué hora es?"
+                },
+                {
+                    "question": "How do you ask someone's name in Spanish?",
+                    "options": [
+                        "¿Cómo te llamas?",
+                        "¿Cuántos años tienes?",
+                        "¿Dónde vives?",
+                        "¿A qué te dedicas?"
+                    ],
+                    "correctAnswer": "¿Cómo te llamas?"
+                },
+                {
+                    "question": "What does 'salida' mean in Spanish?",
+                    "options": [
+                        "Entrada",
+                        "Abierto",
+                        "Salida",
+                        "Empujar"
+                    ],
+                    "correctAnswer": "Salida"
+                },
+                {
+                    "question": "If you need to use the restroom in Spain, what do you ask?",
+                    "options": [
+                        "¿Puedes ayudarme?",
+                        "¿Dónde está el baño?",
+                        "¿Cuánto cuesta?",
+                        "¿Hablas inglés?"
+                    ],
+                    "correctAnswer": "¿Dónde está el baño?"
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "language": "Spanish",
+            "name": "Bookings",
+            "questions": [
+                {
+                    "question": "How do you ask 'Do you have a reservation?'",
+                    "options": [
+                        "¿Hablas inglés?",
+                        "¿Puedo pagar con tarjeta?",
+                        "¿Tienes una reserva?",
+                        "¿Dónde puedo comer?"
+                    ],
+                    "correctAnswer": "¿Tienes una reserva?"
+                },
+                {
+                    "question": "What is 'hotel' in Spanish?",
+                    "options": [
+                        "Hotel",
+                        "Hospital",
+                        "Restaurante",
+                        "Banco"
+                    ],
+                    "correctAnswer": "Hotel"
+                },
+                {
+                    "question": "If you need to change your booking time, how do you ask?",
+                    "options": [
+                        "¿Está incluido?",
+                        "¿Puedo pagar en efectivo?",
+                        "¿Puedo cambiar el horario?",
+                        "¿Hablas español?"
+                    ],
+                    "correctAnswer": "¿Puedo cambiar el horario?"
+                },
+                {
+                    "question": "What does 'una habitación individual' mean in Spanish?",
                     "options": [
                         "A single ticket",
                         "A single room",
@@ -276,12 +561,12 @@
                 {
                     "question": "How do you ask 'Is breakfast included?'",
                     "options": [
-                        "La colazione è inclusa?",
-                        "A che ora chiude?",
-                        "Quanto costa?",
-                        "Dove si trova?"
+                        "¿Está incluido el desayuno?",
+                        "¿A qué hora cierra?",
+                        "¿Cuánto cuesta?",
+                        "¿Dónde está ubicado?"
                     ],
-                    "correctAnswer": "La colazione è inclusa?"
+                    "correctAnswer": "¿Está incluido el desayuno?"
                 }
             ]
         }

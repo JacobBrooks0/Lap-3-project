@@ -1,4 +1,5 @@
 import { Routes, Route, Navigate } from "react-router-dom";
+import { useState } from "react";
 
 import {
   Login,
@@ -15,30 +16,45 @@ import { AuthProvider } from "./contexts";
 import { Welcome, User } from "./layouts";
 
 import "./App.css";
+import { LanguageProvider } from "./contexts/Language";
 
 function App() {
+  const [selectedLanguage, setSelectedLanguage] = useState("");
+
   return (
     <>
-      <AuthProvider>
-        <Routes>
-          <Route element={<Welcome />}>
-            <Route path="/" element={<GetStarted />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-          </Route>
-          <Route element={<User />}>
+      <LanguageProvider>
+        <AuthProvider>
+          <Routes>
+            <Route element={<Welcome />}>
+              <Route path="/" element={<GetStarted />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+            </Route>
+            <Route element={<User />}>
 
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/games" element={<Games />} />
+              <Route
+                path="/language"
+                element={<Language selectedLanguage={selectedLanguage} />}
+              />
+              <Route
+                path="/dashboard"
+                element={
+                  <Dashboard
+                    selectedLanguage={selectedLanguage}
+                  />
+                }
+              />
+              <Route path="/learn/:quizId" element={<Learn />} />
 
-            <Route path="/learn/:quizId" element={<Learn />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/language" element={<Language />} />
-            <Route path="*" element={<NotFound />} />
-          </Route>
-          <Route path="*" element={<Navigate to="/login" />} />
-        </Routes>
-      </AuthProvider>
+              <Route path="/games" element={<Games />} />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="*" element={<NotFound />} />
+            </Route>
+            <Route path="*" element={<Navigate to="/login" />} />
+          </Routes>
+        </AuthProvider>
+      </LanguageProvider>
     </>
   );
 }
