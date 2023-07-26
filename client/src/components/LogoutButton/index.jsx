@@ -14,10 +14,10 @@ export default function LogoutButton() {
 
     try {
       localStorage.removeItem("token");
-      writePopup("You're being logged out")
+      await writePopup("You're being logged out");
       //we don't care whether the token has been deleted on the db or not
-      await axios.delete(`${import.meta.env.VITE_SERVER}/users/logout`, config);
-      goTo("/login");
+      axios.delete(`${import.meta.env.VITE_SERVER}/users/logout`, config);
+      goTo("/");
     } catch (error) {
       writePopup(error.response.data.error);
       console.log(error);

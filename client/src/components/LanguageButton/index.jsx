@@ -8,12 +8,12 @@ export default function LanguageButton() {
 
     return (
         <>
-            <div className={style["Language-buttons"]}>
+            <div className={style["language-buttons"]}>
                 <Link to="/dashboard" onClick={() => setSelectedLanguage("Spanish")}>
-                    <img src="..." alt="Spanish flag" />
+                    <img src="https://www.countryflags.com/wp-content/uploads/spain-flag-png-large.png" alt="Spanish flag" />
                 </Link>
                 <Link to="/dashboard" onClick={() => setSelectedLanguage("Italian")}>
-                    <img src="..." alt="Italian flag" />
+                    <img src="https://www.countryflags.com/wp-content/uploads/italy-flag-png-large.png" alt="Italian flag" />
                 </Link>
             </div>
         </>
