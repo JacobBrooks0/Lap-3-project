@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Cherry+Bomb+One&family=Gloria+Hallelujah&family=Oleo+Script+Swash+Caps:wght@400;700&family=Sen:wght@400;500;600;700;800&family=Share+Tech+Mono&display=swap");
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -15,4 +17,8 @@ body {
   min-width: 320px;
   min-height: 100vh;
   display: grid;
+}
+
+* {
+  font-family: 'Share Tech Mono';
 }

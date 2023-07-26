@@ -2,15 +2,14 @@ import style from "./style.module.css";
 
 export default function UsernameInput() {
   return (
-    <fieldset className={style["input-container"]}>
-      <label>Username: </label>
       <input
+        className={style["input"]}
         type="text"
         name="username"
-        placeholder="Username"
+      placeholder="Username"
+      autoComplete="off"
         size={1}
         required
       />
-    </fieldset>
   );
 }
