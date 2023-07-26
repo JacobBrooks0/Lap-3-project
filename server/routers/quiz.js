@@ -17,7 +17,7 @@ quizRouter.get(
   isAuthenticated,
   quizController.showByLanguageId
 );
-//GET route tto return all the quiz by lvl
+//GET route to return all the quiz by lvl
 quizRouter.get(
   "/level/beginner",
   isAuthenticated,
@@ -45,9 +45,6 @@ quizRouter.get(
 quizRouter.post("/", isAuthenticated, quizController.createQuizInstance);
 
 //quizRouter.patch
-quizRouter.patch(
-  "/:user_id",
-  isAuthenticated,
-  quizController.updateQuizInstance
-);
+quizRouter.patch("/", isAuthenticated, quizController.updateQuizInstance);
+
 module.exports = quizRouter;
