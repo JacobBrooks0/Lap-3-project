@@ -50,6 +50,10 @@ class Quiz {
       "SELECT * FROM Quizzes WHERE user_id = $1",
       [user_id]
     );
+
+    if (response.rows.length === 0) {
+      throw new Error("No Entry available for this user");
+    }
     const quizzes = response.rows.map((quizData) => new Quiz(quizData));
     return quizzes;
   }
@@ -60,6 +64,11 @@ class Quiz {
       "SELECT * FROM Quizzes WHERE language_id = $1",
       [languageId]
     );
+
+    if (response.rows.length === 0) {
+      throw new Error("No Entry available for this user");
+    }
+
     const quizzes = response.rows.map((quizData) => new Quiz(quizData));
     return quizzes;
   }

@@ -30,24 +30,25 @@ describe("Leaderboards Endpoints", () => {
   });
 
   //GET
-  //   it("Should give correct status codes of failure when no entries available", async () => {
-  // await request(app)
-  //   .get("/leaderboards")
-  //   .set({ authorization: token })
-  //   .expect(404);
-  // await request(app)
-  //   .get("/leaderboards/portuguese")
-  //   .set({ authorization: token })
-  //   .expect(404);
-  // await request(app)
-  //   .get("/leaderboards/user/201")
-  //   .set({ authorization: token })
-  //   .expect(404);
-  // await request(app)
-  //   .patch("/leaderboards/user/201")
-  //   .set({ authorization: token })
-  //   .expect(500);
-  //   });
+  it("Should give correct status codes of failure when no entries available", async () => {
+    await request(app).get("/quizzes").expect(403);
+    await request(app)
+      .get("/quizzes/6")
+      .set({ authorization: token })
+      .expect(404);
+    await request(app)
+      .get("/quizzes/user/55")
+      .set({ authorization: token })
+      .expect(404);
+    await request(app)
+      .get("/quizzes/language/7")
+      .set({ authorization: token })
+      .expect(404);
+    await request(app)
+      .get("/quizzes/7/7/7")
+      .set({ authorization: token })
+      .expect(404);
+  });
 
   it("should get all quizzes", async () => {
     const response = await request(app)
@@ -210,6 +211,19 @@ describe("Leaderboards Endpoints", () => {
     expect(beginner_score).toBe(16);
     expect(intermediate_score).toBe(5);
     expect(advanced_score).toBe(15);
+  });
+
+  it("Should fail if the data sent isn't correct", async () => {
+    const updatedScore = {
+      language_id: 2,
+      beginner_score: 14,
+    };
+
+    const response = await request(app)
+      .patch(`/quizzes/2`)
+      .set({ authorization: token })
+      .send(updatedScore)
+      .expect(500);
   });
 
   //POST

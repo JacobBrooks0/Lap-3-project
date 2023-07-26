@@ -16,7 +16,7 @@ async function isAuthenticated(req, res, next) {
         next(); // User is authenticated and can access the route
       } else {
         // Token is invalid or doesn't match any user in the database
-        res.status(401).json({ error: "Unauthorised" });
+        res.status(403).json({ error: "Unauthorised" });
       }
     } catch (err) {
       console.log(err);
@@ -24,7 +24,7 @@ async function isAuthenticated(req, res, next) {
     }
   } else {
     // Token is missing or not valid
-    res.status(401).json({ error: "Unauthorised" });
+    res.status(403).json({ error: "Unauthorised" });
   }
 }
 
