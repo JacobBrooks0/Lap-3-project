@@ -13,7 +13,7 @@ export default function Dashboard() {
 
   return (
     <div className={style["container"]}>
-      <h2>Practice Rounds</h2>
+      <h2>Practice your skills</h2>
       <div className={style["button-container"]}>
         {filteredQuiz.map((quiz) => (
           <Link key={quiz.id} to={`/practice/${quiz.id}`} className={style["quiz-button"]}>

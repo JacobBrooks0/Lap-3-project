@@ -37,7 +37,7 @@ export default function Login() {
         localStorage.setItem("token", data.token);
         setUser(data.user);
         // await writePopup("Logging in ...")
-        goTo("/dashboard");
+        goTo("/language");
       }
     } catch (error) {
       writePopup(error.response.data.error);
@@ -49,9 +49,8 @@ export default function Login() {
   return (
     <>
       <div
-        className={`${hash !== "#fw" ? style["f-transition"] : ""} ${
-          style["container"]
-        }`}
+        className={`${hash !== "#fw" ? style["f-transition"] : ""} ${style["container"]
+          }`}
       >
         <h1>Login</h1>
         <form id="login-form" onSubmit={loginUser}>
