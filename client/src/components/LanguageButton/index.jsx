@@ -1,18 +1,21 @@
-import React from "react"
-import {Link} from 'react-router-dom'
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import style from "./style.module.css";
+import LanguageContext from "../../contexts/Language";
 
 export default function LanguageButton() {
+    const { setSelectedLanguage } = useContext(LanguageContext);
 
-    return(
+    return (
         <>
-        <div className={style["Language-buttons"]}>
-             <Link to="/dashboard"> <img src="data:image/png;base64,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" alt="Spanish-flag"/></Link>
-             <Link to="/dashboard"> <img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/03/Flag_of_Italy.svg/800px-Flag_of_Italy.svg.png?20111003040337" alt="Italian-flag"/></Link>
-        </div>
-        
-        
+            <div className={style["language-buttons"]}>
+                <Link to="/dashboard" onClick={() => setSelectedLanguage("Spanish")}>
+                    <img src="https://www.countryflags.com/wp-content/uploads/spain-flag-png-large.png" alt="Spanish flag" />
+                </Link>
+                <Link to="/dashboard" onClick={() => setSelectedLanguage("Italian")}>
+                    <img src="https://www.countryflags.com/wp-content/uploads/italy-flag-png-large.png" alt="Italian flag" />
+                </Link>
+            </div>
         </>
-    )
-
+    );
 }

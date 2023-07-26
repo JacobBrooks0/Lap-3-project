@@ -17,7 +17,7 @@ async function show(req, res) {
     );
     res.status(200).send(result);
   } catch (err) {
-    res.status(400).json({ error: err.message });
+    res.status(404).json({ error: err.message });
   }
 }
 
@@ -27,7 +27,7 @@ async function showUser(req, res) {
     const result = await Leaderboard.getLeaderboardByUserId(id);
     res.status(200).send(result);
   } catch (err) {
-    res.status(400).json({ error: err.message });
+    res.status(404).json({ error: err.message });
   }
 }
 

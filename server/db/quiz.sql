@@ -8,7 +8,12 @@ DROP TABLE IF EXISTS token;
 CREATE TABLE Users(
     user_id INT GENERATED ALWAYS AS IDENTITY,
     username VARCHAR(30) NOT NULL UNIQUE,
-    email VARCHAR(40) NOT NULL UNIQUE,
+    email VARCHAR(40) UNIQUE,
+    created_date FLOAT DEFAULT extract(
+        epoch
+        from
+            now()
+    ),
     password VARCHAR(60) NOT NULL,
     PRIMARY KEY (user_id)
 );
@@ -57,7 +62,9 @@ CREATE TABLE Quizzes(
 
 
 INSERT INTO Users (username, email, password)
-VALUES ('Alex', 'alex', 'alex'), ('Roberta', 'roberta', 'roberta');
+VALUES ('Alex', 'alex', 'alex'), ('Roberta', 'roberta', 'roberta'), 
+-- the password is 1
+('hack', 'hack@streeboys.com', '$2b$10$.pj1LTt4HxpVVg6fZDhdFOMBfiywBTikuDqx3KjDy85aJNyZ4IoJC');
 
 INSERT INTO Languages (language_name)
 VALUES ('Spanish'), ('Italian');

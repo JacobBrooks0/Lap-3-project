@@ -5,8 +5,8 @@ import axios from "axios";
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  // const [user, setUser] = useState(null);
-  const [user, setUser] = useState("Hackstreet Boys");
+  const [user, setUser] = useState(null);
+  // const [user, setUser] = useState("Hackstreet Boys");
   const goTo = useNavigate();
 
   useEffect(() => {
@@ -14,7 +14,7 @@ export const AuthProvider = ({ children }) => {
       const token = localStorage.getItem("token");
       //if token is undefined, user must also be null
       if (!token) {
-        // setUser(null);
+        setUser(null);
         return;
       }
 
@@ -25,8 +25,8 @@ export const AuthProvider = ({ children }) => {
           },
         };
         const { status, data } = await axios.get(
-          `${process.env.SERVER}/users`,
-          config,
+          `${import.meta.env.VITE_SERVER}/users`,
+          config
         );
         if (status === 200) {
           setUser(data);

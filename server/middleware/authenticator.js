@@ -1,9 +1,9 @@
-const Token = require("../models/token");
+const Token = require("../models/Token");
 
 // Middleware function to check if a user is authenticated
 async function isAuthenticated(req, res, next) {
   const authToken = req.headers["authorization"];
-
+  
   // Check if the authentication token is present and valid
   if (authToken && Token.isValidAuthToken(authToken)) {
     try {
@@ -24,7 +24,7 @@ async function isAuthenticated(req, res, next) {
     }
   } else {
     // Token is missing or not valid
-    res.status(401).json({ error: "Unauthorised" });
+    res.status(403).json({ error: "Unauthorised" });
   }
 }
 
