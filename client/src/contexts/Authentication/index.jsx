@@ -37,11 +37,11 @@ export const AuthProvider = ({ children }) => {
           setTimeout(() => goTo("/login"), 2000);
         }
       } catch (error) {
-        console.log(error);
+        console.log(error)
       }
     };
 
-    getUserDataByToken();
+    // getUserDataByToken();
   }, [localStorage.getItem("token")]);
 
   return (
