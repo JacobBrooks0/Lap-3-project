@@ -25,7 +25,6 @@ async function register(req, res) {
 async function login(req, res) {
   const data = req.body;
   try {
-    console.log(data.username);
     const user = await User.getOneByUsername(data.username);
     console.log(user);
     console.log("User", user);
@@ -43,6 +42,7 @@ async function login(req, res) {
     res.status(403).json({ error: err.message });
   }
 }
+
 
 async function logout(req, res) {
   const token = req.user;

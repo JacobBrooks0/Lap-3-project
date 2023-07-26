@@ -1,4 +1,5 @@
 import { Routes, Route, Navigate } from "react-router-dom";
+import { useState } from "react";
 
 import {
   Login,
@@ -15,31 +16,49 @@ import { AuthProvider } from "./contexts";
 import { Welcome, User } from "./layouts";
 
 import "./App.css";
+import { LanguageProvider } from "./contexts/Language";
 import { Popup } from "./components";
 
+
 function App() {
+  
+  const [selectedLanguage, setSelectedLanguage] = useState("");
+
   return (
     <>
-      <AuthProvider>
-        <Routes>
-          <Route element={<Welcome />}>
-            <Route path="/" element={<GetStarted />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-          </Route>
-          <Route element={<User />}>
+     <LanguageProvider>
+        <AuthProvider>
+          <Routes>
+            <Route element={<Welcome />}>
+              <Route path="/" element={<GetStarted />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+            </Route>
+            <Route element={<User />}>
 
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/games" element={<Games />} />
-            <Route path="/learn" element={<Learn />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/language" element={<Language/>} />
-            <Route path="*" element={<NotFound />} />
-          </Route>
-          <Route path="*" element={<Navigate to="/login" />} />
-        </Routes>
-        <Popup />
-      </AuthProvider>
+              <Route
+                path="/language"
+                element={<Language selectedLanguage={selectedLanguage} />}
+              />
+              <Route
+                path="/dashboard"
+                element={
+                  <Dashboard
+                    selectedLanguage={selectedLanguage}
+                    setSelectedLanguage={setSelectedLanguage}
+                  />
+                }
+              />
+              <Route path="/learn/:quizId" element={<Learn setSelectedLanguage={setSelectedLanguage} />} />
+              <Route path="/games" element={<Games />} />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="*" element={<NotFound />} />
+            </Route>
+            <Route path="*" element={<Navigate to="/login" />} />
+          </Routes>
+          <Popup />
+        </AuthProvider>
+      </LanguageProvider>
     </>
   );
 }
