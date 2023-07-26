@@ -1,20 +1,25 @@
 import React, { useState, useEffect } from 'react';
+import { useParams, Link } from 'react-router-dom';
 import Question from '../../components/Question';
 import AnswerOption from '../../components/AnswerOption';
 import ResultContainer from '../../components/ResultPage';
 import quizData from '../../data/quizData.json';
 import style from './style.module.css';
 
-const QuizPage = () => {
+const QuizPage = ({ setSelectedLanguage }) => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showResult, setShowResult] = useState(false);
   const [score, setScore] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
+
+  const { quizId } = useParams();
   const [selectedQuiz, setSelectedQuiz] = useState(null);
 
   useEffect(() => {
-    setSelectedQuiz(quizData.quizzes[0]);
-  }, []);
+    const parsedQuizId = parseInt(quizId, 10);
+    const quiz = quizData.quizzes.find((quiz) => quiz.id === parsedQuizId);
+    setSelectedQuiz(quiz);
+  }, [quizId]);
 
   const handleAnswerClick = (selectedOption) => {
     const currentQuiz = selectedQuiz.questions[currentQuestion];
@@ -42,6 +47,10 @@ const QuizPage = () => {
     setSelectedOption(null);
   };
 
+  const handleBackToDashboard = () => {
+    setSelectedLanguage(selectedQuiz.language);
+  };
+
   return (
     <div className={style['container']}>
       {!showResult ? (
@@ -60,7 +69,14 @@ const QuizPage = () => {
           </div>
         </>
       ) : (
-        <ResultContainer score={score} totalQuestions={selectedQuiz?.questions.length} onRestart={handleRestartQuiz} />
+        <>
+          <ResultContainer score={score} totalQuestions={selectedQuiz?.questions.length} onRestart={handleRestartQuiz} />
+          <Link to="/dashboard">
+            <button className={style['back-button']} onClick={handleBackToDashboard}>
+              Back to Dashboard
+            </button>
+          </Link>
+        </>
       )}
     </div>
   );
