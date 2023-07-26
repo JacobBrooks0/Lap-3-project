@@ -10,7 +10,7 @@ export const writePopup = async (message) => {
   popup.innerHTML = message;
   popup.className = `${style["container"]} popup-fade-in`;
 
-  await new Promise((resolve) => setTimeout(resolve, 4000));
+  await new Promise((resolve) => setTimeout(resolve, 3000));
 
   popup.className = `${style["container"]}`;
   await new Promise((resolve) => setTimeout(resolve, 1000));

@@ -1,6 +1,8 @@
-const User = require("../models/User");
+require("dotenv").config();
 const bcrypt = require("bcrypt");
-const Token = require("../models/token");
+
+const User = require("../models/User");
+const Token = require("../models/Token");
 
 async function register(req, res) {
   try {
@@ -33,14 +35,28 @@ async function login(req, res) {
     } else {
       //create a new token spec. associated with the user
       const token = await Token.create(user.user_id);
-      res.status(200).json({ authenticated: true, token });
+      res.status(200).json({ authenticated: true, token: token.token, user: data.username });
     }
   } catch (err) {
+    console.log(err)
     res.status(403).json({ error: err.message });
+  }
+}
+
+
+async function logout(req, res) {
+  const token = req.user;
+  const tokenObj = await Token.getOneByToken(token.token);
+  try {
+    const response = await tokenObj.deleteToken();
+    res.status(202).json({ message: response });
+  } catch (error) {
+    res.status(403).json({ error: error.message });
   }
 }
 
 module.exports = {
   register,
   login,
+  logout
 };

@@ -1,4 +1,4 @@
-.nav {
+.nav-bar {
   background-color: grey;
   position: sticky;
   top: 0;
@@ -7,9 +7,18 @@
   padding: 10px 40px;
   display: flex;
   flex-direction: row;
-  justify-content: end;
+  justify-content: space-between;
   align-items: center;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
   column-gap: 1rem;
+}
+
+.nav button {
+  justify-self: start;
 }
 
 .nav :global(.active) {
