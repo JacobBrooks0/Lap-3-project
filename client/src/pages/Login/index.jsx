@@ -36,7 +36,7 @@ export default function Login() {
       if (status === 200) {
         localStorage.setItem("token", data.token);
         setUser(data.user);
-        goTo("/dashboard");
+        goTo("/language");
       }
     } catch (error) {
       writePopup(error.response.data.error);
@@ -48,9 +48,8 @@ export default function Login() {
   return (
     <>
       <div
-        className={`${hash !== "#fw" ? style["f-transition"] : ""} ${
-          style["container"]
-        }`}
+        className={`${hash !== "#fw" ? style["f-transition"] : ""} ${style["container"]
+          }`}
       >
         <h1>Login</h1>
         <form id="login-form" onSubmit={loginUser}>
