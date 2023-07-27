@@ -29,7 +29,6 @@ function App() {
 
   return (
     <>
-
       <LanguageProvider>
         <AuthProvider>
           <Routes>
@@ -39,7 +38,6 @@ function App() {
               <Route path="/register" element={<Register />} />
             </Route>
             <Route element={<User />}>
-
               <Route
                 path="/language"
                 element={<Language selectedLanguage={selectedLanguage} />}
@@ -65,7 +63,6 @@ function App() {
           <Popup />
         </AuthProvider>
       </LanguageProvider>
-
     </>
   );
 }

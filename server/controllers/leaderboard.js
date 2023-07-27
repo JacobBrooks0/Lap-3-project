@@ -24,7 +24,7 @@ async function show(req, res) {
 
 async function showUser(req, res) {
   try {
-    const id = req.params.user_id;
+    const id = req.user.user_id;
     const result = await Leaderboard.getLeaderboardByUserId(id);
     res.status(200).send(result);
   } catch (err) {
@@ -33,7 +33,7 @@ async function showUser(req, res) {
 }
 
 async function update(req, res) {
-  const id = req.params.user_id;
+  const id = req.user.user_id;
   const userInput = req.body;
   try {
     const entryToUpdate = await Leaderboard.getLeaderboardByUserId(id);

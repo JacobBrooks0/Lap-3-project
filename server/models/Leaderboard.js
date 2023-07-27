@@ -27,7 +27,7 @@ class Leaderboard {
       [id]
     );
 
-    if (response.rows.length != 1) {
+    if (response.rows.length === 0) {
       throw new Error("No leaderboard available");
     }
 
@@ -35,7 +35,6 @@ class Leaderboard {
   }
 
   static async getLeaderboardByLanguage(language_name) {
-    console.log(language_name);
     if (language_name === "spanish") {
       const response = await db.query(
         "SELECT user_id, score_spanish FROM Leaderboards GROUP BY user_id ORDER BY score_spanish DESC;"

@@ -21,7 +21,7 @@ export const AuthProvider = ({ children }) => {
       try {
         const config = {
           headers: {
-            Authorization: `Bearer ${token}`,
+            Authorization: token,
           },
         };
         const { status, data } = await axios.get(
@@ -41,7 +41,7 @@ export const AuthProvider = ({ children }) => {
       }
     };
 
-    // getUserDataByToken();
+    getUserDataByToken();
   }, [localStorage.getItem("token")]);
 
   return (

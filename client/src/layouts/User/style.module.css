@@ -1,3 +1,9 @@
+.container {
+  min-height: 100vh;
+  background-color: #0c0e26;
+  overflow: hidden;
+}
+
 .nav-bar {
   background-color: grey;
   position: sticky;
@@ -24,3 +30,4 @@
 .nav :global(.active) {
   color: black;
 }
+

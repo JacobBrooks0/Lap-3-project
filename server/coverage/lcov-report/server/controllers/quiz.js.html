@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.93% </span>
+                <span class="strong">78.33% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>51/58</span>
+                <span class='fraction'>47/60</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">90% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>10/10</span>
+                <span class='fraction'>9/10</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.93% </span>
+                <span class="strong">78.33% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>51/58</span>
+                <span class='fraction'>47/60</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -244,7 +244,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -271,13 +270,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -287,7 +286,9 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -303,10 +304,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -350,7 +350,7 @@ async function getQuizByQuizId(req, res) {
 &nbsp;
 async function showById(req, res) {
   try {
-    const user_id = req.params.id;
+    const user_id = req.user.user_id;
     const quizzes = await Quiz.getAllQuizzesByUserId(user_id);
     res.status(200).json(quizzes);
   } catch (err) {
@@ -373,7 +373,6 @@ async function showByLanguageId(req, res) {
 async function getBeginnerQuizzes(req, res) {
   try {
     const quizzes = await Quiz.getBeginnerQuizzes();
-    console.log(quizzes);
     res.status(200).json(quizzes);
   } catch (err) {
 <span class="cstat-no" title="statement not covered" >    res.status(404).json({ error: err.message });</span>
@@ -400,31 +399,33 @@ async function getAdvancedQuizzes(req, res) {
   }
 }
 &nbsp;
-async function getAllInfo(req, res) {
-  const id = req.user.user_id;
-  try {
-    const { language_id, quiz_id } = req.params;
-    const quizInfo = await Quiz.getAllInfoForOneUser(id, language_id, quiz_id);
+async function <span class="fstat-no" title="function not covered" >getAllInfo(</span>req, res) {
+  const id = <span class="cstat-no" title="statement not covered" >req.user.user_id;</span>
+<span class="cstat-no" title="statement not covered" >  try {</span>
+    const { language_id, quiz_id } = <span class="cstat-no" title="statement not covered" >req.params;</span>
+    const quizInfo = <span class="cstat-no" title="statement not covered" >await Quiz.getAllInfoForOneUser(id, language_id, quiz_id);</span>
 <span class="cstat-no" title="statement not covered" >    res.status(200).json(quizInfo);</span>
   } catch (err) {
-    res.status(404).json({ error: err.message });
+<span class="cstat-no" title="statement not covered" >    res.status(404).json({ error: err.message });</span>
   }
 }
 &nbsp;
 async function createQuizInstance(req, res) {
+  const user_id = req.user.user_id;
   try {
     const data = req.body;
-    const newEntry = await Quiz.createQuiz(data);
-    const updateLeaderboard = await Leaderboard.updateLeaderboards(newEntry);
+    const newEntry = await Quiz.createQuiz(user_id, data);
+    await Leaderboard.updateLeaderboards(newEntry);
     res.status(201).json(newEntry);
   } catch (error) {
-<span class="cstat-no" title="statement not covered" >    res.status(500).json({ error: "Failed to fetch quizzes." });</span>
+<span class="cstat-no" title="statement not covered" >    console.log(error);</span>
+<span class="cstat-no" title="statement not covered" >    res.status(500).json({ error: error.message });</span>
   }
 }
 &nbsp;
 async function updateQuizInstance(req, res) {
   try {
-    const userId = req.params.user_id;
+    const userId = req.user.user_id;
     const data = req.body;
     const newEntry = await Quiz.getAllInfoForOneUser(
       userId,
@@ -432,11 +433,10 @@ async function updateQuizInstance(req, res) {
       data.quiz_id
     );
     const instanceToUpdate = await newEntry.updateQuizInstance(data);
-    const updateLeaderboard = await Leaderboard.updateLeaderboards(
-      instanceToUpdate
-    );
+    await Leaderboard.updateLeaderboards(instanceToUpdate);
     res.status(201).json(instanceToUpdate);
   } catch (error) {
+    console.log(error);
     res.status(500).json({ error: "Failed to fetch quizzes." });
   }
 }
@@ -460,7 +460,7 @@ module.exports = {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-07-26T17:40:00.131Z
+                at 2023-07-27T07:59:37.993Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

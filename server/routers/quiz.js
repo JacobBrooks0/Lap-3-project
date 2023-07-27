@@ -6,11 +6,11 @@ const quizRouter = Router();
 
 //GET route to return all quizzes
 quizRouter.get("/", isAuthenticated, quizController.show);
-//GET by quiz id
-quizRouter.get("/:id", isAuthenticated, quizController.getQuizByQuizId);
+
 
 //GET route to return all quizzes by UserID
-quizRouter.get("/user/:id", isAuthenticated, quizController.showById);
+quizRouter.get("/user", isAuthenticated, quizController.showById);
+
 //GET route to return all quizzes by language ID
 quizRouter.get(
   "/language/:languageId",
@@ -46,5 +46,9 @@ quizRouter.post("/", isAuthenticated, quizController.createQuizInstance);
 
 //quizRouter.patch
 quizRouter.patch("/", isAuthenticated, quizController.updateQuizInstance);
+
+//!must place routes with params below the ones without
+//GET by quiz id
+quizRouter.get("/:id", isAuthenticated, quizController.getQuizByQuizId);
 
 module.exports = quizRouter;
