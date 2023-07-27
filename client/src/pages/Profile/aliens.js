@@ -19,10 +19,10 @@ export default function getAlienImage(rank) {
   let Alien;
   switch (rank) {
     case 1:
-      Alien = Alien1;
+      Alien = Alien2;
       break;
     case 2:
-      Alien = Alien2;
+      Alien = Alien3;
       break;
     case 3:
       Alien = Alien3;
