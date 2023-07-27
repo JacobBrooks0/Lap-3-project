@@ -9,7 +9,7 @@ CREATE TABLE Users(
     user_id INT GENERATED ALWAYS AS IDENTITY,
     username VARCHAR(30) NOT NULL UNIQUE,
     email VARCHAR(40) UNIQUE,
-    created_date TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,
+    creation_date TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,
     password VARCHAR(60) NOT NULL,
     last_login TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
     streak INT DEFAULT 0,
@@ -35,6 +35,7 @@ CREATE TABLE Leaderboards(
     score_spanish INT NOT NULL DEFAULT 0,
     score_italian INT NOT NULL DEFAULT 0,
     rank INT NOT NULL DEFAULT 1,
+    username VARCHAR(30),
     PRIMARY KEY(entry_id),
     FOREIGN KEY (user_id) REFERENCES Users(user_id)
 );
@@ -60,13 +61,14 @@ CREATE TABLE Quizzes(
 );
 
 
-INSERT INTO Users (username, email, password)
-VALUES ('Alex', 'alex', 'alex'), ('Roberta', 'roberta', 'roberta');
+-- INSERT INTO Users (username, email, password)
+-- VALUES ('Alex', 'alex', 'alex'), ('Roberta', 'roberta', 'roberta');
 
 INSERT INTO Users (username, email, password, last_login, streak)
 VALUES 
 -- the password is 1
-('hack', 'hack@streeboys.com', '$2b$10$.pj1LTt4HxpVVg6fZDhdFOMBfiywBTikuDqx3KjDy85aJNyZ4IoJC','2023-07-26 16:23:23 +0000', 2);
+('hack', 'hack@streetboys.com', '$2b$10$.pj1LTt4HxpVVg6fZDhdFOMBfiywBTikuDqx3KjDy85aJNyZ4IoJC','2023-07-26 16:23:23 +0000', 2),
+('street', 'street@hackboys.com', '$2b$10$.pj1LTt4HxpVVg6fZDhdFOMBfiywBTikuDqx3KjDy85aJNyZ4IoJC','2023-07-26 16:23:23 +0000', 0);
 
 INSERT INTO Languages (language_name)
 VALUES ('Spanish'), ('Italian');
@@ -74,8 +76,8 @@ VALUES ('Spanish'), ('Italian');
 INSERT INTO Quiz_names (quiz_name)
 VALUES ('Nouns'), ('Basic Grammar'), ('Foods'), ('Information'), ('Bookings');
 
-INSERT INTO Leaderboards (user_id, score_spanish, score_italian)
-VALUES (1,0, 0), (2, 0, 0);
+INSERT INTO Leaderboards (user_id, username, score_spanish, score_italian)
+VALUES (1, 'Alex', 0, 0), (2, 'Roberta', 0, 0);
 
 INSERT INTO Quizzes (quiz_id, user_id, beginner_score, intermediate_score, advanced_score, language_id)
 VALUES (1, 1, 10, 20, 30, 1), (2, 1, 0, 7, 6, 2), (1, 2, 5, 10, 20, 1), (1, 1, 5, 10, 20, 2), (1, 2, 15, 5, 15, 2),(2, 1, 10, 10, 10, 1);

@@ -1,6 +1,5 @@
-body{
-    background-image: url("../../assets/backgrounds/spaceship-view-earth.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-}
+
+.leader {
+    position: relative;
+  z-index: 1;
 

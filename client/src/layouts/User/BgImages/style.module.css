@@ -1,0 +1,151 @@
+.background {
+  position: absolute;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  transition: all 1s ease-in-out;
+}
+
+.bg-out {
+  opacity: 0;
+}
+
+.spaceship-view {
+  background-image: url("src/assets/backgrounds/spaceship-view-earth.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.night-landscape-moon {
+  background-image: url("src/assets/backgrounds/night_landscape_with_moon.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.river {
+  background-image: url("src/assets/backgrounds/blank-nature-landscape-night-scene.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.cliff-night {
+  background: linear-gradient(#08043015, #0304186b),
+    url("src/assets/backgrounds/human_on_cliff.jpg");
+  background-position: bottom;
+  background-size: cover;
+}
+
+/* Alien 1 */
+.alien1 {
+  position: fixed;
+  left: 27%;
+  display: grid;
+  bottom: -53vh;
+  width: 33vh;
+  height: 100%;
+}
+
+@keyframes flap-left {
+  25% {
+    transform: rotate(30deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(30deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes flap-right {
+  25% {
+    transform: rotate(-30deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-30deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.alien1 > svg:nth-child(1) {
+  translate: -70% 50%;
+  position: absolute;
+  width: 80%;
+  transform-origin: 100% 70%;
+  animation: flap-left 2s ease-in-out infinite;
+}
+
+.alien1 > svg:nth-child(2) {
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+}
+
+.alien1 > svg:nth-child(3) {
+  translate: 83% 50%;
+  position: absolute;
+  width: 80%;
+  transform-origin: 0% 70%;
+  animation: flap-right 2s ease-in-out infinite;
+}
+
+/* Alien 2 and 3 */
+@keyframes expand {
+  50% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fly {
+  25% {
+    translate: 2vh 2vh;
+  }
+  50% {
+    translate: 0vh 4vh;
+  }
+  75% {
+    translate: -2vh 2vh;
+  }
+  100% {
+    translate: 0;
+  }
+}
+
+.alien2 {
+  position: fixed;
+  left: 57%;
+  width: 30vh;
+  bottom: 25vh;
+
+  animation-name: fly, expand;
+  animation-duration: 6s, 6s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.alien3 {
+    position: fixed;
+    right: 43%;
+    width: 50vh;
+    bottom: -14vh;
+  
+    animation-name: expand;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }

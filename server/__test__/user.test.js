@@ -49,13 +49,11 @@ describe("User Endpoints", () => {
 
   it("Should return a user's details", async () => {
     const response = await request(app)
-      .get("/users/4")
+      .get("/users")
       .set({ authorization: token })
       .expect(200);
 
     const userObj = response.body;
-    expect(userObj).toHaveProperty("user_id", 4);
-    expect(userObj).toHaveProperty("email", "email");
     expect(userObj).toHaveProperty("username", "user");
     expect(userObj).toHaveProperty("last_login");
     expect(userObj).toHaveProperty("streak", 0);

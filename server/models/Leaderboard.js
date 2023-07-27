@@ -1,8 +1,16 @@
 const db = require("../db/connect");
 
 class Leaderboard {
-  constructor({ user_id, score_spanish, score_italian, rank, total }) {
+  constructor({
+    user_id,
+    username,
+    score_spanish,
+    score_italian,
+    rank,
+    total,
+  }) {
     this.user_id = user_id;
+    this.username = username;
     this.score_spanish = score_spanish;
     this.score_italian = score_italian;
     this.rank = rank;
@@ -11,7 +19,7 @@ class Leaderboard {
 
   static async getAllLeaderboardEntries() {
     const response = await db.query(
-      "SELECT *, SUM(score_spanish + score_italian) AS Total FROM leaderboards GROUP BY user_id ORDER BY Total DESC"
+      "SELECT *, SUM(score_spanish + score_italian) AS Total FROM leaderboards GROUP BY entry_id ORDER BY Total DESC"
     );
 
     if (response.rows.length === 0) {
@@ -27,7 +35,7 @@ class Leaderboard {
       [id]
     );
 
-    if (response.rows.length != 1) {
+    if (response.rows.length === 0) {
       throw new Error("No leaderboard available");
     }
 
@@ -35,10 +43,9 @@ class Leaderboard {
   }
 
   static async getLeaderboardByLanguage(language_name) {
-    console.log(language_name);
     if (language_name === "spanish") {
       const response = await db.query(
-        "SELECT user_id, score_spanish FROM Leaderboards GROUP BY user_id ORDER BY score_spanish DESC;"
+        "SELECT user_id, score_spanish FROM Leaderboards GROUP BY entry_id ORDER BY score_spanish DESC;"
       );
 
       if (response.rows.length === 0) {
@@ -47,7 +54,7 @@ class Leaderboard {
       return response.rows.map((entry) => new Leaderboard(entry));
     } else if (language_name === "italian") {
       const response = await db.query(
-        "SELECT user_id, score_italian FROM Leaderboards GROUP BY user_id ORDER BY score_italian DESC;"
+        "SELECT user_id, score_italian FROM Leaderboards GROUP BY entry_id ORDER BY score_italian DESC;"
       );
 
       if (response.rows.length === 0) {
