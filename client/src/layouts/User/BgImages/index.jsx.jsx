@@ -17,8 +17,8 @@ export default function BgImages() {
           pathname !== "/dashboard" ? style["bg-out"] : ""
         }`}
       >
-        <Alien3 className={style["alien3"]}/>
-        <Alien2 className={style["alien2"]}/>
+        <Alien3 className={style["alien3"]} />
+        <Alien2 className={style["alien2"]} />
         <div className={style["alien1"]}>
           <LeftWing />
           <Alien1 />
@@ -28,6 +28,21 @@ export default function BgImages() {
       <div
         className={`${style["spaceship-view"]} ${style["background"]} ${
           pathname !== "/profile" ? style["bg-out"] : ""
+        }`}
+      />
+      <div
+        className={`${style["night-landscape-moon"]} ${style["background"]} ${
+          pathname !== "/leaderboard" ? style["bg-out"] : ""
+        }`}
+      />
+      {/* <div
+        className={`${style["alien-planet"]} ${style["background"]} ${
+          pathname !== /\/practice+/i ? style["bg-out"] : ""
+        }`}
+      /> */}
+      <div
+        className={`${style["river"]} ${style["background"]} ${
+          pathname !== "/language" ? style["bg-out"] : ""
         }`}
       />
     </>

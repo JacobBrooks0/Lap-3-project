@@ -5,7 +5,7 @@
 }
 
 .nav-bar {
-  background-color: grey;
+  background-color: palevioletred;
   position: sticky;
   top: 0;
   height: 40px;
@@ -15,12 +15,21 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+
+  background-image: url("src/assets/backgrounds/stars.jpg");
+  background-size: cover;
+  border-bottom: solid #4deeea 2px;
 }
 
 .nav {
   display: flex;
   flex-direction: row;
-  column-gap: 1rem;
+  column-gap: 1.5rem;
+}
+
+.nav a {
+  color: #4deeea;
+  text-decoration: none;
 }
 
 .nav button {
@@ -28,6 +37,6 @@
 }
 
 .nav :global(.active) {
-  color: black;
+  color: #74ee15;
 }
 

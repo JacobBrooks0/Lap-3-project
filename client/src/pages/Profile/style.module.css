@@ -1,4 +1,24 @@
-.container {
+.outer-container {
   position: relative;
   z-index: 1;
+  display: grid;
+  place-items: center;
+  height: 100%;
+}
+
+.container {
+  display: grid;
+}
+
+.user-meta {
+  background-image: linear-gradient(#100e2727, #03041881), url("src/assets/textures/metal-texture-vector.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 30px;
+  border-radius: 20px;
+  
+  border: 2px solid #4deeea;
+}
+.rank-image {
+  height: 250px;
 }

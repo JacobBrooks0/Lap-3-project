@@ -1,7 +1,15 @@
 const db = require("../db/connect");
 
 class User {
-  constructor({ user_id, username, email, password,creation_date, last_login, streak }) {
+  constructor({
+    user_id,
+    username,
+    email,
+    password,
+    creation_date,
+    last_login,
+    streak,
+  }) {
     this.user_id = user_id;
     this.username = username;
     this.email = email;
@@ -46,8 +54,8 @@ class User {
     const newId = response.rows[0].user_id;
 
     let leaderboardsResponse = await db.query(
-      "INSERT INTO Leaderboards (user_id) VALUES ($1) RETURNING user_id;",
-      [newId]
+      "INSERT INTO Leaderboards (user_id, username) VALUES ($1, $2) RETURNING user_id;",
+      [newId, username]
     );
 
     if (response.rows.length != 1) {
