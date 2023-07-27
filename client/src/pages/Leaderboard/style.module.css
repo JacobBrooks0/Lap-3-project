@@ -2,5 +2,9 @@
 .leader {
     position: relative;
   z-index: 1;
-
 }
+
+:global(.page){
+  height: calc(100% - 62px);
+}
+

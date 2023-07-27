@@ -179,7 +179,7 @@ const QuizPage = ({ setSelectedLanguage }) => {
   };
 
   return (
-    <div className={style['container']}>
+    <div className={`page ${style["container"]}`}>
       {!showResult ? (
         <>
           <Question question={selectedQuiz?.questions[currentQuestion]?.question} />

@@ -10,13 +10,12 @@ export default function fetchAllUserInfo() {
 
   useEffect(() => {
     const getUserDetails = async () => {
+      const config = {
+        headers: {
+          Authorization: localStorage.getItem("token"),
+        },
+      };
       try {
-        const config = {
-          headers: {
-            Authorization: localStorage.getItem("token"),
-          },
-        };
-
         const { data: data1 } = await axios.get(
           `${import.meta.env.VITE_SERVER}/users`,
           config

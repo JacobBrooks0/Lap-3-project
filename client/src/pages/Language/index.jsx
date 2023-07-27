@@ -5,7 +5,7 @@ import style from "./style.module.css";
 export default function LanguageSelection() {
     return (
         <>
-            <main id="language-selection">
+            <main className="page" id="language-selection">
                 <div className={style["container"]}>
                     <h1>Pick a language you want to learn</h1>
                     <LanguageButton />

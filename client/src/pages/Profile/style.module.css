@@ -3,22 +3,115 @@
   z-index: 1;
   display: grid;
   place-items: center;
-  height: 100%;
+  height: calc(100% - 62px);
 }
 
 .container {
   display: grid;
+  grid-template-columns: min-content 1fr;
+  column-gap: 2em;
+  width: 100%;
+  margin: 20px;
+  max-width: 1300px;
 }
 
 .user-meta {
-  background-image: linear-gradient(#100e2727, #03041881), url("src/assets/textures/metal-texture-vector.jpg");
+  background-image: linear-gradient(#100e2783, #030418af),
+    url("src/assets/textures/metal-texture-vector.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   padding: 30px;
   border-radius: 20px;
-  
-  border: 2px solid #4deeea;
+  text-align: center;
+  color: yellow;
+  border: 3px solid #4deeea;
 }
+
+.user-meta > div {
+  background-color: #7374856b;
+  padding: 2em;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+.user-meta > p {
+  margin: 0.4em;
+}
+
+.user-meta > p:first-child {
+  text-transform: uppercase;
+}
+
+.rank {
+  position: relative;
+}
+
+.rank > span:first-child {
+  position: absolute;
+  top: -15%;
+  left: 18.5%;
+  border: #4deeea solid 2px;
+  border-radius: 50%;
+  display: grid;
+  font-size: 18px;
+  place-items: center;
+  text-align: center;
+  margin: 0;
+  width: 30px;
+  height: 30px;
+  background-image: linear-gradient(#100e2783, #030418af),
+    url("src/assets/textures/aluminum-metal-texture.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.rank > span:nth-child(2) {
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+@keyframes levitate {
+  50% {
+    transform: translateY(3%);
+  }
+}
+
 .rank-image {
-  height: 250px;
+  height: 220px;
+  animation-name: levitate;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.language-data {
+  background-image: linear-gradient(#100e2783, #030418af),
+    url("src/assets/textures/metal-texture-vector.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  color: yellow;
+  border: 3px solid #4deeea;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: min-content 1fr;
+}
+
+.language-data > h1{
+  grid-column: span 2;
+  margin: 0;
+}
+
+.name > div {
+  
+}
+
+.name > img {
+  height: 30px;
+  border-radius: 3px;
+  text-align: center;
+  border: 2px solid #74ee15;
 }
