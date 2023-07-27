@@ -11,6 +11,7 @@ export default function User() {
   const { user } = useAuth();
   return user ? (
     <>
+
       <div id="user-wrapper" className={style["container"]}>
         <BgImages />
         <header className={style["nav-bar"]}>
@@ -24,6 +25,7 @@ export default function User() {
         </header>
         <Outlet />
       </div>
+
     </>
   ) : (
     <Navigate to="/" />
