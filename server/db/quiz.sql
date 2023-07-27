@@ -35,6 +35,7 @@ CREATE TABLE Leaderboards(
     score_spanish INT NOT NULL DEFAULT 0,
     score_italian INT NOT NULL DEFAULT 0,
     rank INT NOT NULL DEFAULT 1,
+    username VARCHAR(30),
     PRIMARY KEY(entry_id),
     FOREIGN KEY (user_id) REFERENCES Users(user_id)
 );
