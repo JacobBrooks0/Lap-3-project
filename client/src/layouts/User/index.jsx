@@ -12,7 +12,7 @@ export default function User() {
     <>
       <div id="user-wrapper" className={style["container"]}>
         <header className={style["nav-bar"]}>
-          <Link to="/language">
+          <Link to="/dashboard">
             <div className={style["logo"]}>
               <svg viewBox="490 -180 700 250">
                 <text>COSMOGLOTS</text>
@@ -20,7 +20,6 @@ export default function User() {
             </div>
           </Link>
           <nav className={style["nav"]}>
-            <NavLink to="/language">Pick a language</NavLink>
             <NavLink to="/dashboard">Dashboard</NavLink>
             <NavLink to="/leaderboard">Leaderboard</NavLink>
             <NavLink to="/profile">Profile</NavLink>

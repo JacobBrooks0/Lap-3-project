@@ -36,7 +36,7 @@ export default function Login() {
       if (status === 200) {
         localStorage.setItem("token", data.token);
         setUser(data.user);
-        goTo("/language");
+        goTo("/dashboard");
       }
     } catch (error) {
       writePopup(error.response.data.error);

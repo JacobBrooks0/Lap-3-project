@@ -19,7 +19,7 @@ export default function Profile() {
               <p className={style["rank"]}>
                 <div>
                   <span>{data.user.rank}</span>
-                  <span>{rankMap[data.user.rank]}</span>
+                  <span>{rankMap[data.user.rank -1]}</span>
                 </div>
               </p>
               <div>

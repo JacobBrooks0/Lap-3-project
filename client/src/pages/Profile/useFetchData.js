@@ -41,7 +41,8 @@ export default function fetchAllUserInfo() {
   }, []);
 
   const quizDataC = quizData?.map((quizObj) => {
-    quizObj.name = quizNames[quizObj["quiz_id"] + 1];
+    console.log(quizObj["quiz_id"])
+    quizObj.name = quizNames[quizObj["quiz_id"] - 1];
     return quizObj;
   });
 
