@@ -6,11 +6,9 @@ import {
   Register,
   Dashboard,
   Profile,
-  Games,
   Learn,
   NotFound,
   GetStarted,
-  Language,
   Leaderboard,
   Practice
 
@@ -39,10 +37,6 @@ function App() {
             </Route>
             <Route element={<User />}>
               <Route
-                path="/language"
-                element={<Language selectedLanguage={selectedLanguage} />}
-              />
-              <Route
                 path="/dashboard"
                 element={
                   <Dashboard
@@ -53,7 +47,6 @@ function App() {
               />
               <Route path="/learn/:quizId" element={<Learn setSelectedLanguage={setSelectedLanguage} />} />
               <Route path="practice/:quizId" element={<Practice />} />
-              <Route path="/games" element={<Games />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="/leaderboard" element={<Leaderboard />} />
               <Route path="*" element={<NotFound />} />

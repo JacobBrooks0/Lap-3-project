@@ -7,7 +7,6 @@ export default function Leaderboard() {
     <>
         <div className={style["Board"]}>
             <h1>Leaderboard</h1>
-            
         </div>
         
     </>
