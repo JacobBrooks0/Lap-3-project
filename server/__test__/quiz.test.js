@@ -3,7 +3,7 @@ const app = require("../app");
 const db = require("../db/connect");
 const setupMockDB = require("./mock/database/setup");
 
-describe("Leaderboards Endpoints", () => {
+describe("Quizzes Endpoints", () => {
   let token;
   let quizInst;
 

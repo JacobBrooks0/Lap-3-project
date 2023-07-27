@@ -40,7 +40,7 @@ CREATE TABLE Leaderboards(
     score_italian INT NOT NULL DEFAULT 0,
     rank INT NOT NULL DEFAULT 1,
     username VARCHAR(30),
-    PRIMARY KEY(user_id),
+    PRIMARY KEY(entry_id),
     FOREIGN KEY (user_id) REFERENCES Users(user_id)
 );
 
