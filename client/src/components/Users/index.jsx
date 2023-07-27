@@ -10,10 +10,11 @@ export default function Users() {
 
     useEffect(() => {
         async function fetchData() {
-            const URL = "https://hackstreet-boys.onrender.com/leaderboards/"
+            const URL = "http://localhost:3000/leaderboards"
             try {
                 const response = await axios.get(URL)
                 setGetData(response.data)
+                console.log(response.data)
             } catch (error) {
                 console.log(error)
             }
@@ -21,7 +22,6 @@ export default function Users() {
         fetchData()
 
     }, [])
-
 
     return (
         <>
