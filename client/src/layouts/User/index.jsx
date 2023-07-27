@@ -17,9 +17,8 @@ export default function User() {
         <header className={style["nav-bar"]}>
           <LogoutButton />
           <nav className={style["nav"]}>
-            <NavLink to="/dashboard">Dashboard</NavLink>
-         
             <NavLink to="/language">Pick a language</NavLink>
+            <NavLink to="/dashboard">Dashboard</NavLink>
             <NavLink to="/leaderboard">Leaderboard</NavLink>
             <NavLink to="/profile">Profile</NavLink>
           </nav>

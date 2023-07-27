@@ -27,7 +27,7 @@
 }
 
 .river {
-  background-image: url("src/assets/backgrounds/blank-nature-landscape-night-scene.jpg");
+  background-image: linear-gradient(#100e2727, #03041881), url("src/assets/backgrounds/blank-nature-landscape-night-scene.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }

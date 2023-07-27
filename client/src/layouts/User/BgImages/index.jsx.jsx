@@ -36,6 +36,11 @@ export default function BgImages() {
         }`}
       />
       <div
+        className={`${style["alien-planet"]} ${style["background"]} ${
+          pathname !== /\/practice+/i ? style["bg-out"] : ""
+        }`}
+      />
+      <div
         className={`${style["river"]} ${style["background"]} ${
           pathname !== "/language" ? style["bg-out"] : ""
         }`}
