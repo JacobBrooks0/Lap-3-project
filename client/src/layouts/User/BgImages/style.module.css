@@ -7,7 +7,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  transition: all 4s ease-in-out;
+  transition: all 1s ease-in-out;
 }
 
 .bg-out {
@@ -18,7 +18,18 @@
   background-image: url("src/assets/backgrounds/spaceship-view-earth.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  transition: opacity 2s ease-in-out;
+}
+
+.night-landscape-moon {
+  background-image: url("src/assets/backgrounds/night_landscape_with_moon.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.river {
+  background-image: url("src/assets/backgrounds/blank-nature-landscape-night-scene.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .cliff-night {
@@ -26,7 +37,6 @@
     url("src/assets/backgrounds/human_on_cliff.jpg");
   background-position: bottom;
   background-size: cover;
-  transition: opacity 2s ease-in-out;
 }
 
 /* Alien 1 */
