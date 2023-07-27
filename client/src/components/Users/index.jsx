@@ -30,7 +30,7 @@ export default function Users() {
             
             <table className={style["User"]}>
                 <tr>
-                    <th>user</th>
+                    <th>User</th>
                     <th>Italian Score</th>
                     <th>Spanish Score</th>
                     <th>Total Score</th>
@@ -40,7 +40,7 @@ export default function Users() {
                 </tr>
                 {getData.map((getData) => (
                 <tr>
-                    <td >{getData.user_id}</td>
+                    <td >{getData.username}</td>
                     <td >{getData.score_italian}</td>
                     <td >{getData.score_spanish}</td>
                     <td >{getData.total}</td>
