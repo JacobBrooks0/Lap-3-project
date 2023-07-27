@@ -1,4 +1,3 @@
-/*
 import React from 'react'; 
 import {describe, it, expect, beforeEach} from 'vitest';
 //render component in virtual document
@@ -38,4 +37,4 @@ describe("LanguageButton component", () =>{
         expect(italianFlagImage).toBeInTheDocument();
     })
 
-})*/
+})

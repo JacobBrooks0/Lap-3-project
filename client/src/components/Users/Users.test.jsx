@@ -1,12 +1,15 @@
 import React from 'react';
-import { describe, it, expect, beforeEach, afterEach } from 'vitest';
+import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import { screen, render, cleanup } from '@testing-library/react';
+
+import matchers from '@testing-library/jest-dom/matchers';
+expect.extend(matchers);
+
 import axios from 'axios';
+
 import Users from '.';
 
-jest.mock('axios');
-
-describe('Users', () => {
+describe("Users component", () => {
   const mockData = [
     {
       user_id: 1,
@@ -15,7 +18,6 @@ describe('Users', () => {
       total: 300,
       rank: 1,
     },
-    
     {
       user_id: 2,
       score_italian: 50,
@@ -26,19 +28,19 @@ describe('Users', () => {
   ];
 
   beforeEach(() => {
-    axios.get.mockResolvedValue({ data: mockData });
+    vi.spyOn(axios, 'get').mockResolvedValue({ data: mockData });
   });
 
   afterEach(() => {
     cleanup();
-    jest.clearAllMocks();
+    vi.restoreAllMocks(); // Restore all mocked functions after each test
   });
 
-  it('renders table headers and data', async () => {
+  it("renders table headers and data", async () => {
     render(<Users />);
 
     // Wait for the data to be fetched and the component to re-render
-    await screen.findByText('user');
+    await screen.findByText('username');
     await screen.findByText('Italian Score');
     await screen.findByText('Spanish Score');
     await screen.findByText('Total Score');
