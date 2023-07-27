@@ -75,8 +75,8 @@ VALUES ('Spanish'), ('Italian');
 INSERT INTO Quiz_names (quiz_name)
 VALUES ('Nouns'), ('Basic Grammar'), ('Foods'), ('Information'), ('Bookings');
 
-INSERT INTO Leaderboards (user_id, score_spanish, score_italian)
-VALUES (1,0, 0), (2, 0, 0);
+INSERT INTO Leaderboards (user_id, username, score_spanish, score_italian)
+VALUES (1, 'Alex', 0, 0), (2, 'Roberta', 0, 0);
 
 INSERT INTO Quizzes (quiz_id, user_id, beginner_score, intermediate_score, advanced_score, language_id)
 VALUES (1, 1, 10, 20, 30, 1), (2, 1, 0, 7, 6, 2), (1, 2, 5, 10, 20, 1), (1, 1, 5, 10, 20, 2), (1, 2, 15, 5, 15, 2),(2, 1, 10, 10, 10, 1);

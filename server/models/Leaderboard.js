@@ -1,8 +1,16 @@
 const db = require("../db/connect");
 
 class Leaderboard {
-  constructor({ user_id, score_spanish, score_italian, rank, total }) {
+  constructor({
+    user_id,
+    username,
+    score_spanish,
+    score_italian,
+    rank,
+    total,
+  }) {
     this.user_id = user_id;
+    this.username = username;
     this.score_spanish = score_spanish;
     this.score_italian = score_italian;
     this.rank = rank;
