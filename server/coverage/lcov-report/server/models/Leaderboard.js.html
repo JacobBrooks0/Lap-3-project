@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">75% </span>
+                <span class="strong">67.44% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>33/44</span>
+                <span class='fraction'>29/43</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">56.25% </span>
+                <span class="strong">43.75% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>9/16</span>
+                <span class='fraction'>7/16</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">75.6% </span>
+                <span class="strong">67.5% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>31/41</span>
+                <span class='fraction'>27/40</span>
             </div>
         
             
@@ -177,8 +177,7 @@
 <a name='L112'></a><a href='#L112'>112</a>
 <a name='L113'></a><a href='#L113'>113</a>
 <a name='L114'></a><a href='#L114'>114</a>
-<a name='L115'></a><a href='#L115'>115</a>
-<a name='L116'></a><a href='#L116'>116</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
+<a name='L115'></a><a href='#L115'>115</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -202,20 +201,19 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -265,22 +263,22 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -322,15 +320,14 @@ class Leaderboard {
       [id]
     );
 &nbsp;
-    if (response.rows.length != 1) {
-      throw new Error("No leaderboard available");
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (response.rows.length === 0) {
+<span class="cstat-no" title="statement not covered" >      throw new Error("No leaderboard available");</span>
     }
 &nbsp;
     return new Leaderboard(response.rows[0]);
   }
 &nbsp;
   static async getLeaderboardByLanguage(language_name) {
-    console.log(language_name);
     if (language_name === "spanish") {
       const response = await db.query(
         "SELECT user_id, score_spanish FROM Leaderboards GROUP BY user_id ORDER BY score_spanish DESC;"
@@ -389,13 +386,13 @@ class Leaderboard {
           "UPDATE Leaderboards SET rank = CASE WHEN CAST(score_italian as INT) + CAST(score_spanish as INT) &gt; 160 THEN 5 WHEN CAST(score_italian as INT) + CAST(score_spanish as INT)  &gt; 120 THEN 4 WHEN CAST(score_italian as INT) + CAST(score_spanish as INT)  &gt; 80 THEN 3 WHEN CAST(score_italian as INT) + CAST(score_spanish as INT)  &gt; 40 THEN 2 ELSE 1 END WHERE user_id = $1",
           [body.user_id]
         );
-      } else {
-        await db.query(
+      } else <span class="missing-if-branch" title="else path not taken" >E</span>{
+<span class="cstat-no" title="statement not covered" >        await db.query(</span>
           "UPDATE Leaderboards SET score_italian = (SELECT (SELECT COALESCE(SUM(beginner_score), 0) FROM Quizzes WHERE language_id = $1 AND  user_id = $2) + (SELECT COALESCE(SUM(intermediate_score), 0) FROM Quizzes WHERE language_id = $1 AND  user_id = $2) + (SELECT COALESCE(SUM(advanced_score), 0) FROM Quizzes WHERE language_id = $1 AND  user_id = $2)) WHERE user_id = $2;",
           [body.language_id, body.user_id]
         );
 &nbsp;
-        await db.query(
+<span class="cstat-no" title="statement not covered" >        await db.query(</span>
           "UPDATE Leaderboards SET rank = CASE WHEN CAST(score_italian as INT) + CAST(score_spanish as INT) &gt; 160 THEN 5 WHEN CAST(score_italian as INT) + CAST(score_spanish as INT)  &gt; 120 THEN 4 WHEN CAST(score_italian as INT) + CAST(score_spanish as INT)  &gt; 80 THEN 3 WHEN CAST(score_italian as INT) + CAST(score_spanish as INT)  &gt; 40 THEN 2 ELSE 1 END WHERE user_id = $1",
           [body.user_id]
         );
@@ -415,7 +412,7 @@ module.exports = Leaderboard;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-07-26T17:40:00.131Z
+                at 2023-07-27T07:59:37.993Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

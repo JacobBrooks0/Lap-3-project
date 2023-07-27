@@ -25,7 +25,7 @@ async function getQuizByQuizId(req, res) {
 
 async function showById(req, res) {
   try {
-    const user_id = req.params.id;
+    const user_id = req.user.user_id;
     const quizzes = await Quiz.getAllQuizzesByUserId(user_id);
     res.status(200).json(quizzes);
   } catch (err) {
@@ -48,7 +48,6 @@ async function showByLanguageId(req, res) {
 async function getBeginnerQuizzes(req, res) {
   try {
     const quizzes = await Quiz.getBeginnerQuizzes();
-    console.log(quizzes);
     res.status(200).json(quizzes);
   } catch (err) {
     res.status(404).json({ error: err.message });

@@ -34,7 +34,7 @@
   display: grid;
   place-items: center;
   animation-name: fade-in1;
-  animation-duration: 3.5s;
+  animation-duration: 2.5s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: 1;
 }

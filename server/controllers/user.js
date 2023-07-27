@@ -58,14 +58,14 @@ async function logout(req, res) {
 
 async function details(req, res) {
   try {
-    const userId = req.params.id;
+    const userId = req.user.user_id;
+    
     const user = await User.getOneById(userId);
 
     // Omit the password from the user object
-    const { password, ...userInfo } = user;
-
+    delete user.password;
     // Send the user information (without password) in the response
-    res.json(userInfo);
+    res.status(200).json(user);
   } catch (error) {
     res.status(500).json({ error: "Unable to get user details." });
   }

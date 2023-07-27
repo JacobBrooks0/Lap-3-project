@@ -1,11 +1,12 @@
 const db = require("../db/connect");
 
 class User {
-  constructor({ user_id, username, email, password, last_login, streak }) {
+  constructor({ user_id, username, email, password,creation_date, last_login, streak }) {
     this.user_id = user_id;
     this.username = username;
     this.email = email;
     this.password = password;
+    this.creationDate = creation_date;
     this.last_login = last_login;
     this.streak = streak;
   }
