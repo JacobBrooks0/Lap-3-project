@@ -25,17 +25,18 @@ export default function fetchAllUserInfo() {
           `${import.meta.env.VITE_SERVER}/leaderboards/user`,
           config
         );
-        const { data: data3 } = await axios.get(
-          `${import.meta.env.VITE_SERVER}/quizzes/user`,
-          config
-        );
+
         setUserData(data1);
         setLeaderBoardData(data2);
-        setQuizData(data3);
       } catch (error) {
         console.log(error);
         writePopup(error);
       }
+      const { data: data3 } = await axios.get(
+        `${import.meta.env.VITE_SERVER}/quizzes/user`,
+        config
+      );
+      setQuizData(data3);
     };
     getUserDetails();
   }, []);
