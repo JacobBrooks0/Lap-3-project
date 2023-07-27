@@ -10,6 +10,6 @@ userRouter.post("/login", userController.login);
 userRouter.use(isAuthenticated);
 userRouter.get("/", userController.details);
 userRouter.delete("/logout", userController.logout);
-userRouter.delete("/:user_id", userController.destroy);
+userRouter.delete("/", userController.destroy);
 
 module.exports = userRouter;

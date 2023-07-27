@@ -25,13 +25,19 @@
   text-align: center;
   color: yellow;
   border: 3px solid #4deeea;
+  display: grid;
 }
 
 .user-meta > div {
   background-color: #7374856b;
   padding: 2em;
   border-radius: 10px;
-  margin-bottom: 2rem;
+  margin-bottom: 0.8rem;
+}
+
+.user-meta > p:first-child {
+  margin: 0;
+  margin-bottom: 10px;
 }
 
 .user-meta > p {
@@ -44,16 +50,26 @@
 
 .rank {
   position: relative;
+  display: grid;
 }
 
-.rank > span:first-child {
-  position: absolute;
-  top: -15%;
-  left: 18.5%;
-  border: #4deeea solid 2px;
-  border-radius: 50%;
+.rank > div:nth-child(1) {
+  border-radius: 10px;
+  background-color: #7374856b;
+  padding: 0.2em;
+  height: 40px;
   display: grid;
-  font-size: 18px;
+  align-items: center;
+}
+
+.rank span:first-child {
+  position: absolute;
+  left: 6px;
+
+  border: yellow solid 2px;
+  border-radius: 5px;
+  display: grid;
+  font-size: 20px;
   place-items: center;
   text-align: center;
   margin: 0;
@@ -65,7 +81,10 @@
   background-size: cover;
 }
 
-.rank > span:nth-child(2) {
+.rank span:nth-child(2) {
+  position: relative;
+  top: 1px;
+  left: 18px;
   text-transform: uppercase;
   font-size: 18px;
 }
@@ -77,14 +96,14 @@
 }
 
 .rank-image {
-  height: 220px;
+  height: 180px;
   animation-name: levitate;
   animation-duration: 2s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
 }
 
-.language-data {
+.l-data-actions {
   background-image: linear-gradient(#100e2783, #030418af),
     url("src/assets/textures/metal-texture-vector.jpg");
   background-repeat: no-repeat;
@@ -97,21 +116,63 @@
 
   display: grid;
   grid-template-columns: 1fr 1fr;
+  column-gap: 30px;
   grid-template-rows: min-content 1fr;
 }
 
-.language-data > h1{
+.l-data-actions > h1 {
   grid-column: span 2;
   margin: 0;
 }
 
-.name > div {
-  
+.name {
+  display: flex;
+  justify-content: center;
+  column-gap: 20px;
+  align-items: center;
+}
+
+.name > div:first-child {
+  text-decoration: underline;
 }
 
 .name > img {
-  height: 30px;
+  height: 40px;
   border-radius: 3px;
   text-align: center;
   border: 2px solid #74ee15;
+}
+
+.italian-info,
+.spanish-info {
+  display: grid;
+  grid-template-rows: min-content min-content 1fr;
+  place-items: center;
+  row-gap: 20px;
+}
+
+.l-data-actions table,
+.l-data-actions th,
+.l-data-actions td {
+  border-color: yellow;
+  color: yellow;
+  hyphens: auto;
+}
+
+.l-data-actions > div:last-of-type {
+  grid-column: span 2;
+  display: grid;
+  justify-items: end;
+  grid-auto-flow: column;
+  grid-template-columns: 1fr min-content min-content;
+  white-space: nowrap;
+  column-gap: 20px;
+  border-radius: 10px;
+  background-color: #7374856b;
+  padding: 1em;
+}
+
+.l-data-actions > div:last-of-type > h1 {
+  margin: 0;
+  justify-self: start;
 }
