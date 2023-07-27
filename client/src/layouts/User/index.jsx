@@ -14,7 +14,6 @@ export default function User() {
         <LogoutButton />
         <nav className={style["nav"]}>
           <NavLink to="/dashboard">Dashboard</NavLink>
-          <NavLink to="/games">Games</NavLink>
           <NavLink to="/language">Pick a language</NavLink>
           <NavLink to="/leaderboard">Leaderboard</NavLink>
           <NavLink to="/profile">Profile</NavLink>
