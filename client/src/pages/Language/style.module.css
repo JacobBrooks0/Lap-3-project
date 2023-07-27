@@ -5,6 +5,8 @@
   justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
+
+  color:#4deeea;
 }
 
 :global(#language-selection) {
@@ -13,4 +15,16 @@
   place-items: center;
   position: relative;
   z-index: 1;
+} 
+
+.container h1 {
+  margin-top: 0;
+}
+
+.container img {
+  border: 2px solid #4deeea;
+}
+
+.container img:hover {
+  border: 3px solid #74ee15;
 }

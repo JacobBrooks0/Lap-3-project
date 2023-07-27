@@ -47,8 +47,6 @@ const QuizPage = ({ setSelectedLanguage }) => {
     setShowResult(false);
     setSelectedOption(null);
 
-    const loggedInUserId = 4;
-
     const getLanguageId = (language) => {
       return language === 'Spanish' ? 1 : 2;
     };
@@ -61,47 +59,57 @@ const QuizPage = ({ setSelectedLanguage }) => {
       }
     };
 
+    const language_id = getLanguageId(selectedQuiz.language);
+    const quiz_id = getQuizId(selectedQuiz);
+
+    const config = {
+      headers: {
+        Authorization: localStorage.getItem('token'),
+      },
+    };
+
+
+    let hasQuiz = true;
+    let existingScore;
     try {
-      const language_id = getLanguageId(selectedQuiz.language);
-      const quiz_id = getQuizId(selectedQuiz);
+      const { data } = await axios.get(
+        `${import.meta.env.VITE_SERVER}/quizzes/${language_id}/${quiz_id}`,
+        config
+      );
 
-      const config = {
-        headers: {
-          Authorization: localStorage.getItem("token"),
-        },
-      };
+      existingScore = data;
 
-      const { data } = await axios.get(`${import.meta.env.VITE_SERVER}/quizzes/${language_id}/${quiz_id}`, config);
-      console.log(data);
+    } catch (error) {
+      hasQuiz = false;
+    }
 
-      // if (existingQuizData.data) {
+    console.log(hasQuiz);
 
-      //   const existingScore = existingQuizData.data.beginner_score;
-      //   if (score > existingScore) {
-      //     await axios.patch(`/quizzes/${loggedInUserId}`, {
-      //       quiz_id,
-      //       language_id,
-      //       beginner_score: score,
-      //     });
-      //     console.log('Quiz results updated successfully.');
-      //   }
-      // } else {
-      //   await axios.post('/quizzes', {
-      //     user_id: loggedInUserId,
-      //     language_id,
-      //     quiz_id,
-      //     beginner_score: score,
-      //     intermediate_score: 0,
-      //     advanced_score: 0,
-      //   });
-      //   console.log('New quiz results saved successfully.');
-      // }
+    try {
 
+      if (hasQuiz) {
+        await axios.patch(`${import.meta.env.VITE_SERVER}/quizzes`, {
+          quiz_id,
+          language_id,
+          beginner_score: score * 8,
+
+        }, config
+        );
+        console.log('Quiz results updated successfully.');
+      } else {
+        await axios.post(`${import.meta.env.VITE_SERVER}/quizzes`, {
+          quiz_id,
+          language_id,
+          beginner_score: score * 8,
+          intermediate_score: 0,
+          advanced_score: 0
+        }, config);
+        console.log('New quiz results saved successfully.');
+      }
     } catch (error) {
       console.log(error);
     }
   };
-
 
   const handleBackToDashboard = () => {
     setSelectedLanguage(selectedQuiz.language);

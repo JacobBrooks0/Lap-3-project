@@ -3,6 +3,8 @@ import axios from "axios";
 import { useAuth } from "../../contexts";
 import { writePopup } from "../Popup";
 
+import style from "./style.module.css";
+
 export default function LogoutButton() {
   const goTo = useNavigate();
   const { setUser } = useAuth();
@@ -25,5 +27,9 @@ export default function LogoutButton() {
       console.log(error);
     }
   };
-  return <button onClick={LogOut}>Logout</button>;
+  return (
+    <button className={style["button"]} onClick={LogOut}>
+      Logout
+    </button>
+  );
 }
