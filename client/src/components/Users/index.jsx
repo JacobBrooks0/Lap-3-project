@@ -25,6 +25,7 @@ export default function Users() {
 
     return (
         <>
+
             <div className={style["container"]}>
 
                 <table className={style["User"]}>
@@ -49,6 +50,7 @@ export default function Users() {
 
                         ))}
                     </tbody>
+
                 </table>
 
             </div>
