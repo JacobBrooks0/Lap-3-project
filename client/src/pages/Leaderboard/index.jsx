@@ -7,14 +7,16 @@ import React from 'react'
 
 export default function ShowLeaderboard() {
   return (
-    <>
+    <main>
+      <body>
 
         <div className={style["leader"]}>
             <Leaderboard/>
             <Users/>
             
         </div>
-    </>
+        </body>
+    </main>
     
   )
 }

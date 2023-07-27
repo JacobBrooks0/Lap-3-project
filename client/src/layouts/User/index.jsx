@@ -11,13 +11,14 @@ export default function User() {
   const { user } = useAuth();
   return user ? (
     <>
+
       <div id="user-wrapper" className={style["container"]}>
         <BgImages />
         <header className={style["nav-bar"]}>
           <LogoutButton />
           <nav className={style["nav"]}>
             <NavLink to="/dashboard">Dashboard</NavLink>
-            <NavLink to="/games">Games</NavLink>
+         
             <NavLink to="/language">Pick a language</NavLink>
             <NavLink to="/leaderboard">Leaderboard</NavLink>
             <NavLink to="/profile">Profile</NavLink>
@@ -25,6 +26,7 @@ export default function User() {
         </header>
         <Outlet />
       </div>
+
     </>
   ) : (
     <Navigate to="/" />
