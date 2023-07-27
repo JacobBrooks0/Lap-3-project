@@ -1,18 +1,17 @@
 .Board{
     display: flex;
     justify-content: center;
+    color:white
 
 }
 
-table {
-    border-collapse: separate;
-   
-}
+
 
 th,
 td {
   width: 150px;
   text-align: center;
-  border: 1px solid black;
+  border: 1px solid white;
   padding: 5px;
+  text-decoration-color: white;
 }

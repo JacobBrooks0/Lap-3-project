@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.93% </span>
+                <span class="strong">86.66% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>51/58</span>
+                <span class='fraction'>52/60</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.93% </span>
+                <span class="strong">86.66% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>51/58</span>
+                <span class='fraction'>52/60</span>
             </div>
         
             
@@ -244,7 +244,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -275,19 +274,21 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -303,10 +304,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -350,7 +350,7 @@ async function getQuizByQuizId(req, res) {
 &nbsp;
 async function showById(req, res) {
   try {
-    const user_id = req.params.id;
+    const user_id = req.user.user_id;
     const quizzes = await Quiz.getAllQuizzesByUserId(user_id);
     res.status(200).json(quizzes);
   } catch (err) {
@@ -373,7 +373,6 @@ async function showByLanguageId(req, res) {
 async function getBeginnerQuizzes(req, res) {
   try {
     const quizzes = await Quiz.getBeginnerQuizzes();
-    console.log(quizzes);
     res.status(200).json(quizzes);
   } catch (err) {
 <span class="cstat-no" title="statement not covered" >    res.status(404).json({ error: err.message });</span>
@@ -405,26 +404,28 @@ async function getAllInfo(req, res) {
   try {
     const { language_id, quiz_id } = req.params;
     const quizInfo = await Quiz.getAllInfoForOneUser(id, language_id, quiz_id);
-<span class="cstat-no" title="statement not covered" >    res.status(200).json(quizInfo);</span>
+    res.status(200).json(quizInfo);
   } catch (err) {
-    res.status(404).json({ error: err.message });
+<span class="cstat-no" title="statement not covered" >    res.status(404).json({ error: err.message });</span>
   }
 }
 &nbsp;
 async function createQuizInstance(req, res) {
+  const user_id = req.user.user_id;
   try {
     const data = req.body;
-    const newEntry = await Quiz.createQuiz(data);
-    const updateLeaderboard = await Leaderboard.updateLeaderboards(newEntry);
+    const newEntry = await Quiz.createQuiz(user_id, data);
+    await Leaderboard.updateLeaderboards(newEntry);
     res.status(201).json(newEntry);
   } catch (error) {
-<span class="cstat-no" title="statement not covered" >    res.status(500).json({ error: "Failed to fetch quizzes." });</span>
+<span class="cstat-no" title="statement not covered" >    console.log(error);</span>
+<span class="cstat-no" title="statement not covered" >    res.status(500).json({ error: error.message });</span>
   }
 }
 &nbsp;
 async function updateQuizInstance(req, res) {
   try {
-    const userId = req.params.user_id;
+    const userId = req.user.user_id;
     const data = req.body;
     const newEntry = await Quiz.getAllInfoForOneUser(
       userId,
@@ -432,11 +433,10 @@ async function updateQuizInstance(req, res) {
       data.quiz_id
     );
     const instanceToUpdate = await newEntry.updateQuizInstance(data);
-    const updateLeaderboard = await Leaderboard.updateLeaderboards(
-      instanceToUpdate
-    );
+    await Leaderboard.updateLeaderboards(instanceToUpdate);
     res.status(201).json(instanceToUpdate);
   } catch (error) {
+    console.log(error);
     res.status(500).json({ error: "Failed to fetch quizzes." });
   }
 }
@@ -460,7 +460,7 @@ module.exports = {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-07-26T17:40:00.131Z
+                at 2023-07-27T08:55:29.250Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

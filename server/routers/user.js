@@ -6,12 +6,10 @@ const userController = require("../controllers/user");
 
 userRouter.post("/register", userController.register);
 userRouter.post("/login", userController.login);
-userRouter.get("/:id", userController.details);
 
 userRouter.use(isAuthenticated);
-
+userRouter.get("/", userController.details);
 userRouter.delete("/logout", userController.logout);
-
 userRouter.delete("/:user_id", userController.destroy);
 
 module.exports = userRouter;

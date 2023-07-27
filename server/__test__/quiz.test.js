@@ -18,9 +18,11 @@ describe("Leaderboards Endpoints", () => {
       password: "password",
     };
     await request(app).post("/users/register").send(registerDetails);
-    const response = await request(app)
-      .post("/users/login")
-      .send(registerDetails);
+    const loginDetails = {
+      username: "hack",
+      password: "1",
+    };
+    const response = await request(app).post("/users/login").send(loginDetails);
     token = response.body.token;
   });
 
@@ -33,11 +35,11 @@ describe("Leaderboards Endpoints", () => {
   it("Should give correct status codes of failure when no entries available", async () => {
     await request(app).get("/quizzes").expect(403);
     await request(app)
-      .get("/quizzes/6")
+      .get("/quizzes/60")
       .set({ authorization: token })
       .expect(404);
     await request(app)
-      .get("/quizzes/user/55")
+      .get("/quizzes/user")
       .set({ authorization: token })
       .expect(404);
     await request(app)
@@ -48,6 +50,34 @@ describe("Leaderboards Endpoints", () => {
       .get("/quizzes/7/7/7")
       .set({ authorization: token })
       .expect(404);
+  });
+
+  //POST
+  it("posts a new quiz", async () => {
+    const postNewQuizDetails = {
+      quiz_id: 1,
+      language_id: 1,
+      beginner_score: 20,
+      intermediate_score: 0,
+      advanced_score: 0,
+    };
+
+    const postResponse = await request(app)
+      .post("/quizzes")
+      .set({ authorization: token })
+      .send(postNewQuizDetails)
+      .expect(201);
+
+    const { quiz_instance } = postResponse.body;
+    quizInst = quiz_instance;
+
+    expect(postResponse.body).toHaveProperty("quiz_id", 1);
+    expect(postResponse.body).toHaveProperty("language_id", 1);
+    //user_id gotten from token so it's not put in the body and you can't test for it
+    // expect(postResponse.body).toHaveProperty("user_id", 1);
+    expect(postResponse.body).toHaveProperty("beginner_score", 20);
+    expect(postResponse.body).toHaveProperty("intermediate_score", 0);
+    expect(postResponse.body).toHaveProperty("advanced_score", 0);
   });
 
   it("should get all quizzes", async () => {
@@ -71,12 +101,11 @@ describe("Leaderboards Endpoints", () => {
 
   it("should get all quizzes based on an user id", async () => {
     const response = await request(app)
-      .get("/quizzes/user/1")
+      .get("/quizzes/user")
       .set({ authorization: token })
       .expect(200);
     expect(Array.isArray(response.body)).toBe(true);
     expect(response.body.length).toBeGreaterThan(0);
-    expect(response.body[0].user_id).toBe(1);
   });
 
   it("should get all quizzes based on an language id", async () => {
@@ -122,60 +151,30 @@ describe("Leaderboards Endpoints", () => {
     expect(response.body[0]).not.toHaveProperty("intermediate_score");
   });
 
-  // it("should bring back a quiz instance with a specific user id, langauge id and quiz id", async () => {
-  //   const response = await request(app)
-  //     .get("/quizzes/1/1")
-  //     .set({
-  //       authorization: token,
-  //       params: { language_id: 1, quiz_id: 1, user: { user_id: 1 } },
-  //     })
-  //     .expect(200);
+  it("should bring back a quiz instance with a specific user id, langauge id and quiz id", async () => {
+    const response = await request(app)
+      .get("/quizzes/1/1")
+      .set({
+        authorization: token,
+      })
+      .expect(200);
+    const userObj = response.body;
 
-  //   const userObj = response.body;
+    const {
+      user_id,
+      quiz_id,
+      language_id,
+      beginner_score,
+      intermediate_score,
+      advanced_score,
+    } = userObj;
 
-  //   const {
-  //     user_id,
-  //     quiz_id,
-  //     language_id,
-  //     beginner_score,
-  //     intermediate_score,
-  //     advanced_score,
-  //   } = userObj;
-
-  //   expect(user_id).toBe(1);
-  //   expect(quiz_id).toBe(1);
-  //   expect(language_id).toBe(1);
-  //   expect(beginner_score).toBe(10);
-  //   expect(intermediate_score).toBe(20);
-  //   expect(advanced_score).toBe(30);
-  // });
-
-  //POST
-  it("posts a new quiz", async () => {
-    const postNewQuizDetails = {
-      quiz_id: 1,
-      language_id: 1,
-      beginner_score: 20,
-      intermediate_score: 0,
-      advanced_score: 0,
-    };
-
-    const postResponse = await request(app)
-      .post("/quizzes")
-      .set({ authorization: token })
-      .send(postNewQuizDetails)
-      .expect(201);
-
-    const { quiz_instance } = postResponse.body;
-    quizInst = quiz_instance;
-
-    expect(postResponse.body).toHaveProperty("quiz_id", 1);
-    expect(postResponse.body).toHaveProperty("language_id", 1);
-    //user_id gotten from token so it's not put in the body and you can't test for it
-    // expect(postResponse.body).toHaveProperty("user_id", 1);
-    expect(postResponse.body).toHaveProperty("beginner_score", 20);
-    expect(postResponse.body).toHaveProperty("intermediate_score", 0);
-    expect(postResponse.body).toHaveProperty("advanced_score", 0);
+    expect(user_id).toBe(3);
+    expect(quiz_id).toBe(1);
+    expect(language_id).toBe(1);
+    expect(beginner_score).toBe(20);
+    expect(intermediate_score).toBe(0);
+    expect(advanced_score).toBe(0);
   });
 
   //PATCH

@@ -4,8 +4,6 @@ import axios from "axios";
 import style from "./style.module.css";
 
 
-
-
 export default function Users() {
 
         const [getData,setGetData] = useState([])
@@ -16,7 +14,6 @@ export default function Users() {
                 try { 
                     const response = await axios.get(URL)
                     setGetData(response.data)
-                    console.log(response.data)
                 } catch (error){
                     console.log(error)
                 }
