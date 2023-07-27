@@ -1,10 +1,11 @@
 .container {
   min-height: 100vh;
   background-color: #0c0e26;
-  overflow: hidden;
+  position: relative;
 }
 
 .nav-bar {
+  z-index: 3000;
   background-color: palevioletred;
   position: sticky;
   top: 0;

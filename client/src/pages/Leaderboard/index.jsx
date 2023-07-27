@@ -7,7 +7,7 @@ import React from 'react'
 
 export default function ShowLeaderboard() {
   return (
-    <main>
+    <main className="page">
       <body>
 
         <div className={style["leader"]}>

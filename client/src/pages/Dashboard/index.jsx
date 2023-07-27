@@ -12,7 +12,7 @@ export default function Dashboard() {
   );
 
   return (
-    <div className={style["container"]}>
+    <div className={`page ${style["container"]}`}>
       <h2>Practice your skills</h2>
       <div className={style["button-container"]}>
         {filteredQuiz.map((quiz) => (
