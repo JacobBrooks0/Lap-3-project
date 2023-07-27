@@ -35,11 +35,11 @@ export default function BgImages() {
           pathname !== "/leaderboard" ? style["bg-out"] : ""
         }`}
       />
-      <div
+      {/* <div
         className={`${style["alien-planet"]} ${style["background"]} ${
           pathname !== /\/practice+/i ? style["bg-out"] : ""
         }`}
-      />
+      /> */}
       <div
         className={`${style["river"]} ${style["background"]} ${
           pathname !== "/language" ? style["bg-out"] : ""

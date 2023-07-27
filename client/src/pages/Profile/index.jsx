@@ -11,7 +11,8 @@ export default function Profile() {
   return (
     data.user.rank && (
       <>
-        <div id="profile" className={style["container"]}>
+        <div className={style["outer-container"]}>
+        <main id="profile" className={style["container"]}>
           <div className={style["user-meta"]}>
             <AlienImage className={style["rank-image"]} />
             <p>Rank: {rankMap[data.user.rank]}</p>
@@ -22,7 +23,9 @@ export default function Profile() {
             </p>
             <p>Last Login: {new Date(data.user.lastLogin).toLocaleString()}</p>
           </div>
+        </main>
         </div>
+        
       </>
     )
   );
