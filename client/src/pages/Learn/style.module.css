@@ -6,6 +6,8 @@
     height: 100%;
     font-family: Arial, sans-serif;
     font-size: 24px;
+    position: relative;
+    z-index: 1;
 }
 
 .question-container {
