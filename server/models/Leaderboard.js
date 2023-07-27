@@ -19,7 +19,7 @@ class Leaderboard {
 
   static async getAllLeaderboardEntries() {
     const response = await db.query(
-      "SELECT *, SUM(score_spanish + score_italian) AS Total FROM leaderboards GROUP BY user_id ORDER BY Total DESC"
+      "SELECT *, SUM(score_spanish + score_italian) AS Total FROM leaderboards GROUP BY entry_id ORDER BY Total DESC"
     );
 
     if (response.rows.length === 0) {
@@ -45,7 +45,7 @@ class Leaderboard {
   static async getLeaderboardByLanguage(language_name) {
     if (language_name === "spanish") {
       const response = await db.query(
-        "SELECT user_id, score_spanish FROM Leaderboards GROUP BY user_id ORDER BY score_spanish DESC;"
+        "SELECT user_id, score_spanish FROM Leaderboards GROUP BY entry_id ORDER BY score_spanish DESC;"
       );
 
       if (response.rows.length === 0) {
@@ -54,7 +54,7 @@ class Leaderboard {
       return response.rows.map((entry) => new Leaderboard(entry));
     } else if (language_name === "italian") {
       const response = await db.query(
-        "SELECT user_id, score_italian FROM Leaderboards GROUP BY user_id ORDER BY score_italian DESC;"
+        "SELECT user_id, score_italian FROM Leaderboards GROUP BY entry_id ORDER BY score_italian DESC;"
       );
 
       if (response.rows.length === 0) {
