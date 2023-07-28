@@ -1,38 +1,52 @@
-/* .container {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr ;
-  gap: 2rem;
-  padding: 2rem;
-}
-
-.container > div {
-  background-color: lightgrey;
-  border-radius: 10px;
+.outer-container {
   display: grid;
   place-items: center;
 }
 
-.practice {
-  
-  background-color: aqua;
-  display: flex;
-  flex-direction: row;
-} */
-
-/* style.module.css */
-
-/* style.module.css */
-
-.container {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  font-size: 24px;
+.inner-container {
+  display: grid;
   z-index: 1;
+  padding: 40px;
+  border-radius: 15px;
+  border: #74ee15 2px solid;
+  background: linear-gradient(#100e27bd, #030418af);
+  box-shadow: 0 0 5px 2.5px #74ee158f, 0 0 10px 3.5px #ebecca34,
+    0 0 12.5px 10px #8a2be234, 0 0 15px 12px #14e4ff34;
+}
+
+.lang-select {
+  place-self: center;
+  display: grid;
+  place-items: center;
+  grid-auto-flow: column;
+  text-align: center;
+  color: #4deeea;
+  z-index: 1;
+  font-size: 20px;
+}
+.lang-select h1 {
+  margin: 0;
+  margin-right: 20px;
+  font-size: 28px;
+}
+
+.lang-select img {
+  border: 2px solid #4deeea;
+}
+
+.lang-select img:hover {
+  border: 3px solid #74ee15;
+}
+
+.learn-quiz {
+  z-index: 1;
+  text-align: center;
+  color: #4deeea;
+}
+
+.learn-quiz > h2 {
+  font-size: 30px;
+  color: #4deeea;
 }
 
 .button-container {
@@ -43,18 +57,23 @@
 }
 
 .quiz-button {
+  background-image: radial-gradient(#060824ee, #132546c0),
+    url("src/assets/textures/metallic_violet.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: #4deeea 2px solid;
   margin: 10px;
   padding: 20px;
-  border: 1px solid #ccc;
   border-radius: 12px;
   background-color: #f9f9f9;
   text-decoration: none;
-  color: #000;
+  color: #4deeea;
   font-size: 20px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .quiz-button:hover {
-  background-color: #f1f1f1;
+  border: 2px solid #74ee15;
+  color: #74ee15;
 }

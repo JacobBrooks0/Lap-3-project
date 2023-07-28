@@ -87,20 +87,6 @@ describe("User Endpoints", () => {
       .expect(202);
   });
 
-  it("should not delete a user who is not logged in as themself", async () => {
-    const loginResp = await request(app)
-      .post("/users/login")
-      .send({ username: "user", password: "password" });
-
-    const userObj = loginResp.body;
-    const deleteToken = userObj.token;
-
-    const response = await request(app)
-      .delete("/users/2")
-      .set({ authorization: deleteToken })
-      .expect(405);
-  });
-
   it("should delete a user who is logged in as themself", async () => {
     const loginResp = await request(app)
       .post("/users/login")
@@ -110,7 +96,7 @@ describe("User Endpoints", () => {
     const deleteToken = userObj.token;
 
     const response = await request(app)
-      .delete("/users/4")
+      .delete("/users")
       .set({ authorization: deleteToken })
       .expect(204);
   });

@@ -1,17 +1,20 @@
 .Board{
-    display: flex;
-    justify-content: center;
-    color:white
-
+    text-align: center;
+    color:#4deeea;
 }
 
-
+.Board > h1 {
+  text-decoration: underline;
+  font-size: 40px;
+  margin: 0;
+  margin-bottom: 15px;
+}
 
 th,
 td {
   width: 150px;
   text-align: center;
-  border: 1px solid white;
+  border: 1px solid #4deeea;
   padding: 5px;
-  text-decoration-color: white;
+  text-decoration-color: #4deeea;
 }

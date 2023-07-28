@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
-import axios from 'axios';
-import Question from '../../components/Question';
-import AnswerOption from '../../components/AnswerOption';
-import ResultContainer from '../../components/ResultPage';
-import quizData from '../../data/quizData.json';
-import style from './style.module.css';
+import React, { useState, useEffect } from "react";
+import { useParams, Link } from "react-router-dom";
+import axios from "axios";
+import Question from "../../components/Question";
+import AnswerOption from "../../components/AnswerOption";
+import ResultContainer from "../../components/ResultPage";
+import quizData from "../../data/quizData.json";
+import style from "./style.module.css";
 
 const QuizPage = ({ setSelectedLanguage }) => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -48,11 +48,11 @@ const QuizPage = ({ setSelectedLanguage }) => {
     setSelectedOption(null);
 
     const getLanguageId = (language) => {
-      return language === 'Spanish' ? 1 : 2;
+      return language === "Spanish" ? 1 : 2;
     };
 
     const getQuizId = (selectedQuiz) => {
-      if (selectedQuiz.language === 'Spanish') {
+      if (selectedQuiz.language === "Spanish") {
         return selectedQuiz.id - 5;
       } else {
         return selectedQuiz.id;
@@ -64,21 +64,20 @@ const QuizPage = ({ setSelectedLanguage }) => {
 
     const config = {
       headers: {
-        Authorization: localStorage.getItem('token'),
+        Authorization: localStorage.getItem("token"),
       },
     };
-
 
     let hasQuiz = true;
     let existingScore;
     try {
+      console.log(`${import.meta.env.VITE_SERVER}/quizzes/${language_id}/${quiz_id}`)
       const { data } = await axios.get(
         `${import.meta.env.VITE_SERVER}/quizzes/${language_id}/${quiz_id}`,
         config
       );
 
       existingScore = data;
-
     } catch (error) {
       hasQuiz = false;
     }
@@ -86,25 +85,30 @@ const QuizPage = ({ setSelectedLanguage }) => {
     console.log(hasQuiz);
 
     try {
-
       if (hasQuiz) {
-        await axios.patch(`${import.meta.env.VITE_SERVER}/quizzes`, {
-          quiz_id,
-          language_id,
-          beginner_score: score * 8,
-
-        }, config
+        await axios.patch(
+          `${import.meta.env.VITE_SERVER}/quizzes`,
+          {
+            quiz_id,
+            language_id,
+            beginner_score: score * 8,
+          },
+          config
         );
-        console.log('Quiz results updated successfully.');
+        console.log("Quiz results updated successfully.");
       } else {
-        await axios.post(`${import.meta.env.VITE_SERVER}/quizzes`, {
-          quiz_id,
-          language_id,
-          beginner_score: score * 8,
-          intermediate_score: 0,
-          advanced_score: 0
-        }, config);
-        console.log('New quiz results saved successfully.');
+        await axios.post(
+          `${import.meta.env.VITE_SERVER}/quizzes`,
+          {
+            quiz_id,
+            language_id,
+            beginner_score: score * 8,
+            intermediate_score: 0,
+            advanced_score: 0,
+          },
+          config
+        );
+        console.log("New quiz results saved successfully.");
       }
     } catch (error) {
       console.log(error);
@@ -115,11 +119,11 @@ const QuizPage = ({ setSelectedLanguage }) => {
     setSelectedLanguage(selectedQuiz.language);
 
     const getLanguageId = (language) => {
-      return language === 'Spanish' ? 1 : 2;
+      return language === "Spanish" ? 1 : 2;
     };
 
     const getQuizId = (selectedQuiz) => {
-      if (selectedQuiz.language === 'Spanish') {
+      if (selectedQuiz.language === "Spanish") {
         return selectedQuiz.id - 5;
       } else {
         return selectedQuiz.id;
@@ -131,10 +135,9 @@ const QuizPage = ({ setSelectedLanguage }) => {
 
     const config = {
       headers: {
-        Authorization: localStorage.getItem('token'),
+        Authorization: localStorage.getItem("token"),
       },
     };
-
 
     let hasQuiz = true;
     let existingScore;
@@ -145,7 +148,6 @@ const QuizPage = ({ setSelectedLanguage }) => {
       );
 
       existingScore = data;
-
     } catch (error) {
       hasQuiz = false;
     }
@@ -153,25 +155,30 @@ const QuizPage = ({ setSelectedLanguage }) => {
     console.log(hasQuiz);
 
     try {
-
       if (hasQuiz) {
-        await axios.patch(`${import.meta.env.VITE_SERVER}/quizzes`, {
-          quiz_id,
-          language_id,
-          beginner_score: score * 8,
-
-        }, config
+        await axios.patch(
+          `${import.meta.env.VITE_SERVER}/quizzes`,
+          {
+            quiz_id,
+            language_id,
+            beginner_score: score * 8,
+          },
+          config
         );
-        console.log('Quiz results updated successfully.');
+        console.log("Quiz results updated successfully.");
       } else {
-        await axios.post(`${import.meta.env.VITE_SERVER}/quizzes`, {
-          quiz_id,
-          language_id,
-          beginner_score: score * 8,
-          intermediate_score: 0,
-          advanced_score: 0
-        }, config);
-        console.log('New quiz results saved successfully.');
+        await axios.post(
+          `${import.meta.env.VITE_SERVER}/quizzes`,
+          {
+            quiz_id,
+            language_id,
+            beginner_score: score * 8,
+            intermediate_score: 0,
+            advanced_score: 0,
+          },
+          config
+        );
+        console.log("New quiz results saved successfully.");
       }
     } catch (error) {
       console.log(error);
@@ -179,32 +186,48 @@ const QuizPage = ({ setSelectedLanguage }) => {
   };
 
   return (
-    <div className={`page ${style["container"]}`}>
-      {!showResult ? (
-        <>
-          <Question question={selectedQuiz?.questions[currentQuestion]?.question} />
-          <div>
-            {selectedQuiz?.questions[currentQuestion]?.options.map((option, index) => (
-              <AnswerOption
-                key={index}
-                option={option}
-                isCorrect={option === selectedQuiz?.questions[currentQuestion]?.correctAnswer}
-                isSelected={selectedOption === option}
-                onClick={() => handleAnswerClick(option)}
-              />
-            ))}
-          </div>
-        </>
-      ) : (
-        <>
-          <ResultContainer score={score} totalQuestions={selectedQuiz?.questions.length} onRestart={handleRestartQuiz} />
-          <Link to="/dashboard">
-            <button className={style['back-button']} onClick={handleBackToDashboard}>
-              Back to Dashboard
-            </button>
-          </Link>
-        </>
-      )}
+    <div className={`page ${style["outer-container"]}`}>
+      <main className={style["container"]}>
+        {!showResult ? (
+          <>
+            <Question
+              question={selectedQuiz?.questions[currentQuestion]?.question}
+            />
+            <div className={style["answer-options"]}>
+              {selectedQuiz?.questions[currentQuestion]?.options.map(
+                (option, index) => (
+                  <AnswerOption
+                    key={index}
+                    option={option}
+                    isCorrect={
+                      option ===
+                      selectedQuiz?.questions[currentQuestion]?.correctAnswer
+                    }
+                    isSelected={selectedOption === option}
+                    onClick={() => handleAnswerClick(option)}
+                  />
+                )
+              )}
+            </div>
+          </>
+        ) : (
+          <>
+            <ResultContainer
+              score={score}
+              totalQuestions={selectedQuiz?.questions.length}
+              onRestart={handleRestartQuiz}
+            />
+            <Link to="/dashboard">
+              <button
+                className={style["back-button"]}
+                onClick={handleBackToDashboard}
+              >
+                Back to Dashboard
+              </button>
+            </Link>
+          </>
+        )}
+      </main>
     </div>
   );
 };

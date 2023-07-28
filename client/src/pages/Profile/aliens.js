@@ -25,13 +25,13 @@ export default function getAlienImage(rank) {
       Alien = Alien3;
       break;
     case 3:
-      Alien = Alien3;
+      Alien = Alien9;
       break;
     case 4:
       Alien = Alien4;
       break;
     case 5:
-      Alien = Alien5;
+      Alien = Alien11;
       break;
     case 6:
       Alien = Alien6;
@@ -49,7 +49,7 @@ export default function getAlienImage(rank) {
       Alien = Alien10;
       break;
     case 11:
-      Alien = Alien11;
+      Alien = Alien5;
       break;
     case 12:
       Alien = Alien12;

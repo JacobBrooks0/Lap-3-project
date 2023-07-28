@@ -1,8 +1,7 @@
 import React from "react";
-import { NavLink, Outlet, Navigate } from "react-router-dom";
+import { NavLink, Outlet, Navigate, Link } from "react-router-dom";
 
 import { useAuth } from "../../contexts";
-import { LogoutButton } from "../../components";
 import BgImages from "./BgImages/index.jsx";
 
 import style from "./style.module.css";
@@ -13,9 +12,14 @@ export default function User() {
     <>
       <div id="user-wrapper" className={style["container"]}>
         <header className={style["nav-bar"]}>
-          <LogoutButton />
+          <Link to="/dashboard">
+            <div className={style["logo"]}>
+              <svg viewBox="490 -180 700 250">
+                <text>COSMOGLOTS</text>
+              </svg>
+            </div>
+          </Link>
           <nav className={style["nav"]}>
-            <NavLink to="/language">Pick a language</NavLink>
             <NavLink to="/dashboard">Dashboard</NavLink>
             <NavLink to="/leaderboard">Leaderboard</NavLink>
             <NavLink to="/profile">Profile</NavLink>

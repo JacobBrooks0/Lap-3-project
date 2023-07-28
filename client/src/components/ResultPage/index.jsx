@@ -1,5 +1,6 @@
 import React from 'react';
-import style from '../../pages/Learn/style.module.css'
+import style from './style.module.css'
+
 const ResultContainer = ({ score, totalQuestions, onRestart }) => {
     return (
         <div className={style["result-container"]}>

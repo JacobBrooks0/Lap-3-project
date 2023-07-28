@@ -6,7 +6,7 @@
 
 .nav-bar {
   z-index: 3000;
-  background-color: palevioletred;
+  background-color: #0c0e26;
   position: sticky;
   top: 0;
   height: 40px;
@@ -17,9 +17,13 @@
   justify-content: space-between;
   align-items: center;
 
-  background-image: url("src/assets/backgrounds/stars.jpg");
+  background-image: linear-gradient(#100e3031,#1147413f), url("src/assets/backgrounds/stars.jpg");
   background-size: cover;
   border-bottom: solid #4deeea 2px;
+  box-shadow: 0 0 5px 2.5px #48cee08f,
+              0 0 10px 3.5px #ebecca34,
+              0 0 12.5px 10px #8a2be234,
+              0 0 15px 12px #ff149334;
 }
 
 .nav {
@@ -33,7 +37,7 @@
   text-decoration: none;
 }
 
-.nav button {
+.nav .logo {
   justify-self: start;
 }
 
@@ -41,3 +45,41 @@
   color: #74ee15;
 }
 
+.logo svg {
+  transform: scale(0.4) translateY(11%);
+  width: 300px;
+  height: 100%;
+  translate: 0 0%;
+  position: relative;
+  font-weight: 600;
+  overflow: visible;
+}
+
+.logo text {
+  display: inline-block;
+  fill: rgb(12, 7, 54);
+  stroke: #4deeea;
+  font-size: 190px;
+  font-family: "Bruno Ace SC" !important;
+  stroke-width: 8px;
+  stroke-linejoin: round;
+  animation: 7s pulsate infinite;
+}
+
+@keyframes pulsate {
+  20% {
+    stroke:#74ee15;
+  }
+  40% {
+    stroke:#ffe700;
+  }
+  60% {
+    stroke:#f000ff;
+  }
+  80% {
+    stroke:#001eff;
+  }
+  100% {
+    stroke:#4deeea;
+  }
+}

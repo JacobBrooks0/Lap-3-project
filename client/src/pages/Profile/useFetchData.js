@@ -41,10 +41,11 @@ export default function fetchAllUserInfo() {
   }, []);
 
   const quizDataC = quizData?.map((quizObj) => {
-    quizObj.name = quizNames[quizObj["quiz_id"] + 1];
+    
+    quizObj.name = quizNames[quizObj["quiz_id"] - 1];
     return quizObj;
   });
-
+  console.log(quizDataC)
   return {
     user: {
       username: userData?.username,

@@ -72,16 +72,10 @@ async function details(req, res) {
 }
 
 async function destroy(req, res) {
-  const { user_id } = req.params;
-  const user = req.user;
+  const user_id = req.user.user_id;
   try {
-    if (user_id != user.user_id) {
-      throw new Error(
-        "Permission not granted- you cannot delete someone else's profile"
-      );
-    }
     const userToDelete = await User.getOneById(user_id);
-    const deleteUser = await userToDelete.deleteUser();
+    await userToDelete.deleteUser();
     res.status(204).json({ message: "Successfully deleted" });
   } catch (error) {
     res.status(405).json({ error: error.message });
