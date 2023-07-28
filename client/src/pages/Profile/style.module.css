@@ -163,6 +163,10 @@
   hyphens: auto;
 }
 
+.l-data-actions th{
+  background: rgba(81, 255, 0, 0.116);
+}
+
 .l-data-actions > div:last-of-type {
   grid-column: span 2;
   display: grid;
