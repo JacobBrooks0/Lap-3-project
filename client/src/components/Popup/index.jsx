@@ -6,7 +6,6 @@ export default function Popup() {
 
 export const writePopup = async (message) => {
   const popup = document.getElementById("pop-up");
-  console.log(popup)
   popup.style.display = "";
   popup.innerHTML = message;
   popup.className = `${style["container"]} popup-fade-in`;

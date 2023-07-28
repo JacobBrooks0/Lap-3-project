@@ -28,7 +28,7 @@ export default function DeleteAccount() {
   };
 
   return (
-    <button className={style["button"]} onClick={deleteAccount}>
+    <button className={style["button"]} data-testid="delete" onClick={deleteAccount}>
       Delete Account
     </button>
   );
