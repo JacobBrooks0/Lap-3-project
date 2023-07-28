@@ -6,7 +6,7 @@ export default function LanguageSelection() {
     return (
         <>
             <main className="page" id="language-selection">
-                <div className={style["container"]}>
+                <div data-testid="language-container" className={style["container"]}>
                     <h1>Pick a language you want to learn</h1>
                     <LanguageButton />
                 </div>
