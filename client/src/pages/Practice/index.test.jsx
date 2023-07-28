@@ -11,7 +11,6 @@ import {
 } from "../../test/helpers";
 import { AuthProvider } from "../../contexts";
 import { LanguageProvider } from "../../contexts/Language";
-import { Popup } from "../../components";
 
 import Practice from ".";
 
