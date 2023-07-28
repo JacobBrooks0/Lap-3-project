@@ -1,5 +1,5 @@
 import React from 'react';
-import style from '../../pages/Learn/style.module.css'
+import style from './style.module.css'
 const Question = ({ question }) => {
     return (
         <div className={style["question-container"]}>

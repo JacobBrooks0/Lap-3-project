@@ -56,8 +56,7 @@
 }
 
 .quiz-button {
-
-  background-image: linear-gradient(#100e27bd, #030418af),
+  background-image: radial-gradient(#060824ee, #132546c0),
     url("src/assets/textures/metallic_violet.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -75,4 +74,5 @@
 
 .quiz-button:hover {
   border: 2px solid #74ee15;
+  color: #74ee15;
 }

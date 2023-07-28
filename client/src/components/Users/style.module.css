@@ -10,8 +10,28 @@ table {
   border-collapse: collapse;
 }
 
+.container th {
+  background-color: #74ee152a;
+}
+
 th, td {
   border: 2px solid #74ee15;
   padding: 8px;
+  position: relative;
+  place-items: center;
   color:#4deeea;
+}
+
+.container td > svg {
+  position: relative;
+  height: 70px;
+  opacity: 0.2;
+}
+
+.container td > span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 34px;
+  transform: translate(-50%, -50%)
 }

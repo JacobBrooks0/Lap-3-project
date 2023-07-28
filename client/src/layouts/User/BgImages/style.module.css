@@ -16,26 +16,28 @@ bottom: 0px;
 
 .spaceship-view {
   background-image: url("src/assets/backgrounds/spaceship-view-earth.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 .night-landscape-moon {
   background-image: url("src/assets/backgrounds/night_landscape_with_moon.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
-.river {
-  background-image: linear-gradient(#100e2727, #03041881), url("src/assets/backgrounds/blank-nature-landscape-night-scene.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
+.alien-planet {
+  background-image: linear-gradient(#24214628, #04062988), url("src/assets/backgrounds/earth-view-night-from-alien-planet.jpg");
 }
 
-.cliff-night {
+.night-town {
   background: linear-gradient(#08043015, #0304186b),
-    url("src/assets/backgrounds/human_on_cliff.jpg");
-  background-position: bottom;
+    url("src/assets/backgrounds/suburb_at_night.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.mountain-road{
+  background: linear-gradient(#08043015, #0304186b),
+    url("src/assets/backgrounds/mountain_road.jpg");
+  background-position: center;
   background-size: cover;
 }
 

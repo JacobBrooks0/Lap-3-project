@@ -9,11 +9,10 @@ import style from "./style.module.css";
 
 export default function BgImages() {
   const { pathname } = useLocation();
-
   return (
     <>
       <div
-        className={`${style["cliff-night"]} ${style["background"]} ${
+        className={`${style["night-town"]} ${style["background"]} ${
           pathname !== "/dashboard" ? style["bg-out"] : ""
         }`}
       >
@@ -35,14 +34,14 @@ export default function BgImages() {
           pathname !== "/leaderboard" ? style["bg-out"] : ""
         }`}
       />
-      {/* <div
-        className={`${style["alien-planet"]} ${style["background"]} ${
-          pathname !== /\/practice+/i ? style["bg-out"] : ""
-        }`}
-      /> */}
       <div
-        className={`${style["river"]} ${style["background"]} ${
-          pathname !== "/language" ? style["bg-out"] : ""
+        className={`${style["alien-planet"]} ${style["background"]} ${
+          pathname.split("/")[1] !== "practice" ? style["bg-out"] : ""
+        }`}
+      />
+      <div
+        className={`${style["mountain-road"]} ${style["background"]} ${
+          pathname.split("/")[1] !== "learn" ? style["bg-out"] : ""
         }`}
       />
     </>
