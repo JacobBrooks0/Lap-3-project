@@ -26,7 +26,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:__test__\mock\database\setup.js
+SF:__test__/mock/database/setup.js
 FN:6,(anonymous_0)
 FNF:1
 FNH:1
@@ -50,7 +50,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:controllers\leaderboard.js
+SF:controllers/leaderboard.js
 FN:3,index
 FN:13,show
 FN:25,showUser
@@ -91,7 +91,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:controllers\quiz.js
+SF:controllers/quiz.js
 FN:5,show
 FN:13,getQuizByQuizId
 FN:26,showById
@@ -182,7 +182,7 @@ BRF:2
 BRH:2
 end_of_record
 TN:
-SF:controllers\user.js
+SF:controllers/user.js
 FN:7,register
 FN:25,login
 FN:48,logout
@@ -250,7 +250,7 @@ BRF:4
 BRH:3
 end_of_record
 TN:
-SF:db\connect.js
+SF:db/connect.js
 FNF:0
 FNH:0
 DA:1,3
@@ -264,7 +264,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:middleware\authenticator.js
+SF:middleware/authenticator.js
 FN:4,isAuthenticated
 FNF:1
 FNH:1
@@ -294,7 +294,7 @@ BRF:6
 BRH:5
 end_of_record
 TN:
-SF:middleware\logger.js
+SF:middleware/logger.js
 FN:1,logRoutes
 FNF:1
 FNH:1
@@ -308,7 +308,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:models\Leaderboard.js
+SF:models/Leaderboard.js
 FN:4,(anonymous_0)
 FN:20,(anonymous_1)
 FN:29,(anonymous_2)
@@ -392,7 +392,7 @@ BRF:16
 BRH:7
 end_of_record
 TN:
-SF:models\Quiz.js
+SF:models/Quiz.js
 FN:4,(anonymous_0)
 FN:22,(anonymous_1)
 FN:32,(anonymous_2)
@@ -505,7 +505,7 @@ BRF:16
 BRH:13
 end_of_record
 TN:
-SF:models\Token.js
+SF:models/Token.js
 FN:6,(anonymous_0)
 FN:12,(anonymous_1)
 FN:24,(anonymous_2)
@@ -559,7 +559,7 @@ BRF:6
 BRH:2
 end_of_record
 TN:
-SF:models\User.js
+SF:models/User.js
 FN:4,(anonymous_0)
 FN:24,(anonymous_1)
 FN:35,(anonymous_2)
@@ -644,7 +644,7 @@ BRF:18
 BRH:9
 end_of_record
 TN:
-SF:routers\leaderboard.js
+SF:routers/leaderboard.js
 FNF:0
 FNH:0
 DA:1,3
@@ -663,7 +663,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:routers\quiz.js
+SF:routers/quiz.js
 FNF:0
 FNH:0
 DA:1,3
@@ -687,7 +687,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:routers\user.js
+SF:routers/user.js
 FNF:0
 FNH:0
 DA:1,3
