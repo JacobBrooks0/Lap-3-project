@@ -29,7 +29,7 @@ export default function Register() {
         goTo("/login");
       }
     } catch (error) {
-      // writePopup(error.response.data.error);
+      writePopup(error.response.data.error);
       console.log(error);
     }
   };
