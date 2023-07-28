@@ -1,99 +1,61 @@
+.outer-container {
+  display: grid;
+  place-items: center;
+}
+
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    font-family: Arial, sans-serif;
-    font-size: 24px;
-    position: relative;
-    z-index: 1;
+  display: grid;
+  font-size: 24px;
+  place-items: center;
+  position: relative;
+  z-index: 1;
+  row-gap: 25px;
+  width: 60%;
+  max-width: 900px;
+  text-align: center;
 }
 
-.question-container {
-    margin-bottom: 50px;
-    padding: 50px;
-    border: 1px solid #ccc;
-    border-radius: 12px;
-    background-color: #f9f9f9;
-}
-
-.option-button {
-    margin: 20px;
-    padding: 30px 60px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    background-color: #fff;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-size: 20px;
-}
-
-.option-button:hover {
-    background-color: #f1f1f1;
-}
-
-.option-button:global(.correct) {
-    background-color: #4caf50;
-    color: #fff;
-}
-
-.option-button:global(.incorrect) {
-    background-color: #f44336;
-    color: #fff;
-}
-
-.result-container {
-    text-align: center;
-    padding: 70px;
-    width: 450px;
-    border: 1px solid #ccc;
-    border-radius: 12px;
-    background-color: #f9f9f9;
-}
-
-.restart-button {
-    margin-top: 30px;
-    padding: 30px 60px;
-    background-color: #4caf50;
-    color: #fff;
-    transition: background-color 0.3s ease;
-    font-size: 20px;
-    border: none;
-
-}
-
-.restart-button:hover {
-    background-color: #45a049;
+.answer-options {
+  place-self: stretch;
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: 15px;
 }
 
 .back-button {
-    margin: 50px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 12px;
-    background-color: #f9f9f9;
-    text-decoration: none;
-    color: #000;
-    font-size: 20px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  place-self: stretch;
+  padding: 20px;
+  border: 2px solid #74ee15;
+  color: #74ee15;
+  border-radius: 30px;
+  background: linear-gradient(#24214628, #03041881);
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  font-size: 18px;
 }
 
-.show-hint-container {
-    margin: 20px;
+.back-button:hover {
+  font-size: 18px;
+  background-color: #74ee1554;
 }
 
 .show-hint-button {
-    padding: 20px 40px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    background-color: #fff;
-    cursor: pointer;
-    font-size: 18px;
-    transition: background-color 0.3s ease;
+  padding: 20px;
+  border: yellow 2px solid;
+  color: yellow;
+  font-size: 18px;
+  border-radius: 12px;
+  background: linear-gradient(#24214628, #03041881);
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
 }
 
 .show-hint-button:hover {
-    background-color: #f1f1f1;
+  background-color: rgba(255, 255, 0, 0.26);
+}
+
+.hint {
+  color: yellow;
 }
