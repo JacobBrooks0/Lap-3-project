@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(logRoutes);
 
 app.get("/", (req, res) => {
-  res.send({ message: "hello" });
+  res.send({ message: "Cosmoglots API" });
 });
 
 app.use("/users", userRouter);
