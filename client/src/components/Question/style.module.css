@@ -1,0 +1,19 @@
+.question-container {
+  place-self: stretch;
+  padding: 20px;
+  border: #4deeea 3px solid;
+  box-shadow: 0 0 5px 2.5px #4deeea8f, 0 0 10px 3.5px #ebecca34,
+  0 0 12.5px 10px #8a2be234, 0 0 15px 12px #14e4ff34;
+  color: #4deeea;
+  border-radius: 12px;
+  background: linear-gradient(#24214628, #03041881);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: grid;
+  place-items: center;
+  margin-bottom: 35px;
+}
+
+.question-container > h2 {
+  margin: 2rem;
+}

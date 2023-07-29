@@ -1,0 +1,41 @@
+.password-container {
+  display: grid;
+  place-self: stretch;
+  position: relative;
+}
+
+.password-container > input {
+  padding: 7px 20px;
+  border-radius: 100vmax;
+  width: 150px;
+  font-size: 18px;
+  background-color: #ffffff29;
+  color: #4deeea;
+  border: 2px solid #4deeea;
+
+  background-image: url("src/assets/Welcome/password1.svg");
+  background-repeat: no-repeat;
+  background-size: 15px;
+  background-position: left 1.2ex top 50%;
+
+  padding-left: 35px;
+}
+
+.password-container > input::placeholder {
+  position: relative;
+  top: 1px;
+  color: #bbd4d4;
+}
+
+.password-toggler {
+  position: absolute;
+  bottom: 50%;
+  right: 0;
+  font-size: 0;
+  transform: translate(-70%, 50%);
+  cursor: pointer;
+}
+
+.password-toggler:hover {
+  opacity: 0.4;
+}

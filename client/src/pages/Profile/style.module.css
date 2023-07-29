@@ -1,0 +1,186 @@
+.outer-container {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  height: calc(100% - 62px);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  column-gap: 2em;
+  width: 100%;
+  margin: 20px;
+  max-width: 1300px;
+}
+
+.container > * {
+  box-shadow: 0 0 5px 2.5px #4deeea8f, 0 0 10px 3.5px #ebecca34,
+    0 0 12.5px 10px #8a2be234, 0 0 15px 12px #14e4ff34;
+}
+.user-meta {
+  background-image: linear-gradient(#100e2783, #030418af),
+    url("src/assets/textures/metal-texture-vector.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  color: yellow;
+  min-width: 270px;
+  border: 3px solid #4deeea;
+  display: grid;
+}
+
+.user-meta > div {
+  background-color: #7374856b;
+  padding: 2em;
+  border-radius: 10px;
+  margin-bottom: 0.8rem;
+}
+
+.user-meta > p:first-child {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.user-meta > p {
+  margin: 0.4em;
+}
+
+.user-meta > p:first-child {
+  text-transform: uppercase;
+}
+
+.rank {
+  position: relative;
+  display: grid;
+}
+
+.rank > div:nth-child(1) {
+  border-radius: 10px;
+  background-color: #7374856b;
+  padding: 0.2em;
+  height: 40px;
+  display: grid;
+  align-items: center;
+}
+
+.rank span:first-child {
+  position: absolute;
+  left: 6px;
+
+  border: yellow solid 2px;
+  border-radius: 5px;
+  display: grid;
+  font-size: 20px;
+  place-items: center;
+  text-align: center;
+  margin: 0;
+  width: 30px;
+  height: 30px;
+  background-image: linear-gradient(#100e2783, #030418af),
+    url("src/assets/textures/aluminum-metal-texture.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.rank span:nth-child(2) {
+  position: relative;
+  top: 1px;
+  left: 18px;
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+@keyframes levitate {
+  50% {
+    transform: translateY(3%);
+  }
+}
+
+.rank-image {
+  height: 180px;
+  animation-name: levitate;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.l-data-actions {
+  background-image: linear-gradient(#100e2783, #030418af),
+    url("src/assets/textures/metal-texture-vector.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  color: yellow;
+  border: 3px solid #4deeea;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 30px;
+  grid-template-rows: min-content 1fr;
+}
+
+.l-data-actions > h1 {
+  grid-column: span 2;
+  margin: 0;
+}
+
+.name {
+  display: flex;
+  justify-content: center;
+  column-gap: 20px;
+  align-items: center;
+}
+
+.name > div:first-child {
+  text-decoration: underline;
+}
+
+.name > img {
+  height: 40px;
+  border-radius: 3px;
+  text-align: center;
+  border: 2px solid #74ee15;
+}
+
+.italian-info,
+.spanish-info {
+  display: grid;
+  grid-template-rows: min-content min-content 1fr;
+  place-items: center;
+  row-gap: 20px;
+}
+
+.l-data-actions table,
+.l-data-actions th,
+.l-data-actions td {
+  border-color: yellow;
+  color: yellow;
+  hyphens: auto;
+}
+
+.l-data-actions th{
+  background: rgba(81, 255, 0, 0.116);
+}
+
+.l-data-actions > div:last-of-type {
+  grid-column: span 2;
+  display: grid;
+  justify-items: end;
+  grid-auto-flow: column;
+  grid-template-columns: 1fr min-content min-content;
+  white-space: nowrap;
+  column-gap: 20px;
+  border-radius: 10px;
+  background-color: #7374856b;
+  padding: 1em;
+}
+
+.l-data-actions > div:last-of-type > h1 {
+  margin: 0;
+  justify-self: start;
+}

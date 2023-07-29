@@ -1,0 +1,11 @@
+.language-buttons img {
+    border-radius: 10px;
+    margin-left: 20px;
+    height: 60px;
+}
+
+.selected {
+    border-color: yellow !important;
+    border-width: 4px !important;
+}
+

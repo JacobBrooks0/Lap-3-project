@@ -1,0 +1,24 @@
+.option-button {
+    font-size: 20px;
+    padding: 20px ;
+    border: #4deeea 2px solid;
+    color: #4deeea;
+    border-radius: 12px;
+    background: linear-gradient(#24214628, #03041881);
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+}
+
+.option-button:hover {
+    border: 2px solid #74ee15;
+    color: #74ee15;
+}
+
+.option-button:global(.correct) {
+    background-color: #22b627d7;
+}
+
+.option-button:global(.incorrect) {
+    background-color: #f44336d8;
+}

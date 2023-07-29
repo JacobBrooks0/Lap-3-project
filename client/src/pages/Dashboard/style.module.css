@@ -1,0 +1,79 @@
+.outer-container {
+  display: grid;
+  place-items: center;
+}
+
+.inner-container {
+  display: grid;
+  z-index: 1;
+  padding: 40px;
+  border-radius: 15px;
+  border: #74ee15 2px solid;
+  background: linear-gradient(#100e27bd, #030418af);
+  box-shadow: 0 0 5px 2.5px #74ee158f, 0 0 10px 3.5px #ebecca34,
+    0 0 12.5px 10px #8a2be234, 0 0 15px 12px #14e4ff34;
+}
+
+.lang-select {
+  place-self: center;
+  display: grid;
+  place-items: center;
+  grid-auto-flow: column;
+  text-align: center;
+  color: #4deeea;
+  z-index: 1;
+  font-size: 20px;
+}
+.lang-select h1 {
+  margin: 0;
+  margin-right: 20px;
+  font-size: 28px;
+}
+
+.lang-select img {
+  border: 2px solid #4deeea;
+}
+
+.lang-select img:hover {
+  border: 3px solid #74ee15;
+}
+
+.learn-quiz {
+  z-index: 1;
+  text-align: center;
+  color: #4deeea;
+}
+
+.learn-quiz > h2 {
+  font-size: 30px;
+  color: #4deeea;
+}
+
+.button-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.quiz-button {
+  background-image: radial-gradient(#060824ee, #132546c0),
+    url("src/assets/textures/metallic_violet.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: #4deeea 2px solid;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 12px;
+  background-color: #f9f9f9;
+  text-decoration: none;
+  color: #4deeea;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.quiz-button:hover {
+  border: 2px solid #74ee15;
+  color: #74ee15;
+}
