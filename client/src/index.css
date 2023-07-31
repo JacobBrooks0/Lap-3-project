@@ -1,10 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Cherry+Bomb+One&family=Gloria+Hallelujah&family=Oleo+Script+Swash+Caps:wght@400;700&family=Sen:wght@400;500;600;700;800&family=Share+Tech+Mono&display=swap");
 
+html { font-size: clamp(12px, calc(100vw * 0.0105),16px); }
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;

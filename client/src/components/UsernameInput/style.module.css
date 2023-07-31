@@ -3,14 +3,14 @@
   border-radius: 100vmax;
 
   width: 150px;
-  font-size: 18px;
+  font-size: 1.125rem;
   background-color: #ffffff29;
   color: #3dfffc;
   border: 2px solid #4deeea;
   padding: 7px 20px;
   border-radius: 100vmax;
 
-  background-image: url("src/assets/Welcome/alien_head.svg");
+  background-image: url("/src/assets/Welcome/alien_head.svg");
   background-repeat: no-repeat;
   background-size: 15px;
   background-position: left 1.2ex top 50%;

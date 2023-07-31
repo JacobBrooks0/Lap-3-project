@@ -5,11 +5,11 @@
 
 .container {
   display: grid;
-  font-size: 24px;
+  font-size: 1.5rem;
   place-items: center;
   position: relative;
   z-index: 1;
-  row-gap: 25px;
+  row-gap: 1.56rem;
   width: 60%;
   max-width: 900px;
   text-align: center;
@@ -24,7 +24,7 @@
 
 .back-button {
   place-self: stretch;
-  padding: 20px;
+  padding: 1.25rem;
   border: 2px solid #74ee15;
   color: #74ee15;
   border-radius: 30px;
@@ -32,25 +32,25 @@
   background-repeat: no-repeat;
   background-size: cover;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 
 .back-button:hover {
-  font-size: 18px;
+  font-size: 1.125rem;
   background-color: #74ee1554;
 }
 
 .show-hint-button {
-  padding: 20px;
+  padding: 1.25rem;
   border: yellow 2px solid;
   color: yellow;
-  font-size: 18px;
+  font-size: 1.125rem;
   border-radius: 12px;
   background: linear-gradient(#24214628, #03041881);
   background-repeat: no-repeat;
   background-size: cover;
   cursor: pointer;
-  margin-top: 20px;
+  margin-top: 1.25rem;
 }
 
 .show-hint-button:hover {
