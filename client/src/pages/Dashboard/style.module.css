@@ -58,7 +58,7 @@
 
 .quiz-button {
   background-image: radial-gradient(#060824ee, #132546c0),
-    url("src/assets/textures/metallic_violet.jpg");
+    url("/src/assets/textures/metallic_violet.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   border: #4deeea 2px solid;

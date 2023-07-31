@@ -61,14 +61,14 @@
 }
 
 .alien-bg {
-  background-image: url("src/assets/backgrounds/alien-fantasy-landscape.jpg");
+  background-image: url("/src/assets/backgrounds/alien-fantasy-landscape.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   transition: opacity 2s ease-in-out;
 }
 
 .earth-bg {
-  background-image: url("src/assets/backgrounds/suburban_neighbourhood.jpg");
+  background-image: url("/src/assets/backgrounds/suburban_neighbourhood.jpg");
   transition: opacity 2s ease-in-out;
 }
 
@@ -82,9 +82,6 @@
   50% {
     top: 47vh;
   }
-  100% {
-    top: 50vh;
-  }
 }
 
 .ufo {
@@ -95,9 +92,8 @@
 
   animation-name: levitate;
   animation-duration: 2s;
-  animation-timing-function: ease-in;
+  animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
-  animation-fill-mode: forwards;
 }
 
 .lr .ufo {
