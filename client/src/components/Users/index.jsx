@@ -10,7 +10,7 @@ export default function Users() {
 
   useEffect(() => {
     async function fetchData() {
-      const URL = "http://localhost:3000/leaderboards";
+      const URL = `${import.meta.env.VITE_SERVER}/leaderboards`;
       try {
         const response = await axios.get(URL);
         setGetData(response.data);

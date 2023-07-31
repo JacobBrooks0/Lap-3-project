@@ -3,7 +3,7 @@
   z-index: 0;
   width: 100%;
   height: calc(100% - 62px);
-bottom: 0px;
+  bottom: 0px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -15,28 +15,29 @@ bottom: 0px;
 }
 
 .spaceship-view {
-  background-image: url("src/assets/backgrounds/spaceship-view-earth.jpg");
+  background-image: url("../../../assets/backgrounds/spaceship-view-earth.jpg");
 }
 
 .night-landscape-moon {
-  background-image: url("src/assets/backgrounds/night_landscape_with_moon.jpg");
+  background-image: url("../../../assets/backgrounds/night_landscape_with_moon.jpg");
 }
 
 .alien-planet {
-  background-image: linear-gradient(#24214628, #04062988), url("src/assets/backgrounds/earth-view-night-from-alien-planet.jpg");
+  background-image: linear-gradient(#24214628, #04062988),
+    url("../../../assets/backgrounds/earth-view-night-from-alien-planet.jpg");
 }
 
 .night-town {
   background: linear-gradient(#08043015, #0304186b),
-    url("src/assets/backgrounds/suburb_at_night.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    url("../../../assets/backgrounds/suburb_at_night.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
-.mountain-road{
+.mountain-road {
   background: linear-gradient(#08043015, #0304186b),
-    url("src/assets/backgrounds/mountain_road.jpg");
+    url("../../../assets/backgrounds/mountain_road.jpg");
   background-position: center;
   background-size: cover;
 }
@@ -141,13 +142,13 @@ bottom: 0px;
 }
 
 .alien3 {
-    position: fixed;
-    right: 43%;
-    width: 50vh;
-    bottom: -14vh;
-  
-    animation-name: expand;
-    animation-duration: 4s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-  }
+  position: fixed;
+  right: 43%;
+  width: 50vh;
+  bottom: -14vh;
+
+  animation-name: expand;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
