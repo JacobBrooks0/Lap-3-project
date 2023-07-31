@@ -37,6 +37,7 @@
 .header > p {
   color: #4deeea;
   margin: 0;
+  font-size: 1.13rem;
   margin-bottom: 20px;
 }
 
@@ -80,7 +81,7 @@
 
 @keyframes levitate {
   50% {
-    top: 47vh;
+    top: 48vh;
   }
 }
 

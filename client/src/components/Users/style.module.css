@@ -1,7 +1,7 @@
 .container{
      display: flex; 
     justify-content: center;
-    font-size: 24px;
+    font-size: 1.5rem;
     align-content: center;
 
 } 
@@ -24,7 +24,8 @@ th, td {
 
 .container td > svg {
   position: relative;
-  height: 70px;
+  top: 0.25rem;
+  height: 4.375rem;
   opacity: 0.2;
 }
 
@@ -32,6 +33,6 @@ th, td {
   position: absolute;
   top: 50%;
   left: 50%;
-  font-size: 34px;
+  font-size: 2.125rem;
   transform: translate(-50%, -50%)
 }

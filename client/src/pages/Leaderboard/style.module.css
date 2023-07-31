@@ -5,9 +5,9 @@
 }
 
 .leader {
-  margin: 20px;
+  margin: 2.5rem;
   position: relative;
-  padding: 40px;
+  padding: 2.5rem;
   border-radius: 15px;
   display: grid;
   z-index: 1;

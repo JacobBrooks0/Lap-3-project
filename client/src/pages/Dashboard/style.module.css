@@ -5,8 +5,9 @@
 
 .inner-container {
   display: grid;
+  margin: 2.5rem;
   z-index: 1;
-  padding: 40px;
+  padding: 2.5rem;
   border-radius: 15px;
   border: #74ee15 2px solid;
   background: linear-gradient(#100e27bd, #030418af);
@@ -22,12 +23,12 @@
   text-align: center;
   color: #4deeea;
   z-index: 1;
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 .lang-select h1 {
   margin: 0;
-  margin-right: 20px;
-  font-size: 28px;
+  margin-right: 1.25rem;
+  font-size: 2.5rem;
 }
 
 .lang-select img {
@@ -45,7 +46,7 @@
 }
 
 .learn-quiz > h2 {
-  font-size: 30px;
+  font-size: 1.875rem;
   color: #4deeea;
 }
 
@@ -53,7 +54,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 
 .quiz-button {
@@ -62,13 +63,13 @@
   background-repeat: no-repeat;
   background-size: cover;
   border: #4deeea 2px solid;
-  margin: 10px;
-  padding: 20px;
+  margin: 0.625rem;
+  padding: 1.25rem;
   border-radius: 12px;
   background-color: #f9f9f9;
   text-decoration: none;
   color: #4deeea;
-  font-size: 20px;
+  font-size: 1.25rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }

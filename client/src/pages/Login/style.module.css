@@ -50,7 +50,7 @@
 
 .container button {
   place-self: stretch;
-  font-size: 18px;
+  font-size: 1.125rem;
   background-color: #281c3c;
   color: #4deeea;
   border: 2px solid #4deeea;
