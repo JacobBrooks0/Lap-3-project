@@ -1,19 +1,19 @@
-import Alien1 from "../../graphics/aliens/1.svg";
-import Alien2 from "../../graphics/aliens/2.svg";
-import Alien3 from "../../graphics/aliens/3.svg";
-import Alien4 from "../../graphics/aliens/4.svg";
-import Alien5 from "../../graphics/aliens/5.svg";
-import Alien6 from "../../graphics/aliens/6.svg";
-import Alien7 from "../../graphics/aliens/7.svg";
-import Alien8 from "../../graphics/aliens/8.svg";
-import Alien9 from "../../graphics/aliens/9.svg";
-import Alien10 from "../../graphics/aliens/10.svg";
-import Alien11 from "../../graphics/aliens/11.svg";
-import Alien12 from "../../graphics/aliens/12.svg";
-import Alien13 from "../../graphics/aliens/13.svg";
-import Alien14 from "../../graphics/aliens/14.svg";
-import Alien15 from "../../graphics/aliens/15.svg";
-import Alien16 from "../../graphics/aliens/16.svg";
+import Alien1 from "../../../assets/aliens/1.svg";
+import Alien2 from "../../../assets/aliens/2.svg";
+import Alien3 from "../../../assets/aliens/3.svg";
+import Alien4 from "../../../assets/aliens/4.svg";
+import Alien5 from "../../../assets/aliens/5.svg";
+import Alien6 from "../../../assets/aliens/6.svg";
+import Alien7 from "../../../assets/aliens/7.svg";
+import Alien8 from "../../../assets/aliens/8.svg";
+import Alien9 from "../../../assets/aliens/9.svg";
+import Alien10 from "../../../assets/aliens/10.svg";
+import Alien11 from "../../../assets/aliens/11.svg";
+import Alien12 from "../../../assets/aliens/12.svg";
+import Alien13 from "../../../assets/aliens/13.svg";
+import Alien14 from "../../../assets/aliens/14.svg";
+import Alien15 from "../../../assets/aliens/15.svg";
+import Alien16 from "../../../assets/aliens/16.svg";
 
 export default function getAlienImage(rank) {
   let Alien;

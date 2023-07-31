@@ -1,6 +1,6 @@
 import React from "react";
 import { Outlet, useLocation } from "react-router-dom";
-import UFO from "../../graphics/Welcome/alien_space_ship.png";
+import UFO from "../../../assets/Welcome/alien_space_ship.png";
 
 import style from "./style.module.css";
 

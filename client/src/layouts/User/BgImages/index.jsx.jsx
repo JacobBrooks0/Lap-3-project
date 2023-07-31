@@ -1,10 +1,10 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
-import Alien1 from "../../../graphics/aliens_back/1.svg";
-import Alien2 from "../../../graphics/aliens_back/2.svg";
-import Alien3 from "../../../graphics/aliens_back/3.svg";
-import LeftWing from "../../../graphics/aliens_back/leftwing1.svg";
-import RightWing from "../../../graphics/aliens_back/rightwing1.svg";
+import Alien1 from "../../../../assets/aliens/1.svg";
+import Alien2 from "../../../../assets/aliens_back/2.svg";
+import Alien3 from "../../../../assets/aliens_back/3.svg";
+import LeftWing from "../../../../assets/aliens_back/leftwing1.svg";
+import RightWing from "../../../../assets/aliens_back/rightwing1.svg";
 import style from "./style.module.css";
 
 export default function BgImages() {
