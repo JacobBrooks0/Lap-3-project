@@ -60,14 +60,14 @@
 }
 
 .alien-bg {
-  background-image: url("../../assets/backgrounds/alien-fantasy-landscape.jpg");
+  background-image: url("src/graphics/backgrounds/alien-fantasy-landscape.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   transition: opacity 2s ease-in-out;
 }
 
 .earth-bg {
-  background-image: url("../../assets/backgrounds/suburban_neighbourhood.jpg");
+  background-image: url("src/graphics/backgrounds/suburban_neighbourhood.jpg");
   transition: opacity 2s ease-in-out;
 }
 

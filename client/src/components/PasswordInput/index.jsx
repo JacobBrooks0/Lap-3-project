@@ -1,6 +1,6 @@
 import { useRef } from "react";
 
-import ShowPassword from "../../assets/Welcome/show_password.svg";
+import ShowPassword from "../../graphics/Welcome/show_password.svg";
 import style from "./style.module.css";
 
 export default function PasswordInput() {

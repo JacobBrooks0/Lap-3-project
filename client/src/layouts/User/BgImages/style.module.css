@@ -15,21 +15,21 @@
 }
 
 .spaceship-view {
-  background-image: url("../../../assets/backgrounds/spaceship-view-earth.jpg");
+  background-image: url("src/graphics/backgrounds/spaceship-view-earth.jpg");
 }
 
 .night-landscape-moon {
-  background-image: url("../../../assets/backgrounds/night_landscape_with_moon.jpg");
+  background-image: url("src/graphics/backgrounds/night_landscape_with_moon.jpg");
 }
 
 .alien-planet {
   background-image: linear-gradient(#24214628, #04062988),
-    url("../../../assets/backgrounds/earth-view-night-from-alien-planet.jpg");
+    url("src/graphics/backgrounds/earth-view-night-from-alien-planet.jpg");
 }
 
 .night-town {
   background: linear-gradient(#08043015, #0304186b),
-    url("../../../assets/backgrounds/suburb_at_night.jpg");
+    url("src/graphics/backgrounds/suburb_at_night.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -37,7 +37,7 @@
 
 .mountain-road {
   background: linear-gradient(#08043015, #0304186b),
-    url("../../../assets/backgrounds/mountain_road.jpg");
+    url("src/graphics/backgrounds/mountain_road.jpg");
   background-position: center;
   background-size: cover;
 }
