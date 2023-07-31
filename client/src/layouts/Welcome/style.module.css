@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap");
 
-
 .container {
   min-height: 100vh;
   background-color: #0c0e26;
@@ -61,14 +60,14 @@
 }
 
 .alien-bg {
-  background-image: url("src/assets/backgrounds/alien-fantasy-landscape.jpg");
+  background-image: url("assets/backgrounds/alien-fantasy-landscape.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   transition: opacity 2s ease-in-out;
 }
 
 .earth-bg {
-  background-image: url("src/assets/backgrounds/suburban_neighbourhood.jpg");
+  background-image: url("assets/backgrounds/suburban_neighbourhood.jpg");
   transition: opacity 2s ease-in-out;
 }
 
@@ -128,18 +127,18 @@
 
 @keyframes pulsate {
   20% {
-    stroke:#74ee15;
+    stroke: #74ee15;
   }
   40% {
-    stroke:#ffe700;
+    stroke: #ffe700;
   }
   60% {
-    stroke:#f000ff;
+    stroke: #f000ff;
   }
   80% {
-    stroke:#001eff;
+    stroke: #001eff;
   }
   100% {
-    stroke:#4deeea;
+    stroke: #4deeea;
   }
 }

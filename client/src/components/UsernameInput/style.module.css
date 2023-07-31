@@ -10,7 +10,7 @@
   padding: 7px 20px;
   border-radius: 100vmax;
 
-  background-image: url("src/assets/Welcome/alien_head.svg");
+  background-image: url("assets/Welcome/alien_head.svg");
   background-repeat: no-repeat;
   background-size: 15px;
   background-position: left 1.2ex top 50%;

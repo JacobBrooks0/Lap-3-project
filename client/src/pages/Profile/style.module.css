@@ -21,7 +21,7 @@
 }
 .user-meta {
   background-image: linear-gradient(#100e2783, #030418af),
-    url("src/assets/textures/metal-texture-vector.jpg");
+    url("../../../assets/textures/metal-texture-vector.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   padding: 30px;
@@ -81,7 +81,7 @@
   width: 30px;
   height: 30px;
   background-image: linear-gradient(#100e2783, #030418af),
-    url("src/assets/textures/aluminum-metal-texture.jpg");
+    url("../../../assets/textures/aluminum-metal-texture.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -110,7 +110,7 @@
 
 .l-data-actions {
   background-image: linear-gradient(#100e2783, #030418af),
-    url("src/assets/textures/metal-texture-vector.jpg");
+    url("../../../assets/textures/metal-texture-vector.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   padding: 30px;
@@ -163,7 +163,7 @@
   hyphens: auto;
 }
 
-.l-data-actions th{
+.l-data-actions th {
   background: rgba(81, 255, 0, 0.116);
 }
 
